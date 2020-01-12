@@ -1,0 +1,13 @@
+<footer class="c-footer">
+  <div class="c-footer__container_desc">
+    <p>{{ site.description }}</p>
+  </div>
+  <div>
+    <p class="c-footer__container_links">
+      {% if site.twitterUsername %}<a href="https://twitter.com/{{ site.twitterUsername }}">Twitter</a>{% endif %}
+      {% if site.githubUsername %}<a href="https://github.com/{{ site.githubUsername }}">Github</a>{% endif %}
+      {% if site.youtubeUsername %}<a href="https://youtube.com/channel/{{ site.youtubeUsername }}">YouTube</a>{% endif %}
+      {% if site.steamUsername %}<a href="https://steamcommunity.com/id/{{ site.steamUsername }}">Steam</a>{% endif %}
+    </p>
+  </div>
+</footer>

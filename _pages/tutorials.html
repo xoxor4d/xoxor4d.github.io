@@ -1,0 +1,28 @@
+---
+layout: page
+title: Tutorials
+permalink: /tutorials/
+---
+
+{% for post in site.categories.tutorials  %}
+    {% capture this_categorie %}{{ post.categorie | categorie: "%Y" }}{% endcapture %}
+    {% capture next_categorie %}{{ post.previous.categorie | categorie: "%Y" }}{% endcapture %}
+
+    {% if forloop.first %}
+          <h2 class="c-tutorials_year" id="{{ this_categorie }}-ref">{{this_categorie}}</h2>
+       <ul class="c-tutorials_list">
+    {% endif %}
+        <li class="c-archives__item">
+            <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+            <p>{{ post.date | date: "%b %-d, %Y" }}</p>
+        </li>
+    {% if forloop.last %}
+        </ul>
+    {% else %}
+        {% if this_categorie != next_categorie %}
+        </ul>
+        <h2 class="c-tutorials_year" id="{{ next_year }}-ref">{{next_categorie}}</h2>
+        <ul class="c-tutorials_list">
+           {% endif %}
+    {% endif %}
+{% endfor %}

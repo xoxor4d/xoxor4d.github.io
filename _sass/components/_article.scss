@@ -1,0 +1,56 @@
+/* ==========================================================================
+   Article
+   ========================================================================== */
+
+.c-article {
+  background: $t-theme;
+
+}
+
+.c-article__main {
+  position:relative;
+  max-width: 128rem; // 760px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 7.5rem;
+  //padding-bottom: 2.5rem;
+  padding-bottom: 80px;
+  padding-right: 2.5rem;
+  padding-left: 2.5rem;
+  background: $t-theme;
+
+/*   display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  //display: contents;
+  display: inline-table;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: justify; //space-between;  */
+
+  @include fs--body;
+
+  > * {
+    margin-bottom: 1.8rem;
+    color: rgba($c__black, .7);
+  }
+
+  a:not(.c-btn) {
+    text-decoration: underline;
+  }
+
+  blockquote {
+    margin-left: -2.5rem;
+    width: calc(100% + 5rem);
+    padding: 2.5rem;
+    background: $c__light-grey;
+  }
+
+  ul, ol {
+    margin-left: 40px;
+  }
+}

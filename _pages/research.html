@@ -1,0 +1,28 @@
+---
+layout: page
+title: Research
+permalink: /research/
+---
+
+{% for post in site.categories.research  %}
+    {% capture this_game %}{{ post.game | game: "%Y" }}{% endcapture %}
+    {% capture next_game %}{{ post.previous.game | game: "%Y" }}{% endcapture %}
+
+    {% if forloop.first %}
+          <h2 class="c-research_game" id="{{ this_game }}-ref">{{this_game}}</h2>
+       <ul class="c-research_list">
+    {% endif %}
+        <li class="c-archives__item">
+            <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+            <p>{{ post.date | date: "%b %-d, %Y" }}</p>
+        </li>
+    {% if forloop.last %}
+        </ul>
+    {% else %}
+        {% if this_game != next_game %}
+        </ul>
+        <h2 class="c-research_game" id="{{ next_game }}-ref">{{next_game}}</h2>
+        <ul class="c-research_list">
+           {% endif %}
+    {% endif %}
+{% endfor %}

@@ -1,0 +1,84 @@
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.c-footer {
+  //padding-top: 2.5rem; // 75px
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  width: 100%;
+  height: 80px;
+  color: #6d6d6d;
+  //background: $t-theme; //background: $c__light-grey;
+  //display: inline-table;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+
+/*   p:first-of-type {
+    color: $t-theme;
+  } */
+
+   p {
+    @include fs--meta;
+  }
+
+  // padding between links
+  /* a:not(:first-of-type) {
+    margin-left: 2rem;
+  } */
+}
+
+.c-footer__container_desc {
+  width: 60%;
+  float: left;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 2rem;
+  overflow: hidden;
+
+  display: -webkit-box;
+  /* display: -webkit-flex;
+  display: -ms-flexbox;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; */
+  //display: flex;
+  //-webkit-box-pack: justify;
+  //-webkit-justify-content: space-between;
+  //    -ms-flex-pack: justify;
+  //        justify-content: space-between; //space-between;
+  
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+}
+
+.c-footer__container_links {
+  
+  // spacing for text
+  a {
+    margin-left: 2rem;
+    margin-bottom: 2px;
+  } 
+
+  width: 25%;
+  float: right;
+  //margin-right: auto;
+  //margin-left: calc(100vh - 50px);
+  //padding-top: 8px;
+  padding-right: 5rem;
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  //display: contents;
+  display: inline-table;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: right; //space-between; 
+          //display: table-cell; vertical-align: middle;
+}
