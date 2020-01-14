@@ -8,6 +8,8 @@ permalink: /research/cod4-doublebounce/
 
 There are 2 variables in the __playerState_s__ struct: __jumpOriginZ__ and __pm_flags__ that are assigned new values upon hitting the ground or a slope. These new values prevent __PM_StepSlideMove__ from executing specific parts of it that makes bouncing possible in the first place.
 
+<div class="padding-1l"></div>
+
 >   - jumpOriginZ
       + saves the max. z-origin for your current jump (current z-origin + jump_height dvar (probably for prediction))
       + the value gets saved till one hits a slope or a groundEntity and will get reset after around 2 seconds
@@ -16,6 +18,8 @@ There are 2 variables in the __playerState_s__ struct: __jumpOriginZ__ and __pm_
       + saves a flag, lets call it "Jumped-And-In-Air" ( 0x4000 ) when you perform a legit jump
       + the flag gets saved till one hits a slope or a groundEntity.
 
+<div class="padding-1l"></div>
+
 Lets assume we are on CoD4 and the current z-origin of the player is 1000.0f. The player is aiming for a bounce and at the moment he initiates the jump:  
  __jumpOriginZ__ contains __1039.0f__ ( z-origin (1000.0f) + jump_height (39)) and __pm_flags__ contains the __Jumped-And-In-Air__ flag.
 
@@ -23,9 +27,10 @@ Now if he hits the slope correctly, __PM_StepSlideMove__ will do its thing and i
 
 Now to enable double bouncing, one has to disable the resets for these two variables within __PM_GroundTrace__ by nopping them (0x90). This will alter the flow of execution to a point where __PM_StepSlideMove__ thinks that the player just jumped, so it will always execute __PM_ProjectVelocity__.
 
-{% highlight cpp %}
-/*Part of PM_GroundTrace*/
+<div class="padding-1l"></div>
 
+<div class="highlight-header"><p>​Part of PM_GroundTrace</p></div>
+{% highlight cpp %}
 if ( trace.walkable )
 {
     pml->groundPlane = 1;
@@ -49,6 +54,8 @@ else
     ps->jumpOriginZ = 0.0f;     // but its inlined in cod4                    // nop
 }
 {% endhighlight %}
+
+<div class="padding-1l"></div>
 
 There are obv. multiple ways of getting this to work. This way has some side effects like getting stuck on blockbounces or the slowdown-timer taking longer to reset. Latter happens because the slowdown-timer would normally start when one has hit the first bounce wherever now it starts counting down when the player walks on the ground.
 

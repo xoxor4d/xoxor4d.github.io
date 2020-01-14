@@ -11,16 +11,19 @@ stop at every brush that is 1 unit heigher than the plane he is walking on. It b
 
 >Fun Fact: CoD2 did not include __PM_ProjectVelocity__ and used __PM_ClipVelocity__ in its place. Hooking the call to __PM_ClipVelocity__ and instead calling your own version of __PM_ProjectVelocity__ will enable bouncing just like it is in CoD4.
 
----
+<div class="padding-1l"></div>
+<div align="center"><div class="seperator-75p"></div></div>
+<div class="padding-1l"></div>
 
 # Bouncing in Modern Warfare 2
 The Bouncefix that was first introduced in Modern Warfare 2 is just one check on a variable called __jumping__ right were it decides if __PM_StepSlideMove__ should return early or try to further clip/project the players origin/velocity. The __jumping__ variable was also set in CoD4's __PM_StepSlideMove__ but not used at that location.  
 
 This snippet shows where __jumping__ is set for both games:
-{% highlight cpp %}
-/*Part of PM_StepSlideMove*/
-/*same for cod4 / mw2*/
 
+<div class="padding-1l"></div>
+
+<div class="highlight-header"><p>​Part of PM_StepSlideMove - same for cod4 / mw2</p></div>
+{% highlight cpp %}
 if ( ps->pm_flags & 0x4000 && ps->pm_time )
     Jump_ClearState(ps);
     
@@ -34,9 +37,8 @@ if ( iBumps && ps->pm_flags & 0x4000 && Jump_GetStepHeight(ps, start_o, &fStepSi
 {% endhighlight %}
 
 Here you can see the change that prevents bouncing on MW2:
+<div class="highlight-header"><p>Part of MW2's PM_StepSlideMove</p></div>
 {% highlight cpp %}
-/*Part of MW2's PM_StepSlideMove*/
-
 if ( trace.fraction >= 1.0 )
 {
     if ( fStepAmount != 0.0 )
@@ -60,4 +62,9 @@ else
 }
 {% endhighlight %}
 
-So removing that check re-enables bouncing like it was back in Call of Duty 4.
+<div class="padding-2l"></div>
+
+<div align="center" markdown="1">
+#### So removing that check re-enables bouncing like it was back in Call of Duty 4 :)
+</div>
+

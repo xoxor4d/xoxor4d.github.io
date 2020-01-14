@@ -14,9 +14,9 @@ This will act as a global z-velocity cap as that that function gets called every
 
 So to fix mini bounces and also re-enable bayonetjumps, simply disable __player_bayonetLaunchProof__ or nop / invert the check in __PM_MeleeChargeUpdate__.
 
----
+<div class="padding-1l"></div>
 
-__PM_MeleeChargeClear__ (WaW / Bo1)
+<div class="highlight-header"><p>PM_MeleeChargeClear - WaW / BO1</p></div>
 {% highlight cpp %}
 void __cdecl PM_MeleeChargeClear(playerState_s *ps)
 {

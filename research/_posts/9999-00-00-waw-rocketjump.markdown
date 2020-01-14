@@ -5,12 +5,14 @@ date:   2020-01-01 22:59:00
 game:   World at War
 permalink: /research/waw-rocketjump/
 ---
+
+<div align="center" markdown="1">
 Rocketjumps happen in __Weapon_RocketLauncher_Fire__ and were fixed by not altering the z-velocity of the player if -weaponParms->forward[2] is > 0.0f.
+</div>
 
-
-__Weapon_RocketLauncher_Fire__ (WaW)
+<div class="highlight-header"><p>Part of Weapon_RocketLauncher_Fire - WaW</p></div>
 {% highlight cpp %}
-/*Part of Weapon_RocketLauncher_Fire*/
+/* . . . */
 
 if ( ent->client )
 {
@@ -27,7 +29,7 @@ if ( ent->client )
 return result;
 {% endhighlight %}
 
-__Weapon_RocketLauncher_Fire__ (CoD4)
+<div class="highlight-header"><p>Part of Weapon_RocketLauncher_Fire - CoD4</p></div>
 {% highlight cpp %}
 /*Part of Weapon_RocketLauncher_Fire*/
 

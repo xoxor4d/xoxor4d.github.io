@@ -17,20 +17,24 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-
-title: "#xoxor4d's content"
-email: your-email@example.com
+title: "#xoxor4d's - Bug Research / ex. Bouncepatch.com / Tutorials and Tools"
+email: 
 description: >- # this means to ignore newlines until "baseurl:"
-  Content on this site has been created purely for the purposes of academic research. Project maintainers are not responsible or liable for misuse of the software.
+  Call of Duty - Bug Research / ex. Bouncepatch.com / Tutorials and Tools.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://example.com" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://xoxor4d.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+favicon: favico.png
+author.name: xoxor4d
+keywords: call of duty, cod, bug research, bouncepatch, bounce depatch, cod4 hlsl, custom hlsl shaders, iw3xo, visible clip
 
-
+# Footer -------------------
+footer-content: Content on this site has been created purely for the purposes of academic research. Project maintainers are not responsible or liable for misuse of any content provided.
 # Social
 githubUsername: xoxor4d
 twitterUsername: xoxor4d
 youtubeUsername: UC7DiUO6bzZGii0EUx1Vg4mw
 steamUsername: xoxor4d
+
 
 # Build settings
 markdown: kramdown

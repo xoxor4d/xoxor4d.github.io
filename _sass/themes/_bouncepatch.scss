@@ -107,11 +107,80 @@ li > ul {
   display: block;
 }
 
-// code boxes
+// -----------------------------------------
+// custom seperators
+
+// 1 line padding
+// :: <div class="padding-1l"></div>
+.padding-1l {
+  padding: 0.35rem;
+}
+
+.padding-2l {
+  padding: 1.5rem;
+}
+
+// full width
+// :: <div class="seperator-100p"></div>
+.seperator-100p {
+  background: $c__seperator_100p;
+  margin-left: -2.5rem;
+  margin-top: 3rem; // increased by 1
+  width: calc(100% + 5rem);
+  padding: 1px;
+}
+
+// 3 quater width
+// :: <div align="center"><div class="seperator-75w"></div></div>
+.seperator-75p {
+  background: $c__seperator_75p;
+  margin-top: 3rem; // increased by 1
+  width: 75%;
+  padding: 1px;
+  
+  p {
+    @include ff--sans-serif(100);
+    color: #c4c4c4;
+  }
+}
+
+// half width
+// :: <div align="center"><div class="seperator-50p"></div></div>
+.seperator-50p {
+  background: $c__seperator_50p;
+  margin-top: 3rem; // increased by 1
+  width: 50%;
+  padding: 1px;
+}
+
+// -----------------------------------------
+// code highlight header
+// :: <div class="highlight-header"><p> TITLE </p></div>
+
+.highlight-header {
+  background: $c__bouncepatch_codebox_header;
+  margin-left: -2.5rem;
+  margin-bottom: 0rem;
+  width: calc(100% + 5rem);
+  padding: 4px;
+  padding-left: 1rem;
+
+  p {
+    @include fs--body;
+    color: #c4c4c4;
+  }
+}
+
+// code highlight box
+// :: {% highlight LANGUAGE %} {% endhighlight %}
+
 .highlight {
-  //color: $c__light-grey;
   background: $c__bouncepatch_codebox;
   }
+
+
+// ------------------------------
+// general stuff
 
 .t-bouncepatch 
 {

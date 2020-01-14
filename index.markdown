@@ -1,13 +1,15 @@
 ---
 layout: page
-title: "xoxor4d 🥝 "
+title: "Overview / Projects"
 ---
 
 # Site Migration - Incomplete
 I didn't feel like paying for weebly any longer so I switched to github pages as it's more then enough for my use-case.
 [Bouncepatch.com](https://bouncepatch.com) will redirect any requests to this site for the next year or so. This site will be frequently updated with tools / research / tutorials or whatever else I feel like is worth posting.
 
----
+<div class="padding-1l"></div>
+<div align="center"><div class="seperator-100p"></div></div>
+<div class="padding-1l"></div>
 
 # Current Projects
 1. [IW3xo](/projects/iw3xo/) (eta. 2020) - custom CoD4 client with a multitude of new features including but not limited to:
@@ -40,16 +42,12 @@ I didn't feel like paying for weebly any longer so I switched to github pages as
 	   + inject custom materials into stock weapon xmodels
 	   + glsl -> hlsl syntax converter
 
----
+<div align="center"><div class="seperator-100p"></div></div>
+<div class="padding-1l"></div>
 
-
-![alt text](/assets/img/bouncepatch_tool.jpg "Multi Call of Duty - Bounce Depatch Tool"){:class="img-centered"}
-
-
-highlighting test
-
+<div class="highlight-header"><p>Oh, .. hey there fellow</p></div>
 {% highlight cpp %}
-  PM_CorrectAllSolid(pmove_t *pm, pml_t *pml, trace_t *trace)
+PM_CorrectAllSolid(pmove_t *pm, pml_t *pml, trace_t *trace)
 {
 	/* Simplyfied Pseudocode */
 	while ( 1 )
@@ -75,6 +73,8 @@ highlighting test
 	return result;
 }
 {% endhighlight %}
+
+<div class="padding-1l"></div>
 
 ### Heading Level 3
 

@@ -9,9 +9,11 @@ permalink: /research/mw2-elevator/
 >While trying to disable elevators in CoD4, I noticed that if I overjump a call to __PM_CorrectAllSolid__ or __PM_JitterPoint__ in later CoD's, elevators will stop working.
 >I couldn't find anything special in that function and decided to compare it to the one in MW2 ... and well, Spot On!
 
----
+<div class="padding-1l"></div>
+<div align="center"><div class="seperator-75p"></div></div>
+<div class="padding-1l"></div>
 
-__PM_CorrectAllSolid__ (CoD4)
+<div class="highlight-header"><p>PM_CorrectAllSolid - CoD4</p></div>
 {% highlight cpp %}
 bool PM_CorrectAllSolid(pmove_t *pm, pml_t *pml, trace_t *trace)
 {
@@ -45,7 +47,7 @@ bool PM_CorrectAllSolid(pmove_t *pm, pml_t *pml, trace_t *trace)
 }
 {% endhighlight %}  
 
-__PM_CorrectAllSolid__ (MW2)
+<div class="highlight-header"><p>PM_CorrectAllSolid - MW2</p></div>
 {% highlight cpp %}
 bool PM_CorrectAllSolid(pmove_t *pm, pml_t *pml, trace_t *trace)
 {
@@ -85,4 +87,10 @@ bool PM_CorrectAllSolid(pmove_t *pm, pml_t *pml, trace_t *trace)
 }
 {% endhighlight %}
 
-All thats needed to re-enable elevators is to nop 1 jump equal instruction and the code-flow will be the same as it was in CoD4.
+<div class="padding-2l"></div>
+
+<div align="center" markdown="1">
+#### All thats needed to re-enable elevators is to nop 1 jump equal instruction and the code-flow will be the same as it was in CoD4 :)
+</div>
+
+
