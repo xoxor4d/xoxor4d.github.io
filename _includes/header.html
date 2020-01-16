@@ -1,0 +1,32 @@
+<div class="bg-ground">
+
+    <div class="container">
+
+        <div class="header">
+
+            <div class="logo"></div>
+
+            <div class="nav">
+
+                <a class="nav_item {% if page.url == '/' %}is-active{% endif %}" href="{{ "/" | prepend: site.baseurl }}">Home</a>
+                <a class="nav_item {% if page.url == '/projects/' %}is-active{% endif %}" href="{{ "/projects/" | prepend: site.baseurl }}">Projects</a>
+                <a class="nav_item {% if page.url == '/tutorials/' %}is-active{% endif %}" href="{{ "/tutorials/" | prepend: site.baseurl }}">Tutorials</a>
+                <a class="nav_item {% if page.url == '/research/' %}is-active{% endif %}" href="{{ "/research/" | prepend: site.baseurl }}">Research</a>
+                <a class="nav_item {% if page.url == '/about/' %}is-active{% endif %}" href="{{ "/about/" | prepend: site.baseurl }}">About</a>
+            
+            </div>
+
+        </div>
+
+        <div class="desc">
+
+            <div class="title">{{ page.title }}</div>
+
+            <div class="sub-title">{{ page.subtitle }}</div>
+
+        </div>
+        
+    </div>
+
+</div>
+
