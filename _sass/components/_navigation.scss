@@ -24,15 +24,25 @@
   &.is-fixed {
     position: fixed;
     will-change: transform;
-    max-height: 6.6rem; // fix maxheight so our floating logo doesnt resize it
+    //max-height: 6.6rem; // nah
   }
+}
+
+.c-navigation__left_block {
+  min-width: 5rem;
+  max-width: 5rem;
+  min-height: 5rem;
+  max-height: 5rem;
+
+  padding: 1rem;
+  float: left;
 }
 
 .c-navigation__item {
   position: relative;
   display: inline-block;
   padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
   @include ff--mono(500);
   @include fs--meta;
   color: $c__white;
