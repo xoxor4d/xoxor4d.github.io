@@ -1,0 +1,104 @@
+.bg-ground {
+	height: 350px; //570px
+	background-color: #1f1b34;
+	background-image: url("/assets/img/bg-header.png");
+	background-repeat: no-repeat;
+}
+
+.container {
+	position: relative;
+	max-width: 128rem;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.header {
+	padding-top: 40px;
+}
+
+.header .logo {
+	height: 21px;
+	width: 143px;
+	background-image: url("/assets/img/logo-xoxo-2.png");
+	background-repeat: no-repeat;
+	float: left;
+}
+
+.header .logo p {
+	float: left;
+	color: #FFF;
+	font-size: 16px;
+	padding: 2px 0px 0px 65px;
+}
+
+.header .nav {
+	float: right;
+}
+
+.header .nav a.nav_item {
+	color: #FFF;
+	line-height: 21px;
+	padding: 0px 20px 0px 20px;
+	min-width: 80px;
+	width: 80px;
+	font-size: 16px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 200;
+}
+
+.header .nav a.nav_item:hover {
+	color: #5584ff;
+	//text-decoration:underline;
+}
+
+
+.header .nav a.nav_item.is-active {
+	color: #5584ff;
+
+}
+
+.desc {
+	margin: 100px auto;
+	color: #fff;
+	text-align: center;
+}
+
+.desc .title {
+	font-size: 48px;
+}
+
+.desc .sub-title {
+	font-size: 24px;
+	color: #8b8a92;
+	padding-top: 10px;
+	font-weight: lighter;
+}
+
+h1,h2,h3,h4 {
+	color: #6e7080;
+}
+
+p,li,ul {
+	color: #a7a7b5;
+}
+
+
+.highlight-header p {
+	line-height: 1.5;
+	font-size: 1.8rem;
+	color: #6e7080 !important; 
+}
+
+.highlight {
+	background: #FFF;
+	border-bottom: 1px solid #e8e8f1;
+	border-right: 1px solid #e8e8f1;
+	border-top: 1px solid #e8e8f1;
+	border-left: 5px solid #e8e8f1;
+}
+.highlight {
+	padding: 0px 0px 0px 0px !important;
+}
+.highlight pre {
+    padding: 2.5rem;
+}
