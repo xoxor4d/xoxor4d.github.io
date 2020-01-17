@@ -124,9 +124,9 @@ li > ul {
 // :: <div class="seperator-100p"></div>
 .seperator-100p {
   background: $c__seperator_100p;
-  margin-left: -2.5rem;
+  margin-left: 0rem;
   margin-top: 3rem; // increased by 1
-  width: calc(100% + 5rem);
+  width: 100%;
   padding: 1px;
 }
 

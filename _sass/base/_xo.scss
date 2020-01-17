@@ -43,7 +43,7 @@
 	width: 80px;
 	font-size: 16px;
 	font-family: 'Roboto', sans-serif;
-	font-weight: 200;
+	font-weight: 300;
 }
 
 .header .nav a.nav_item:hover {
@@ -65,6 +65,8 @@
 
 .desc .title {
 	font-size: 48px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
 }
 
 .desc .sub-title {
@@ -72,14 +74,17 @@
 	color: #8b8a92;
 	padding-top: 10px;
 	font-weight: lighter;
+	font-family: 'Roboto', sans-serif;
 }
 
 h1,h2,h3,h4 {
 	color: #6e7080;
+	font-weight: 300;
 }
 
 p,li,ul {
 	color: #a7a7b5;
+	font-family: "Lato"; //maybe chang thos to something else
 }
 
 
@@ -99,7 +104,54 @@ p,li,ul {
 .highlight {
 	padding: 0px 0px 0px 0px !important;
 	color:#6e7080 !important;
+	margin-left: 0rem !important;
+	width: 100% !important;
 }
 .highlight pre {
     padding: 2.5rem;
+}
+
+.content-title {
+	font-size: 28px;
+	font-weight: 300;
+	color: #6e7080;
+	border-bottom: 1px solid #e8e8f1;
+	//margin-left: -2.5rem;
+	//width: calc(100% + 5rem);
+}
+
+.padding-bottom-15 {
+	margin-bottom: 15px;
+}
+
+.hightlight-lang-marks {
+	font-size: 14px;
+	color: #6e7080;
+	padding: 5px;
+	background-color: #e8e8f1;
+	min-width: 100px;
+	width: 115px;
+	border-radius: 5px;
+	text-align: center;
+	//margin-left: -2.5rem;
+	margin-top: 10px;
+	margin-bottom: 10px !important;
+}
+
+.c-footer {
+	background-color: #1f1b34 !important;
+	height: 100px !important;
+	line-height: 100px;
+	font-size: 16px;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+	color: #6d6d6d;
+	display: inline-flex;
+	align-items: center;
+	vertical-align: middle;
+	width: 100%;
+}
+
+.c-footer__container_links {
+	color: #5584ff;
 }
