@@ -58,7 +58,7 @@ The whole material chain depends on things like:
 
 <div align="center" markdown="1">
 #### Quick links for the individual files within the material chain with more in-depth information
-[MaterialTemplates](/tutorials/hlsl-templates/) :: [Techsets](/tutorials/hlsl-techsets/) :: [Techniques](/tutorials/hlsl-techniques/) :: [Statemaps](/tutorials/hlsl-statemaps/) :: [PixelShader](/tutorials/hlsl-pixelshader/) :: [VertexShader](/tutorials/hlsl-vertexshader/)
+[MaterialTemplates](/tutorials/hlsl-templates#quicklink) :: [Techsets](/tutorials/hlsl-techsets#quicklink) :: [Techniques](/tutorials/hlsl-techniques#quicklink) :: [Statemaps](/tutorials/hlsl-statemaps#quicklink) :: [PixelShader](/tutorials/hlsl-pixelshader#quicklink) :: [VertexShader](/tutorials/hlsl-vertexshader#quicklink)
 </div>  
 
 

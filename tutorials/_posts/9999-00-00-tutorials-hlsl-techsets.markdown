@@ -1,23 +1,18 @@
 ---
 layout:     post
 title:      "Techsets - In-depth"
+subtitle:   ">> root\\raw\\techsets"
 date:       2020-01-01 23:58:00
 categorie:  Call of Duty 4 - HLSL
 permalink: /tutorials/hlsl-techsets/
 ---
-
-<div align="center" markdown="1">
-# Techsets > _root\raw\techsets_
-are calling different techniques depending on the current lighting/rendering states
-</div>
-
-<div align="center"><div class="seperator-75p"></div></div>
-<div class="padding-1l"></div>
+<!-- tag for quick links so we do not show the nav -->
+<a name="quicklink"></a>
 
 <div align="center" markdown="1">
 Techsets are rather simple and there is not much to know about them really. They just define different techniques for different lighting/rendering states within the game.
 There is one thing thats kinda tricky tho, ... knowing what states are needed and what they are needed for.
-</div>
+<div class="seperator-75p"></div></div>
 
 <div class="padding-1l"></div>
 
@@ -188,3 +183,13 @@ These will obv. not work on SM2 hardware but I personally do not care about that
 1. Creating "lit" world-materials is hard and I wasn't able to get them to work. It seems like the game is prepending __"l_hsm_"__ to techset names even tho they are not referenced by anything within my material chain. I guess thats something done by the engine at runtime and these are probably used for instanced lighting / baked lighting. I'm not really sure.
 2. Creating "lit" model-materials is easier, but still requires multiple shaders to fully support each and every lighting state. Tbh. I'm fine with doing it like in the example I posted above.
 3. Looking at stock techsets and techniques can help you quite alot :)
+
+<div class="padding-1l"></div>
+<div align="center"><div class="seperator-75p"></div></div>
+<div class="padding-1l"></div>
+
+<div align="center" markdown="1">
+#### Quick links to articles related to Techsets
+[MaterialTemplates](/tutorials/hlsl-templates#quicklink) :: [Techniques](/tutorials/hlsl-techniques#quicklink)
+</div> 
+

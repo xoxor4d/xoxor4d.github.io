@@ -1,32 +1,27 @@
 ---
 layout:     post
 title:      "Material Templates - In-depth"
+subtitle:   ">> root\\deffiles\\materials"
 date:       2020-01-01 23:58:00
 categorie:  Call of Duty 4 - HLSL
 permalink: /tutorials/hlsl-templates/
 ---
+<!-- tag for quick links so we do not show the nav -->
+<a name="quicklink"></a>
 
 <div align="center" markdown="1">
-# Material Templates > _root\deffiles\materials_
-are the basis of any material and can be used for multiple subsets / types of shaders
+Material templates define inputs, constants, textures, shader states and the techniques that are being used by your materials. Material templates are quite dynamic and can be written in such a way that they are able to support multiple different but similar shaders. That means that you do not have to create a seperate template for each new shader you write if you have a well written template.
 </div>
 
 <div align="center"><div class="seperator-75p"></div></div>
 <div class="padding-1l"></div>
 
 <div align="center" markdown="1">
-Material templates define inputs, constants, textures, shader states and the techniques that are being used by your materials. Material templates are quite dynamic and can be written in such a way that they are able to support multiple different but similar shaders. That means that you do not have to create a seperate template for each new shader you write if you have a well written template.
-</div>
-
-<div class="padding-1l"></div>
-
-<div align="center" markdown="1">
 Remember that scrolling hud element shader we created within the introduction? The template we used was very basic and only supports 1 texture and uses a hard-coded techset. What if we want to use a second texture within a shader?
+<div class="padding-2l"></div>
+Example of a more dynamic template that can use 2 different techsets depending on your material settings in AssetManager:
 </div>
 
-<div class="padding-1l"></div>
-
-<div class="highlight-header"><p>Example of a more dynamic template that can use 2 different techsets depending on your material settings in AssetManager</p></div>
 {% highlight cpp %}
 #define HUD_SHADER_SUFFIX   "2d_scroll_c0"      // techset suffix for materials using this template
 
@@ -82,9 +77,11 @@ You obv. have to create 2 techsets now, each calling their own technique and eac
 <div align="center"><div class="seperator-75p"></div></div>
 <div class="padding-1l"></div>
 
-<div align="center" markdown="1">
+<!--<div align="center" markdown="1">
 ### Other usefull things to know about templates:
-</div>
+</div>-->
+
+# Other usefull things to know about templates:
 
 <div class="padding-1l"></div>
 
@@ -131,7 +128,10 @@ refImage( "$white" );   // using a default texture
 {% endhighlight %}
 
 <div class="padding-1l"></div>
+<div align="center"><div class="seperator-75p"></div></div>
+<div class="padding-1l"></div>
 
-<div align="right" markdown="1">
-##### Looking at stock templates is always a good idea if you feel lost ;)
-</div>
+<div align="center" markdown="1">
+#### Quick links to articles related to material templates
+[Introduction](/tutorials/hlsl-intro#quicklink) :: [Techsets](/tutorials/hlsl-techsets#quicklink)
+</div> 
