@@ -50,13 +50,13 @@ I didn't feel like paying for weebly any longer so I switched to github pages as
 <div align="center"><div class="seperator-100p"></div></div>
 <div class="padding-1l"></div>
 
-<!-- <div class="highlight-header"><p>Oh, .. hey there fellow</p></div> -->
+<!-- <div class="hightlight-lang-marks">cpp</div> -->
 
 <div class="content-title">
 	Oh, .. hey there fellow
 </div>
+<div class="highlight-header"><p>Oh, .. hey there fellow</p></div>
 
-<div class="hightlight-lang-marks">cpp</div>
 {% highlight cpp %}
 PM_CorrectAllSolid(pmove_t *pm, pml_t *pml, trace_t *trace)
 {
