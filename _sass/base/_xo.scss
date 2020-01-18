@@ -1,5 +1,5 @@
 .bg-ground {
-	height: 350px; //570px
+	height: 360px; //570px
 	background-color: #1f1b34;
 	background-image: url("/assets/img/bg-header.png");
 	background-repeat: no-repeat;
@@ -14,11 +14,31 @@
 
 .sticky {
 	position: fixed;
-	background-color: #1f1b34;
+	//background-color: #1f1b34;
 	width: 1280px;
 	padding: 20px 0px !important;
 	transition: 0.2s;
 }
+
+.sticky_max {
+	position: fixed;
+	//background-color: #8a8a8a;
+	width: 1280px;
+	padding: 20px 0px !important;
+	//transition: 0.2s;
+}
+
+/* .sticky_max_visible {
+	visibility: visible;
+	opacity: 1;
+	transition: opacity 2s linear;
+}
+
+.sticky_max_hidden  {
+	visibility: hidden;
+  	opacity: 0;
+  	transition: visibility 0s 2s, opacity 2s linear;
+} */
 
 .sticky + .desc + .bg-ground {
 	margin-top: 100px;

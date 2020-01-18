@@ -18,13 +18,31 @@ window.onscroll = function() {hatemylife()};
 var header = document.getElementById("header");
 var desc = document.getElementById("desc-padd");
 var sticky = header.offsetTop;
-function hatemylife() {
-  if (window.pageYOffset > sticky) {
+function hatemylife() 
+{
+  // sticky when not at the top or bottom of bg
+  if (window.pageYOffset > sticky && window.pageYOffset < sticky + 280) {
     header.classList.add("sticky");
+    header.classList.remove("sticky_max");
     desc.classList.add("desc-padd");
-  } else {
+  } 
+
+  // sticky_max at the bottom of bg
+  else if(window.pageYOffset > sticky + 240) {
     header.classList.remove("sticky");
+    header.classList.add("sticky_max");
+  } 
+  
+  // remove sticky when top of bg was reached
+  else {
+    header.classList.remove("sticky");
+    header.classList.remove("sticky_max");
     desc.classList.remove("desc-padd");
+  }
+
+  // remove sticky when out of bg bounds
+  if(window.pageYOffset > sticky + 300) {
+    header.classList.remove("sticky_max");
   }
 }
 </script>
