@@ -12,8 +12,25 @@
 	margin-left: auto;
 }
 
+.sticky {
+	position: fixed;
+	background-color: #1f1b34;
+	width: 1280px;
+	padding: 20px 0px !important;
+	transition: 0.2s;
+}
+
+.sticky + .desc + .bg-ground {
+	margin-top: 100px;
+  }
+.sticky + .desc {
+	padding-top: 140px;
+}
+
 .header {
 	padding-top: 40px;
+	transition: 0.2s;
+	z-index: 99; 
 }
 
 .header .logo {
@@ -22,6 +39,7 @@
 	background-image: url("/assets/img/logo-xoxo-2.png");
 	background-repeat: no-repeat;
 	float: left;
+	margin: 0px 20px;
 }
 
 .header .logo p {
@@ -58,7 +76,7 @@
 }
 
 .desc {
-	margin: 100px auto;
+	padding: 100px;
 	color: #fff;
 	text-align: center;
 }
@@ -108,7 +126,8 @@ p,li,ul {
 	width: 100% !important;
 }
 .highlight pre {
-    padding: 2.5rem;
+	padding: 2.5rem;
+	font-size: 16px;
 }
 
 .content-title {

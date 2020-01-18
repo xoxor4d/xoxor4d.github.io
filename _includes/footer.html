@@ -11,3 +11,20 @@
     </p>
   </div>
 </footer>
+
+<script type="text/javascript">
+
+window.onscroll = function() {hatemylife()};
+var header = document.getElementById("header");
+var desc = document.getElementById("desc-padd");
+var sticky = header.offsetTop;
+function hatemylife() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+    desc.classList.add("desc-padd");
+  } else {
+    header.classList.remove("sticky");
+    desc.classList.remove("desc-padd");
+  }
+}
+</script>
