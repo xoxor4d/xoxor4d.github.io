@@ -13,36 +13,98 @@
 </footer>
 
 <script type="text/javascript">
+var prevPageOffs = 0;
 
-window.onscroll = function() {hatemylife()};
-var header = document.getElementById("header");
-var desc = document.getElementById("desc-padd");
-var sticky = header.offsetTop;
-function hatemylife() 
-{
-  // sticky when not at the top or bottom of bg
-  if (window.pageYOffset > sticky && window.pageYOffset < sticky + 280) {
-    header.classList.add("sticky");
-    header.classList.remove("sticky_max");
-    desc.classList.add("desc-padd");
-  } 
+// -1: scrolling up; 0: not scrolling; 1: scrolling down
+function getScrollDirection(currPageOffs) {
+  var direction;
 
-  // sticky_max at the bottom of bg
-  else if(window.pageYOffset > sticky + 240) {
-    header.classList.remove("sticky");
-    header.classList.add("sticky_max");
-  } 
-  
-  // remove sticky when top of bg was reached
-  else {
-    header.classList.remove("sticky");
-    header.classList.remove("sticky_max");
-    desc.classList.remove("desc-padd");
+  if(prevPageOffs == currPageOffs) {
+    return 0;
   }
 
-  // remove sticky when out of bg bounds
-  if(window.pageYOffset > sticky + 300) {
-    header.classList.remove("sticky_max");
+  if(currPageOffs - prevPageOffs > 0) {
+    direction = 1;
+  } 
+  else {
+    direction = -1;
+  }
+
+  prevPageOffs = currPageOffs;
+  return direction;
+}
+
+window.onscroll = function() {navScroll()};
+var bg = document.getElementById("bg-ground"); 
+var header = document.getElementById("header");
+
+var wasAllowedToScroll = false;
+
+function navScroll() 
+{
+  var scrollDir = getScrollDirection(window.pageYOffset);
+
+  // only modify the header when there there is/was enough content to scroll
+  if(document.body.scrollHeight >= 1300 || wasAllowedToScroll) 
+  {
+    // debug
+    //console.log('currScroll @ ' + window.pageYOffset);
+    //console.log('scrollDir @ ' + scrollDir);
+
+    // one time on page load to set nav height. only usefull when jumped to tags within the page instead of landing at the top
+    // using wasAllowedToScroll as a one shot bool
+    if(!wasAllowedToScroll) 
+    {
+        if(window.pageYOffset < 40) {
+          //console.log('initial height: 360 @ scroll: ' + window.pageYOffset);
+          bg.style.height = "360px";
+        } else {
+          //console.log('initial height: 160 @ scroll: ' + window.pageYOffset);
+          bg.style.height = "160px";
+        }
+    }
+    
+    // we loose scrollHeight on resizing the bg and may fall under the min-threshold to scroll
+    // ^ allow further scrolling
+    wasAllowedToScroll = true;
+    
+    // small nav between 1 - 161
+    if (window.pageYOffset > 0 && window.pageYOffset < 161) 
+    {
+      if(header.classList.contains("sticky")) 
+      {
+        // snap to small nav when scrolling up
+        if(scrollDir == -1 && window.pageYOffset > 100) {
+          window.scrollBy(0, -4);
+        }
+
+        // do not resize when we already use the small nav
+        return;
+      }
+        //console.log('STICKY @ ' + window.pageYOffset);
+        bg.style.height = "160px";
+        bg.style.transition = "0.25s";
+        header.classList.add("sticky");
+    }
+
+    else if (window.pageYOffset == 0)
+    {
+      if(!header.classList.contains("sticky")) {
+        return;
+      }
+
+      //console.log('BIG @ ' + window.pageYOffset);
+      bg.style.height = "360px";
+      bg.style.transition = "0.4s";
+
+      bg.scrollIntoView(true);
+      header.classList.remove("sticky");
+    }
+
+    else if(window.pageYOffset >= 161 && header.classList.contains("sticky")) {
+      //console.log('REMOVED STICKY @ ' + window.pageYOffset);
+      header.classList.remove("sticky");
+    }
   }
 }
 </script>

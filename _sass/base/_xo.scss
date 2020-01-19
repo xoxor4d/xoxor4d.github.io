@@ -3,6 +3,7 @@
 	background-color: #1f1b34;
 	background-image: url("/assets/img/bg-header.png");
 	background-repeat: no-repeat;
+	position: sticky;
 }
 
 .container {
@@ -14,43 +15,31 @@
 
 .sticky {
 	position: fixed;
-	//background-color: #1f1b34;
-	width: 1280px;
+	width: 100%;
+	max-width: 1280px;
 	padding: 20px 0px !important;
 	transition: 0.2s;
+
+	.nav {
+		float: right;
+	}
 }
 
-.sticky_max {
-	position: fixed;
-	//background-color: #8a8a8a;
-	width: 1280px;
-	padding: 20px 0px !important;
-	//transition: 0.2s;
-}
-
-/* .sticky_max_visible {
-	visibility: visible;
-	opacity: 1;
-	transition: opacity 2s linear;
-}
-
-.sticky_max_hidden  {
-	visibility: hidden;
-  	opacity: 0;
-  	transition: visibility 0s 2s, opacity 2s linear;
-} */
-
-.sticky + .desc + .bg-ground {
+/* .sticky + .desc + .bg-ground {
 	margin-top: 100px;
-  }
+  } */
+
 .sticky + .desc {
-	padding-top: 140px;
-}
+	padding-top: 150px;
+	transition: opacity 0.15s ease-in;
+	opacity: 0%;
+} 
 
 .header {
 	padding-top: 40px;
 	transition: 0.2s;
 	z-index: 99; 
+	min-height: 60px;
 }
 
 .header .logo {
@@ -96,9 +85,12 @@
 }
 
 .desc {
-	padding: 100px;
+	padding: 90px;
 	color: #fff;
 	text-align: center;
+
+	transition: opacity 0.2s ease-in;
+	opacity: 80%;
 }
 
 .desc .title {
