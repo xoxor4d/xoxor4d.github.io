@@ -10,7 +10,7 @@ permalink: /projects/bouncepatch/
 <div class="content-title">
 	Version 2.3 - December 2019
       <div class="md_flex-item" style="float:right;" markdown="1"> 
-[Changelog](/projects/bouncepatch/#changelog){: class= .c-btn }
+[Changelog](#changelog){: class= .c-btn }
 [Download](https://drive.google.com/open?id=1mAinLnqLoRFnGW8fxFDCSdnrk8mdhBoG){: class= .c-btn .bounce-btn} 
 </div>
 </div>
@@ -50,10 +50,13 @@ permalink: /projects/bouncepatch/
 [![Play](/assets/img/vid-depatch.jpg# left){: style="width: 47%"}](https://www.youtube.com/watch?v=9nrkyITri2A) [![Play](/assets/img/vid-mwr-montage.jpg# right){: style="width: 47%"}](https://www.youtube.com/watch?v=qhXSROY-tRE)
 
 ---
+<div id="changelog"><a href="changelog"></a></div>
+
 
 <div class="content-title">
 	Changelog
 </div>
+
 
 
 {% highlight cpp %}
