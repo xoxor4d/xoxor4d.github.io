@@ -1,9 +1,7 @@
 ---
 layout: page
 title: About
+subtitle: "You ask no money. You are old man"
 permalink: /about/
 ---
 
-<div align="center" markdown="1">
-Theme template used: [https://github.com/alexcarpenter/material-jekyll-theme](https://github.com/alexcarpenter/material-jekyll-theme) 
-</div>  

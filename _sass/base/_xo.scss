@@ -113,7 +113,7 @@ h1,h2,h3,h4 {
 }
 
 p,li,ul {
-	color: #a7a7b5;
+	color: #8b8c9d; //a7a7b5
 	font-family: "Lato"; //maybe chang thos to something else
 }
 
@@ -147,6 +147,7 @@ p,li,ul {
 	font-weight: 300;
 	color: #6e7080;
 	border-bottom: 1px solid #e8e8f1;
+	width: 100%;
 	//margin-left: -2.5rem;
 	//width: calc(100% + 5rem);
 }
@@ -169,6 +170,20 @@ p,li,ul {
 	margin-bottom: 10px !important;
 }
 
+.c-btn.bounce-btn {
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: right;
+	background-color: #5584ff;
+	color: #FFF;
+}
+
+blockquote {
+	background:#FFF !important;
+	border: 1px solid#e8e8f1;
+}
+
 .c-footer {
 	background-color: #1f1b34 !important;
 	height: 100px !important;
@@ -186,3 +201,4 @@ p,li,ul {
 .c-footer__container_links {
 	color: #5584ff;
 }
+

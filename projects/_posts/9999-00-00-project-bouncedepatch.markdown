@@ -6,12 +6,16 @@ permalink: /projects/bouncepatch/
 ---
 
 <div class="md_container" markdown="1"> 
-<div class="md_fixed" markdown="1">
-# Version 2.3 - December 2019
+
+<div class="content-title">
+	Version 2.3 - December 2019
+      <div class="md_flex-item" style="float:right;" markdown="1"> 
+[Changelog](/projects/bouncepatch/#changelog){: class= .c-btn }
+[Download](https://drive.google.com/open?id=1mAinLnqLoRFnGW8fxFDCSdnrk8mdhBoG){: class= .c-btn .bounce-btn} 
 </div>
-<div class="md_flex-item" align="right" markdown="1"> 
-[Download](https://drive.google.com/open?id=1mAinLnqLoRFnGW8fxFDCSdnrk8mdhBoG){: class= .c-btn style="display: inline-block; margin-left: auto; margin-right: auto; margin-bottom: 1rem; text-align:right"} [Changelog](/projects/bouncepatch/#changelog){: class= .c-btn style="display: inline-block; margin-left: auto; margin-right: auto; text-align:right"}
 </div>
+
+
 </div>
 
 ![](/assets/img/bouncepatch_tool.jpg# halfsize left) ![](/assets/img/bouncepatch_tool_adv.jpg# halfsize right) 
@@ -44,16 +48,17 @@ permalink: /projects/bouncepatch/
 ---
 
 [![Play](/assets/img/vid-depatch.jpg# left){: style="width: 47%"}](https://www.youtube.com/watch?v=9nrkyITri2A) [![Play](/assets/img/vid-mwr-montage.jpg# right){: style="width: 47%"}](https://www.youtube.com/watch?v=qhXSROY-tRE)
-<a name="changelog"></a>
 
 ---
 
-### Changelog
+<div class="content-title">
+	Changelog
+</div>
 
 
 {% highlight cpp %}
 #Version 2.3 - 1st December 2019
-    - Updated MW:R-MP & CJ / CONFIG LOADER
+  - Updated MW:R-MP & CJ / CONFIG LOADER
 {% endhighlight %}
 
 {% highlight cpp %}
