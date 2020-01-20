@@ -10,7 +10,7 @@ permalink: /tutorials/hlsl-techniques/
 <a name="quicklink"></a>
 
 <div align="center" style="margin-top: -1rem" markdown="1">
-#### Table of content
+#### Table of Contents
 [Samplers](#samplers) :: [Code-Textures](#codetextures) :: [Shader Input - Semantics](#semantics)
 <div class="padding-2l"></div></div> 
 

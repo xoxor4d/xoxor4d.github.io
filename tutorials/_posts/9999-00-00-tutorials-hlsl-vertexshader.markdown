@@ -10,7 +10,7 @@ permalink: /tutorials/hlsl-vertexshader/
 <a name="quicklink"></a>
 
 <div align="center" style="margin-top: -1rem" markdown="1">
-#### Table of content
+#### Table of Contents
 [Preprocessors](#preprocessors) :: [Constants](#constants) :: [Input-Output](#structs)
 <div class="padding-2l"></div></div> 
 

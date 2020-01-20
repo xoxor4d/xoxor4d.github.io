@@ -10,7 +10,7 @@ permalink: /tutorials/hlsl-techsets/
 <a name="quicklink"></a>
 
 <div align="center" style="margin-top: -1rem" markdown="1">
-#### Table of content
+#### Table of Contents
 [Techset-Suffix](#suffix) :: [ShaderModel 2](#sm2) :: [Assign Techniques](#techniques) :: [Additional Info](#info)
 <div class="padding-2l"></div></div> 
 
