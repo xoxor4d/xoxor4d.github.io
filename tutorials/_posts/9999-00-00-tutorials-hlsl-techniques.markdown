@@ -9,6 +9,11 @@ permalink: /tutorials/hlsl-techniques/
 <!-- tag for quick links so we do not show the nav -->
 <a name="quicklink"></a>
 
+<div align="center" style="margin-top: -1rem" markdown="1">
+#### Table of content
+[Samplers](#samplers) :: [Code-Textures](#codetextures) :: [Shader Input - Semantics](#semantics)
+<div class="padding-2l"></div></div> 
+
 <div align="center" markdown="1">
 Techniques define shaders, shader-inputs and statemaps that are being used for your current pass. Always make sure that every constant you pass into your shader is actively being used within your shader and referenced by your material template
 , otherwise your shader will fail to compile.  
@@ -21,33 +26,41 @@ Multiple Shader-passes are also supported, but more on that later.
 Lets have a look at a technique that is using 2 textures (referencing the dynamic material template that was shown here: [Material Templates - In-depth](/tutorials/hlsl-templates/))
 </div>
 
+<div class="padding-1l" style="margin-bottom: 0.5rem"></div>
+<div class="highlight-header"><p>Example:</p></div>
 {% highlight cpp %}
 {
-    stateMap "default2d";                   // defines the statemap to be used >> root\raw\statemaps
-
-    vertexShader 3.0 "hud_myshader"         // custom shader to be used :: shader name (without "vs_3_0_" suffix and extension )
-                                            // you only need to append the ".hlsl" extension when you want to use stock shaders 
+    stateMap "default2d";           // defines the statemap to be used for the current pass >> root\raw\statemaps
+    
+    vertexShader 3.0 "hud_myshader" // custom shader to be used :: shader name (without "vs_3_0_" suffix and .ext)
+                                    // you only need to append the ".hlsl" extension when you want to use stock shaders 
     {
-        // you can pass in constants if you referenced them within your material template like so:
-        // distortionScale = material.distortionScale;  
+        // assign material parameters to pre-defined global shader constants in here (defined in shader_vars.h)
+        
+        // eg. assign the distortionScale set within AssetManager and exposed by your material template:
+        // distortionScale = material.distortionScale; // assign your parameter to a global shader constant
     }
 
-    pixelShader 3.0 "hud_myshader"                  // custom shader to be used :: shader name (without "ps_3_0_" suffix and extension)
-                                                    // ^ same applies for pixelshaders
+    pixelShader 3.0 "hud_myshader"  // custom shaders :: shader-name (without "ps_3_0_" suffix and .ext)
+                                    // ^ same applies for pixelshaders
     {
-        // ^ same applies for pixelshaders:
-        // detailScale = material.detailScale;
+        // assign material parameters to pre-defined global shader constants in here (defined in shader_vars.h)
 
-        colorMapSampler = material.colorMap;        // pass in the colorMap that was referenced within the material template
+        // detailScale = material.detailScale;      // assign your parameter to a global shader constant
+        colorMapSampler = material.colorMap;        // assign your colorMap to a sampler (global shader constant)
         colorMapSampler1 = material.specularMap;    // ^ same for the second "colorMap" that was applied to the specularMap slot
     }
 
-    // variables exposed by the engine
+    // assign code-variables exposed by the engine to shader semantics
     vertex.position = code.position;                // the current vertex position in model-space 
     vertex.texcoord[0] = code.texcoord[0];          // the UV of the current Vertex
 }
 {% endhighlight %}
 
+
+
+<!-- tag for quicklinks -->
+<a name="samplers"></a>
 <div class="padding-1l"></div>
 <div align="center"><div class="seperator-75p"></div></div>
 <div class="padding-1l"></div>
@@ -58,11 +71,8 @@ Samplers are defined in __root\raw\shader_bin\shader_src\shader_vars.h__ and eit
 Each sampler type uses different hard-coded sampler stats that define how it samples the given input image (eg. texture filtering or sampling technique).   
 I advice you to use a sampler that fits your input but you can obv. experiment with them if you want. 
 
-<div class="padding-1l"></div>
-<div align="right" markdown="1">
-##### A list of availible samplers (not sure if every one of them works tho)
-</div>
-
+<div class="padding-1l" style="margin-bottom: 0.5rem"></div>
+<div class="highlight-header"><p>A list of availible samplers (not sure if every one of them works tho)</p></div>
 {% highlight cpp %}
 sampler     colorMapSampler;
 sampler     colorMapSampler1;
@@ -116,22 +126,23 @@ sampler     detailMapSampler3;
 sampler     detailMapSampler4;
 {% endhighlight %}
 
+
+
+<!-- tag for quicklinks -->
+<a name="codetextures"></a>
 <div class="padding-1l"></div>
 <div align="center"><div class="seperator-75p"></div></div>
 <div class="padding-1l"></div>
 
 # 2. Code-Textures
 
-Code-Textures are exposed by the game but not always valid. They represent the different __Rendertargets__ that the game uses to render   
-to "textures" off-screen and are mostly used for post-process effects but also for depth, shadows, lightmaps etc.  
-Most of them are only valid when the specific use-case, that they are used for, is active.  
+Textures exposed by code are not always valid. They represent the different __Rendertargets__ that the game uses to render   
+to off-screen "textures" and are mostly used for post-process effects but also for depth, shadows, lightmaps etc.  
+Most of them are only valid when the specific use-case (in code), that they are used for, is active.  
 Rendering to code-textures can only be done via engine modifications so these can only be read from.
 
-<div class="padding-1l"></div>
-<div align="right" markdown="1">
-##### A list of availible Code-Textures
-</div>
-
+<div class="padding-1l" style="margin-bottom: 0.5rem"></div>
+<div class="highlight-header"><p>A list of availible textures exposed by code:</p></div>
 {% highlight cpp %}
 caseTexture
 rawFloatZ
@@ -152,9 +163,9 @@ identityNormalMap
 attenuation
 {% endhighlight %}
 
-<div class="padding-1l"></div>
 
-The most useful code-textures are:
+<div class="padding-1l" style="margin-bottom: 0.5rem"></div>
+<div class="highlight-header"><p>The most useful textures exposed by code:</p></div>
 {% highlight cpp %}
 colorMapPostSunSampler  = sampler.resolvedPostSun;  // framebuffer without hud or lightTweaks but includes the viewmodel
                                                     // can be used for post-processing effects
@@ -162,7 +173,8 @@ colorMapPostSunSampler  = sampler.resolvedPostSun;  // framebuffer without hud o
 colorMapSampler         = sampler.floatZ;           // scene depth
 {% endhighlight %}
 
-And can be used like:
+<div class="padding-1l" style="margin-bottom: 0.5rem"></div>
+<div class="highlight-header"><p>Can be used like:</p></div>
 {% highlight cpp %}
 /* ... */
 
@@ -175,31 +187,73 @@ pixelShader 3.0 "hud_myshader"
 /* ... */
 {% endhighlight %}
 
+
+
+<!-- tag for quicklinks -->
+<a name="semantics"></a>
 <div class="padding-1l"></div>
 <div align="center"><div class="seperator-75p"></div></div>
 <div class="padding-1l"></div>
 
-# 3. Variables
+# 3. Semantics / Code-Variables / Input
 
-Variables are exposed by the game and hold information about the current vertex that runs through the pipeline.
-Variables are always 4D vectors but you can define them as 2D vectors within your shader structs if you only ever need x and y component.
-You only define the variables you need and use in your shader or you'll get errors when linking your shader.
+Like mentioned earlier, you pass material parameters into your shader by assigning them to pre-defined, global shader variables (defined in shader_vars.h).
+The same applies to textures that you assign to samplers. 
 
+<div class="padding-1l" style="margin-bottom: 0.5rem"></div>
+<div class="highlight-header"><p>Example:</p></div>
+{% highlight cpp %}
+pixelShader 3.0 "hud_myshader"
+{
+    // assign material parameters to pre-defined global shader constants (defined in shader_vars.h)
+
+    detailScale = material.detailScale;      // assign your parameter to a global shader constant
+    colorMapSampler = material.colorMap;     // assign your colorMap to a sampler (global shader constant)
+}
+{% endhighlight %}
+
+<div align="center" markdown="1">
+<div class="padding-1l" style="margin-top: -2.0rem; margin-bottom: 0.5rem"></div>
+<div class="seperator-50p"></div>
 <div class="padding-1l"></div>
-<div align="right" markdown="1">
-##### A list of variables (incomplete)
 </div>
 
+
+There are also variables exposed by code, that hold information about the current vertex within the pipeline.
+Vertex-information that you need within your shader needs to be put into its intended [[Semantic]](https://docs.microsoft.com/windows/win32/direct3dhlsl/dx-graphics-hlsl-semantics) defined at the bottom of your technique.  
+
+<div class="padding-1l" style="margin-bottom: 0.5rem"></div>
+<div class="highlight-header"><p>Example:</p></div>
 {% highlight cpp %}
-vertex.position = code.position;                // vertex position in model-space
-vertex.normal = code.normal;                    // vertex normal 
-vertex.color[0] = code.color;                   // vertex color
-vertex.texcoord[0] = code.texcoord[0];          // vertex UV
-vertex.texcoord[2] = code.tangent;              // vertex tangent
-vertex.texcoord[3] = code.texcoord[1];          // prob. vertex binormal
-vertex.texcoord[4] = code.texcoord[2];          // unsure
-vertex.texcoord[5] = code.normalTransform[0];   // unsure
-vertex.texcoord[6] = code.normalTransform[1];   // unsure
+pixelShader 3.0 "hud_myshader"
+{
+    /* ... */
+}
+
+// only define semantics you use inside of your vertex / pixel shader
+vertex.position     = code.position;    // vertex position in model-space
+vertex.normal       = code.normal;      // vertex normal 
+vertex.color[0]     = code.color;       // vertex color
+vertex.texcoord[0]  = code.texcoord[0]; // vertex uv
+{% endhighlight %}
+
+<div class="padding-1l" style="margin-bottom: 0.5rem"></div>
+<div align="center" markdown="1">
+You only define the variables __you really need and use__ in your shader or you'll get __errors__ when linking your shader.
+</div>
+
+<div class="padding-1l" style="margin-bottom: 0.5rem"></div>
+<div class="highlight-header"><p>Vertex information exposed by code assigned to their intended semantics (incomplete)</p></div>
+{% highlight cpp %}
+vertex.position     = code.position;            // vertex position in model-space
+vertex.normal       = code.normal;              // vertex normal 
+vertex.color[0]     = code.color;               // vertex color
+vertex.texcoord[0]  = code.texcoord[0];         // vertex UV
+vertex.texcoord[2]  = code.tangent;             // vertex tangent
+vertex.texcoord[3]  = code.texcoord[1];         // prob. vertex binormal
+vertex.texcoord[4]  = code.texcoord[2];         // unsure
+vertex.texcoord[5]  = code.normalTransform[0];  // unsure
+vertex.texcoord[6]  = code.normalTransform[1];  // unsure
 {% endhighlight %}
 
 <div class="padding-1l"></div>

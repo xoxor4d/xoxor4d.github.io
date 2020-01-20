@@ -5,6 +5,12 @@ date:       2020-01-01 23:59:00
 categorie:  Call of Duty 4 - HLSL
 permalink: /tutorials/hlsl-intro/
 ---
+<div align="center" style="margin-top: -1rem" markdown="1">
+#### Table of content
+[Introduction](#intro) :: [Overview](#creatematerials) :: [Material Templates](#templates) :: [Asset Manager](#assman)   
+[Techset](#techset) :: [Technique](#technique) :: [Vertex Shader](#vertex) :: [Pixel Shader](#pixel) :: [Compiling Shaders](#compiling) :: [Linking Shaders](#usingshader)
+<div class="padding-2l"></div></div> 
+
 <div align="center" markdown="1">
 #### If you have no idea what shaders can be used for, click one of the images below and see for yourself.   
 I have a whole lot of other videos featuring hlsl shaders so go check them out if you are interested.
@@ -12,6 +18,10 @@ I have a whole lot of other videos featuring hlsl shaders so go check them out i
 
 [![Play](/assets/img/tut_hlsl_yt_ao.jpg# left){: style="width: 32%"}](https://www.youtube.com/watch?v=GCxEoJcsv78) [![Play](/assets/img/tut_hlsl_yt_killstreak.jpg# left){: style="width: 32%"}](https://www.youtube.com/watch?v=WxhJXiDroO4) [![Play](/assets/img/tut_hlsl_yt_sky.jpg# left){: style="width: 32%"}](https://www.youtube.com/watch?v=vlulcpE3dgw)
 
+
+
+<!-- tag for quick links -->
+<a name="intro"></a>
 <div class="padding-1l"></div>
 <div align="center"><div class="seperator-75p"></div></div>
 <div class="padding-1l"></div>
@@ -34,6 +44,9 @@ If you need a quick overview, feel free to look around the following sites:
 - Pixel Shader / Texcoords ( UV's ):
    + [https://www.3dgep.com/texturing-lighting-directx-11/](https://www.3dgep.com/texturing-lighting-directx-11/)
 
+
+<!-- tag for quick links -->
+<a name="creatematerials"></a>
 <div class="padding-1l"></div>
 <div align="center"><div class="seperator-75p"></div></div>
 <div class="padding-1l"></div>
@@ -67,11 +80,13 @@ We are going to create a scrolling 2D material, that can be used for eg. HUD-Ele
 #### This is obv. very basic but starting with something different would be way to much for this scope.
 </div>  
 
+
+
+<!-- tag for quick links -->
+<a name="templates"></a>
 <div class="padding-1l"></div>
 <div align="center"><div class="seperator-75p"></div></div>
 <div class="padding-1l"></div>
-
-
 
 # 1. Material Template > _root\deffiles\materials_
 
@@ -106,11 +121,13 @@ techniqueSet( "z_scrolling_hud" );
 /* ... */
 {% endhighlight %}
 
+
+
+<!-- tag for quick links -->
+<a name="assman"></a>
 <div class="padding-1l"></div>
 <div align="center"><div class="seperator-75p"></div></div>
 <div class="padding-1l"></div>
-
-
 
 # 2. Asset Manager
 
@@ -126,11 +143,12 @@ techniqueSet( "z_scrolling_hud" );
    + Color map    : "Input your Image" : "tile both*"
 {% endhighlight %}
 
+
+<!-- tag for quick links -->
+<a name="techset"></a>
 <div class="padding-1l"></div>
 <div align="center"><div class="seperator-75p"></div></div>
 <div class="padding-1l"></div>
-
-
 
 # 3. Techset > _root\raw\techsets_
 
@@ -158,11 +176,13 @@ techniqueSet( "z_scrolling_hud" );
 create a copy of the new techset and place it in >> _​root\raw\techsets\sm2_ (a sm2 techset is needed or you'll get errors on linking your fastfile) 
 </div>
 
+
+
+<!-- tag for quick links -->
+<a name="technique"></a>
 <div class="padding-1l"></div>
 <div align="center"><div class="seperator-75p"></div></div>
 <div class="padding-1l"></div>
-
-
 
 # 4. Technique > _root\raw\techniques_
 
@@ -211,11 +231,13 @@ create a copy of the new techset and place it in >> _​root\raw\techsets\sm2_ (
 }
 {% endhighlight %}
 
+
+
+<!-- tag for quick links -->
+<a name="vertex"></a>
 <div class="padding-1l"></div>
 <div align="center"><div class="seperator-75p"></div></div>
 <div class="padding-1l"></div>
-
-
 
 # 5. Vertex Shader > _root\raw\shader_bin\shader_src_
 
@@ -264,11 +286,13 @@ PixelShaderInput vs_main(VertexShaderInput input)  // Writing into the struct Pi
 }
 {% endhighlight %}
 
+
+
+<!-- tag for quick links -->
+<a name="pixel"></a>
 <div class="padding-1l"></div>
 <div align="center"><div class="seperator-75p"></div></div>
 <div class="padding-1l"></div>
-
-
 
 # 6. Pixel Shader > _root\raw\shader_bin\shader_src_
 
@@ -323,11 +347,13 @@ float4 ps_main(PixelShaderInput input) : COLOR     // As the pixelshader is only
 }
 {% endhighlight %}
 
+
+
+<!-- tag for quick links -->
+<a name="compiling"></a>
 <div class="padding-1l"></div>
 <div align="center"><div class="seperator-75p"></div></div>
 <div class="padding-1l"></div>
-
-
 
 # 7. Compiling the shader so that cod-linker can access it
 
@@ -350,11 +376,13 @@ Use the following to compile your shader: __shader_tool z_scrolling_hud__
 - This will compile the Vertex- & Pixelshader using microsoft's fxc shader compiler
 - Shader_tool will also add the hashed shader names to the shader_names file and copy the compiled binary shaders over into >> _root\raw\shader_bin_
 
+
+
+<!-- tag for quick links -->
+<a name="usingshader"></a>
 <div class="padding-1l"></div>
 <div align="center"><div class="seperator-75p"></div></div>
 <div class="padding-1l"></div>
-
-
 
 # 8. Adding your custom material to your mod/map
 
@@ -398,8 +426,7 @@ addHud( )
 <div class="padding-1l"></div>
 
 <div align="center" markdown="1">
-Build your mod/map fastfile
-Put your __.iwi__ into your __.iwd__
+Build your mod/map fastfile and put your __.iwi__ into your __.iwd__
 # Run the game and test :)
 </div>
 

@@ -12,11 +12,14 @@
   </div>
 </footer>
 
-<script type="text/javascript">
-var prevPageOffs = 0;
 
-// -1: scrolling up; 0: not scrolling; 1: scrolling down
-function getScrollDirection(currPageOffs) {
+<script type="text/javascript">
+// ---------------------------------------
+// scrolling direction
+
+var prevPageOffs = 0;
+function getScrollDirection(currPageOffs) // -1: scrolling up; 0: not scrolling; 1: scrolling down
+{ 
   var direction;
 
   if(prevPageOffs == currPageOffs) {
@@ -25,8 +28,7 @@ function getScrollDirection(currPageOffs) {
 
   if(currPageOffs - prevPageOffs > 0) {
     direction = 1;
-  } 
-  else {
+  } else {
     direction = -1;
   }
 
@@ -34,17 +36,23 @@ function getScrollDirection(currPageOffs) {
   return direction;
 }
 
-window.onscroll = function() {navScroll()};
+// ---------------------------------------
+// dynamic nav
+
+window.onscroll = function() {
+  navScroll()
+};
+
 var bg = document.getElementById("bg-ground"); 
 var header = document.getElementById("header");
-
 var wasAllowedToScroll = false;
 
 function navScroll() 
 {
+  // get the scroll direction
   var scrollDir = getScrollDirection(window.pageYOffset);
 
-  // only modify the header when there there is/was enough content to scroll
+  // only modify the header when there is/was enough content to scroll
   if(document.body.scrollHeight >= 1300 || wasAllowedToScroll) 
   {
     // debug
@@ -78,7 +86,7 @@ function navScroll()
           window.scrollBy(0, -4);
         }
 
-        // do not resize when we already use the small nav
+        // do not resize when already using the small nav
         return;
       }
         //console.log('STICKY @ ' + window.pageYOffset);

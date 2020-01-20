@@ -18,10 +18,10 @@ Material templates define inputs, constants, textures, shader states and the tec
 
 <div align="center" markdown="1">
 Remember that scrolling hud element shader we created within the introduction? The template we used was very basic and only supports 1 texture and uses a hard-coded techset. What if we want to use a second texture within a shader?
-<div class="padding-2l"></div>
-Example of a more dynamic template that can use 2 different techsets depending on your material settings in AssetManager:
 </div>
 
+<div class="padding-1l"></div>
+<div class="highlight-header"><p>Example of a more dynamic template that can use 2 different techsets depending on your material settings in AssetManager:</p></div>
 {% highlight cpp %}
 #define HUD_SHADER_SUFFIX   "2d_scroll_c0"      // techset suffix for materials using this template
 
@@ -73,17 +73,11 @@ Materials using only a single colorMap will be using the techset __2d_scroll_c0_
 You obv. have to create 2 techsets now, each calling their own technique and each technique its own shaders.
 </div>
 
+
+
 <div class="padding-1l"></div>
 <div align="center"><div class="seperator-75p"></div></div>
-<div class="padding-1l"></div>
-
-<!--<div align="center" markdown="1">
-### Other usefull things to know about templates:
-</div>-->
-
-# Other usefull things to know about templates:
-
-<div class="padding-1l"></div>
+<div class="padding-2l"></div>
 
 <div class="highlight-header"><p>Including other templates</p></div>
 {% highlight cpp %}

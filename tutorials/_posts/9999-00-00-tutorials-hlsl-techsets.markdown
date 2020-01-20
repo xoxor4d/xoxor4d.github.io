@@ -9,11 +9,20 @@ permalink: /tutorials/hlsl-techsets/
 <!-- tag for quick links so we do not show the nav -->
 <a name="quicklink"></a>
 
+<div align="center" style="margin-top: -1rem" markdown="1">
+#### Table of content
+[Techset-Suffix](#suffix) :: [ShaderModel 2](#sm2) :: [Assign Techniques](#techniques) :: [Additional Info](#info)
+<div class="padding-2l"></div></div> 
+
 <div align="center" markdown="1">
 Techsets are rather simple and there is not much to know about them really. They just define different techniques for different lighting/rendering states within the game.
 There is one thing thats kinda tricky tho, ... knowing what states are needed and what they are needed for.
-<div class="seperator-75p"></div></div>
 
+
+
+<!-- tag for quick links -->
+<a name="suffix"></a>
+<div class="seperator-75p"></div></div>
 <div class="padding-1l"></div>
 
 # 1. Techset Suffixes
@@ -30,6 +39,10 @@ Different suffixes and multiple techsets might be needed, depending on where you
   > Models & Geo :: needs both of the above (eg. mc_my_techset.techset & wc_my_techset.techset)
 {% endhighlight %}
 
+
+
+<!-- tag for quick links -->
+<a name="sm2"></a>
 <div class="padding-1l"></div>
 <div align="center"><div class="seperator-75p"></div></div>
 <div class="padding-1l"></div>
@@ -40,16 +53,28 @@ Like stated in the introduction: Techsets in __root\raw\techsets__ will be used 
 so you have to create copies of your techsets and place them into __​root\raw\techsets\sm2__ (otherwise get'll errors when linking your fastfile).  
 These will obv. not work on SM2 hardware but I personally do not care about that.
 
+
+
+
+<!-- tag for quick links -->
+<a name="techniques"></a>
+<div class="padding-1l"></div>
+<div align="center"><div class="seperator-75p"></div></div>
 <div class="padding-1l"></div>
 
 # 3. Assigning Techniques
 
+Only a single technique can be assigned to a state but multiple states can be assigned to a single technique.  
+Not defining a state used by the game results in .. ? (unsure)
+
+<div class="padding-1l" style="margin-bottom: 0.5rem"></div>
 <div class="highlight-header"><p>2D only techsets</p></div>
 {% highlight cpp %}
 "unlit":
     my_hud_technique_name;
 {% endhighlight %}
 
+<div class="padding-1l" style="margin-bottom: 0.5rem"></div>
 <div class="highlight-header"><p>"Model techsets with suffix "mc_"</p></div>
 {% highlight cpp %}
 /* eg. viewmodels */
@@ -106,6 +131,7 @@ These will obv. not work on SM2 hardware but I personally do not care about that
 
 {% endhighlight %}
 
+<div class="padding-1l" style="margin-bottom: 0.5rem"></div>
 <div class="highlight-header"><p>World techsets with suffix "wc_"</p></div>
 {% highlight cpp %}
 /* example for world geometry*/
@@ -139,9 +165,11 @@ These will obv. not work on SM2 hardware but I personally do not care about that
 "lit spot shadow":
 "lit omni":
 "lit omni shadow":
+    
     my_technique_name;
 {% endhighlight %}
 
+<div class="padding-1l" style="margin-bottom: 0.5rem"></div>
 <div class="highlight-header"><p>Sky techsets with suffix "wc_"</p></div>
 {% highlight cpp %}
 /* example for skies*/
@@ -170,15 +198,18 @@ These will obv. not work on SM2 hardware but I personally do not care about that
 "lit instanced spot shadow":
 "lit instanced omni":
 "lit instanced omni shadow":
-
+    
     my_sky_technique;
 {% endhighlight %}
 
+
+<!-- tag for quick links -->
+<a name="info"></a>
 <div class="padding-1l"></div>
 <div align="center"><div class="seperator-75p"></div></div>
 <div class="padding-1l"></div>
 
-# 5. Additional Information
+# 4. Additional Information
 
 1. Creating "lit" world-materials is hard and I wasn't able to get them to work. It seems like the game is prepending __"l_hsm_"__ to techset names even tho they are not referenced by anything within my material chain. I guess thats something done by the engine at runtime and these are probably used for instanced lighting / baked lighting. I'm not really sure.
 2. Creating "lit" model-materials is easier, but still requires multiple shaders to fully support each and every lighting state. Tbh. I'm fine with doing it like in the example I posted above.
