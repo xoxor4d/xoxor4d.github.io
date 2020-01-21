@@ -1,17 +1,28 @@
 <footer class="c-footer">
-  <div class="c-footer__container_desc">
-    <p>{{ site.footer-content }}</p>
+  <div class="container">
+    <div class="footer-left">
+      <p>{{ site.footer-content }}</p>
+    </div>
+    
+    <div class="footer-right">
+      <p class="c-footer__container_links">
+        {% if site.twitterUsername %}<a class="twitter" href="https://twitter.com/{{ site.twitterUsername }}"></a>{% endif %}
+        {% if site.githubUsername %}<a class="github" href="https://github.com/{{ site.githubUsername }}"></a>{% endif %}
+        {% if site.youtubeUsername %}<a class="youtube" href="https://youtube.com/channel/{{ site.youtubeUsername }}"></a>{% endif %}
+        {% if site.steamUsername %}<a class="steam" href="https://steamcommunity.com/id/{{ site.steamUsername }}"></a>{% endif %}
+      </p>
+    </div>
+    
   </div>
-  <div>
-    <p class="c-footer__container_links">
-      {% if site.twitterUsername %}<a href="https://twitter.com/{{ site.twitterUsername }}">Twitter</a>{% endif %}
-      {% if site.githubUsername %}<a href="https://github.com/{{ site.githubUsername }}">Github</a>{% endif %}
-      {% if site.youtubeUsername %}<a href="https://youtube.com/channel/{{ site.youtubeUsername }}">YouTube</a>{% endif %}
-      {% if site.steamUsername %}<a href="https://steamcommunity.com/id/{{ site.steamUsername }}">Steam</a>{% endif %}
-    </p>
-  </div>
+  
 </footer>
-
+<div class="footer-copy">
+    <div class="container">
+      <div class="footer-copy-left"><p>&copy; Copyright LNR & XOXOR4D</p></div>
+      <div class="footer-copy-center"><div class="footer-logo"></div></div>
+      <div class="footer-copy-right"><p>Created with <b style="color: #ce2020;font-size: 14px;">♥</b></p></div>
+    </div>
+</div>
 
 <script type="text/javascript">
 // ---------------------------------------

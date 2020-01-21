@@ -240,19 +240,102 @@ blockquote {
 
 .c-footer {
 	background-color: #1f1b34 !important;
-	height: 100px !important;
 	line-height: 100px;
 	font-size: 16px;
-	padding-left: 1.5rem;
-	padding-right: 1.5rem;
-	color: #6d6d6d;
-	display: inline-flex;
-	align-items: center;
-	vertical-align: middle;
-	width: 100%;
+}
+
+.footer-left {
+	width: 50%;
+	float: left;
+	margin-top: 50px;
+}
+
+.footer-right {
+	width: 50%;
+	float: right;
+	margin-top: 50px;
+}
+
+.footer-copy-left {
+	width: 33%;
+	float: left;
+	text-align: left;
+}
+
+.footer-copy-left p {
+	font-size: 12px;
+	font-family: "Roboto";
+	text-transform: uppercase;
+}
+
+.footer-copy-center {
+	width: 33%;
+	float: left;
+	text-align: center;
+}
+
+.footer-copy-right {
+	width: 33%;
+	float: right;
+	text-align: right;
+}
+.footer-copy-right p {
+	font-size: 12px;
+	font-family: "Roboto";
+	text-transform: uppercase;
+}
+
+.footer-copy {
+	background-color: #221d39;
+	height: 50px;
+	line-height: 50px;
+}
+.footer-logo {
+	height: 18px;
+	width: 30px;
+	background-image: url("/assets/img/footer-logo.png");
+	background-repeat: no-repeat;
+	margin: 16px auto;
 }
 
 .c-footer__container_links {
 	color: #5584ff;
 }
 
+.twitter {
+	background-image: url("/assets/img/social/twitter.png");
+	background-repeat: no-repeat;
+	width: 32px;
+	height: 32px;
+	display: inline-block;
+}
+
+.steam {
+	background-image: url("/assets/img/social/steam.png");
+	background-repeat: no-repeat;
+	width: 32px;
+	height: 32px;
+	display: inline-block;
+}
+
+.twitch {
+	background-image: url("/assets/img/social/twitch.png");
+	background-repeat: no-repeat;
+	width: 32px;
+	height: 32px;
+	display: inline-block;
+}
+.github {
+	background-image: url("/assets/img/social/github.png");
+	background-repeat: no-repeat;
+	width: 32px;
+	height: 32px;
+	display: inline-block;
+}
+.youtube {
+	background-image: url("/assets/img/social/youtube.png");
+	background-repeat: no-repeat;
+	width: 32px;
+	height: 32px;
+	display: inline-block;
+}
