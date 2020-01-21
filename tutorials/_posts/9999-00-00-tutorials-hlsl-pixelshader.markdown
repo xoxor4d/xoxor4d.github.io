@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Pixelshaders - In-depth"
+title:      "In-depth :: PixelShaders"
 subtitle:   ">> root\\raw\\shader_bin\\shader_src"
 date:       2020-01-01 23:54:00
 categorie:  Call of Duty 4 - HLSL
@@ -17,7 +17,7 @@ permalink: /tutorials/hlsl-pixelshader/
 <div align="center" markdown="1">
 PixelShaders are programmable functions in the rendering pipeline, that get executed for every pixel of a mesh.  
 The PixelShader will calculate the color of each pixel, after the model was transformed from 3D model-space to 2D projection-space (screen space) via the VertexShader.
-Advanced per-pixel-lighting and diverse texture operations like filters, multi-texturing, bump- and normal-mapping or screen-space effects can be implemented using PixelShaders.
+Advanced per-pixel-lighting and diverse texture operations like filters, multi-texturing, bump/normal-mapping or screen-space effects can be implemented using PixelShaders.
 
 <!-- tag for quick links -->
 <a name="preprocessors"></a>

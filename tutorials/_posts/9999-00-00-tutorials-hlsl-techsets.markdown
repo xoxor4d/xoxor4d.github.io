@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Techsets - In-depth"
+title:      "In-depth :: Techsets"
 subtitle:   ">> root\\raw\\techsets"
 date:       2020-01-01 23:58:00
 categorie:  Call of Duty 4 - HLSL

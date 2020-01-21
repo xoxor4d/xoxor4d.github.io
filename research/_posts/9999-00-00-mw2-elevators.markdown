@@ -2,7 +2,7 @@
 layout: post
 title:  "Modern Warfare 2 - Elevators"
 date:   2020-01-01 21:58:00
-game:   Modern Warfare 2
+game:   "mw2"
 permalink: /research/mw2-elevator/
 ---
 >This won't explain how or why elevators work. This will only show you what was changed in order to prevent them in Modern Warfare 2.

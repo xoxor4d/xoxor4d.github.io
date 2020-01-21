@@ -14,6 +14,7 @@ permalink: /tutorials/hlsl-intro/
 <div align="center" markdown="1">
 #### If you have no idea what shaders can be used for, click one of the images below and see for yourself.   
 I have a whole lot of other videos featuring hlsl shaders so go check them out if you are interested.
+<div class="padding-2l"></div>
 </div>
 
 [![Play](/assets/img/tut_hlsl_yt_ao.jpg# left){: style="width: 32%"}](https://www.youtube.com/watch?v=GCxEoJcsv78) [![Play](/assets/img/tut_hlsl_yt_killstreak.jpg# left){: style="width: 32%"}](https://www.youtube.com/watch?v=WxhJXiDroO4) [![Play](/assets/img/tut_hlsl_yt_sky.jpg# left){: style="width: 32%"}](https://www.youtube.com/watch?v=vlulcpE3dgw)
@@ -34,7 +35,7 @@ The problem was that he did not specify how to setup the material so that the ga
 Link to the original post: [https://archive.raid-gaming.net/topic/1679-adding-new-sm3-hlsl-shaders-to-cod4/](https://archive.raid-gaming.net/topic/1679-adding-new-sm3-hlsl-shaders-to-cod4/)  
 The full source-code he posted: [https://pastebin.com/4be66PEU](https://pastebin.com/4be66PEU)  
 
-You'll need to know the .hlsl syntax and some basic understanding of how game/rendering engines work.  
+You need to know the .hlsl syntax and some basic understanding of how the DirectX 9 rendering-pipeline works.  
 If you need a quick overview, feel free to look around the following sites:
 
 - General:
@@ -56,13 +57,13 @@ If you need a quick overview, feel free to look around the following sites:
 Material setup depends heavily on your shader use-case and can become quite tricky and messy.
 The whole material chain depends on things like:
 
-- use/sample textures within your shader?
-- material use-case eg. hud elements, xmodels, skies or brushes?
-- multiple shaders required for different lighting states?
-- semanctic's needed for your shader?
-- _the list goes on and on_ ...
+- Do you want to use/sample textures within your shader?
+- Material use-case eg. hud elements, xmodels, skies or brushes?
+- Multiple shaders required for different lighting states?
+- Which shader-inputs do you need for your use-case?
+- _The list goes on and on_ ...
 
-<div align="right" markdown="1">
+<div align="right" style="padding-right: 3rem" markdown="1">
 ###### A quick overview of whats needed for any material in CoD4 to work.  
 </div>  
 ![](/assets/img/tut_hlsl_intro_flow.jpg)
@@ -111,7 +112,7 @@ textureTable
 refImage( "$colorMap$" );
 {% endhighlight %}
 
-- This template fits our needs 100% so all we need to change is the __techniqueSet__
+- This template fits perfectly, so all we need to change is the __techset__
 - We are going to use this template only for this specific shader so we'll give the techset the same name as our template
 
 <div class="highlight-header"><p>​z_scrolling_hud.template</p></div>
@@ -209,7 +210,7 @@ create a copy of the new techset and place it in >> _​root\raw\techsets\sm2_ (
 }
 {% endhighlight %}
 
-- Bear's shader-linker only works with sm3 shaders change the version of both the Vertex & Pixelshader to __3.0__
+- Bear's shader-linker only works with ShaderModel 3 shaders, so change the version to __3.0__ (VertexShader and PixelShader) 
 - Rename both shaders to __z_scrolling_hud__ and cut the __.hlsl__ extension
 - Comment out __vertex.color[0] = code.color;__ because we are not going to use it in our shader (all defined inputs have to be used within the shader)
 
@@ -217,16 +218,17 @@ create a copy of the new techset and place it in >> _​root\raw\techsets\sm2_ (
 {% highlight cpp %}
 {
    stateMap "default2d";
-   vertexShader 3.0 "z_scrolling_hud"          // Defines our vertex shader   >> root\raw\shader_bin\shader_src
+   vertexShader 3.0 "z_scrolling_hud"        // Defines our vertex shader   >> root\raw\shader_bin\shader_src
    {
    }
 	
-   pixelShader 3.0 "z_scrolling_hud"           // Defines our pixel shader    >> root\raw\shader_bin\shader_src
+   pixelShader 3.0 "z_scrolling_hud"         // Defines our pixel shader    >> root\raw\shader_bin\shader_src
    {
       colorMapSampler = material.colorMap;
    }
+
    vertex.position = code.position;
-   //vertex.color[0] = code.color;               // not needed
+   //vertex.color[0] = code.color;           // not needed
    vertex.texcoord[0] = code.texcoord[0];
 }
 {% endhighlight %}
@@ -239,10 +241,10 @@ create a copy of the new techset and place it in >> _​root\raw\techsets\sm2_ (
 <div align="center"><div class="seperator-75p"></div></div>
 <div class="padding-1l"></div>
 
-# 5. Vertex Shader > _root\raw\shader_bin\shader_src_
+# 5. VertexShader > _root\raw\shader_bin\shader_src_
 
-- The Vertex shader only needs to transform our vertices to __cameraSpace__ or in CoD terms __worldViewProjectionSpace__
-- Create a new .txt file and name it: ___vs_3_0_z_scrolling_hud.hlsl__ (every custom vertex shader needs the "vs_3_0_" suffix)
+- The VertexShader only needs to transform our vertices into __worldViewProjectionSpace__  (cameraSpace)
+- Create a new txt-file and call it: ___vs_3_0_z_scrolling_hud.hlsl__ (every custom VertexShader needs the "vs_3_0_" suffix)
 - Paste the following:
 
 <div class="padding-1l"></div>
@@ -294,10 +296,10 @@ PixelShaderInput vs_main(VertexShaderInput input)  // Writing into the struct Pi
 <div align="center"><div class="seperator-75p"></div></div>
 <div class="padding-1l"></div>
 
-# 6. Pixel Shader > _root\raw\shader_bin\shader_src_
+# 6. PixelShader > _root\raw\shader_bin\shader_src_
 
-- The pixelshader will, as the name suggest, shade our pixels; 1 pixel at a time
-- Create a new .txt file and name it: ___ps_3_0_z_scrolling_hud.hlsl__ (every custom pixel shader needs the "ps_3_0_" suffix)
+- The PixelShader will, as the name suggest, shade our pixels; 1 pixel at a time
+- Create a new txt-file and call it: ___ps_3_0_z_scrolling_hud.hlsl__ (every custom PixelShader needs the "ps_3_0_" suffix)
 - Paste the following:
 
 <div class="padding-1l"></div>

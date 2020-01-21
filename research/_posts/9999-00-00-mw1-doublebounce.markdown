@@ -2,7 +2,7 @@
 layout: post
 title:  "CoD4 - Double Bounce"
 date:   2020-01-01 23:59:00
-game:   Call of Duty 4
+game:   "cod4"
 permalink: /research/cod4-doublebounce/
 ---
 

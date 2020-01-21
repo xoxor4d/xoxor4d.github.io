@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Techniques - In-depth"
+title:      "In-depth :: Techniques"
 subtitle:   ">> root\\raw\\techniques"
 date:       2020-01-01 23:57:00
 categorie:  Call of Duty 4 - HLSL

@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Material Templates - In-depth"
+title:      "In-depth :: Material Templates"
 subtitle:   ">> root\\deffiles\\materials"
 date:       2020-01-01 23:58:00
 categorie:  Call of Duty 4 - HLSL

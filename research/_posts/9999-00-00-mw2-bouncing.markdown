@@ -2,7 +2,7 @@
 layout: post
 title:  "Modern Warfare 2 - Bouncing"
 date:   2020-01-01 21:59:00
-game:   Modern Warfare 2
+game:   "mw2"
 permalink: /research/mw2-bounce/
 ---
 # Some general info

@@ -142,11 +142,65 @@ p,li,ul {
 	font-size: 16px;
 }
 
+
+// ------------------------------------------------
+// multiple elements within the same row / markdown
+
+.md_flex-container {
+	display: flex;
+}
+  
+  .md_flex-item{
+	//padding-bottom: 5px;
+	flex-grow: 1;
+}
+
+
+// -----------------------------------------
+// custom seperators
+
+.padding-1l { // 1 line padding :: <div class="padding-1l"></div>
+	padding: 0.35rem;
+}
+  
+.padding-2l {
+	padding: 1.5rem;
+}
+  
+.seperator-100p { // full width
+	background: $c__seperator_100p;
+	margin-left: 0rem;
+	margin-top: 3rem; // increased by 1
+	width: 100%;
+	padding: 1px;
+}
+  
+.seperator-75p { // 75 %
+	background: $c__seperator_75p;
+	margin-top: 3rem; // increased by 1
+	width: 75%;
+	padding: 1px;
+	
+	p {
+	  @include ff--sans-serif(100);
+	  color: #c4c4c4;
+	}
+}
+  
+.seperator-50p { // 50 %
+	background: $c__seperator_50p;
+	margin-top: 3rem; // increased by 1
+	width: 50%;
+	padding: 1px;
+}
+
+// --------------------------------------------
+
 .content-title {
 	font-size: 28px;
 	font-weight: 300;
 	color: #6e7080;
-	border-bottom: 1px solid #e8e8f1;
+	//border-bottom: 1px solid #e8e8f1;
 	width: 100%;
 	//margin-left: -2.5rem;
 	//width: calc(100% + 5rem);

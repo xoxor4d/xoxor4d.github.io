@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Statemaps - In-depth"
+title:      "In-depth :: Statemaps"
 subtitle:   ">> root\\raw\\statemaps"
 date:       2020-01-01 23:56:00
 categorie:  Call of Duty 4 - HLSL

@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "World at War - Rocketjumps"
-date:   2020-01-01 22:59:00
-game:   World at War
+date:   2020-01-01 21:58:00
+game:   "waw"
 permalink: /research/waw-rocketjump/
 ---
 

@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "World at War - Mini Bounce"
-date:   2020-01-01 22:58:00
-game:   World at War
+date:   2020-01-01 21:58:00
+game:   "waw"
 permalink: /research/waw-minibounce/
 ---
 The fix for Bayonet-Jumps is also responsible for mini-bounces because they've just limited the maximum z-velocity a player can have instead of fixing the real issue.

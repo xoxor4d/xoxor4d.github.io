@@ -1,22 +1,21 @@
 ---
-layout: post
-title:  "Multi Call of Duty - Bounce Depatch Tool"
-date:   2019-12-01 23:59:00
-permalink: /projects/bouncepatch/
+layout:     post
+title:      "Multi Call of Duty - Bounce Depatch Tool"
+subtitle:   "Enable Bouncing in multiple Call of Duty Games"
+date:       2019-12-01 23:59:00
+permalink:  /projects/bouncepatch/
 ---
 
-<div class="md_container" markdown="1"> 
-
-<div class="content-title">
-	Version 2.3 - December 2019
-      <div class="md_flex-item" style="float:right;" markdown="1"> 
+<div class="md_flex-container"> 
+      <div class="content-title"> Version 2.3 - December 2019
+            <div class="md_flex-item" style="float: right" markdown="1"> 
 [Changelog](#changelog){: class= .c-btn }
 [Download](https://drive.google.com/open?id=1mAinLnqLoRFnGW8fxFDCSdnrk8mdhBoG){: class= .c-btn .bounce-btn} 
-</div>
-</div>
+</div></div></div>
 
-
-</div>
+<div class="padding-1l" style="margin-top: -2.5rem"></div>
+<div align="center"><div class="seperator-100p"></div></div>
+<div class="padding-1l" style="margin-bottom: -1rem"></div>
 
 ![](/assets/img/bouncepatch_tool.jpg# halfsize left) ![](/assets/img/bouncepatch_tool_adv.jpg# halfsize right) 
 
@@ -45,12 +44,17 @@ permalink: /projects/bouncepatch/
 >  - Call of Duty - World War II
       + _​​Steam / Reloaded_
 
----
+<div class="padding-1l"></div>
+<div align="center"><div class="seperator-75p"></div></div>
+<div class="padding-1l"></div>
 
 [![Play](/assets/img/vid-depatch.jpg# left){: style="width: 47%"}](https://www.youtube.com/watch?v=9nrkyITri2A) [![Play](/assets/img/vid-mwr-montage.jpg# right){: style="width: 47%"}](https://www.youtube.com/watch?v=qhXSROY-tRE)
 
----
-<div id="changelog"><a href="changelog"></a></div>
+<!-- tag for quick links -->
+<a name="changelog"></a>
+<div class="padding-1l"></div>
+<div align="center"><div class="seperator-75p"></div></div>
+<div class="padding-1l"></div>
 
 
 <div class="content-title">

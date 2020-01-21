@@ -1,31 +1,75 @@
 ---
-layout: page
-title: Research
-permalink: /research/
+layout:     page
+title:      "Research"
+subtitle:   "surrounding the Call of Duty Series"
+permalink:  /research/
 ---
 
+<!-- Hardcode that shit because I do not want to deal with fucking jekyll sorting -->
+
+<!-- CoD4 -->
 {% for post in site.categories.research  %}
-    {% capture this_game %}{{ post.game | game: "%Y" }}{% endcapture %}
-    {% capture next_game %}{{ post.previous.game | game: "%Y" }}{% endcapture %}
+    {% capture this_game %}{{ post.game }}{% endcapture %}
 
     {% if forloop.first %}
-        <h2 class="c-research_game" id="{{ this_game }}-ref">{{this_game}}</h2>
+        <h2 class="c-research_game" id="cod4">Call of Duty 4</h2>
         <ul class="c-research_list">
     {% endif %}
 
-    <li class="c-archives__item">
-        <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
-        <p>{{ post.date | date: "%b %-d, %Y" }}</p>
-    </li>
+    {% if this_game == 'cod4' %}
+        <li class="c-archives__item">
+            <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+             <p>{{ post.date | date: "%b %-d, %Y" }}</p>
+        </li>
+    {% endif %}
 
     {% if forloop.last %}
         </ul>
+    {% endif %}
+{% endfor %}
 
-    {% else %}
-        {% if this_game != next_game and next_game != "" %}
-            </ul>
-            <h2 class="c-research_game" id="{{ next_game }}-ref">{{next_game}}</h2>
-            <ul class="c-research_list">
-        {% endif %}
+<div class="padding-1l"></div>
+
+<!-- MW2 -->
+{% for post in site.categories.research  %}
+    {% capture this_game %}{{ post.game }}{% endcapture %}
+
+    {% if forloop.first %}
+        <h2 class="c-research_game" id="mw2">Modern Warfare 2</h2>
+        <ul class="c-research_list">
+    {% endif %}
+
+    {% if this_game == 'mw2' %}
+        <li class="c-archives__item">
+            <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+             <p>{{ post.date | date: "%b %-d, %Y" }}</p>
+        </li>
+    {% endif %}
+
+    {% if forloop.last %}
+        </ul>
+    {% endif %}
+{% endfor %}
+
+<div class="padding-1l"></div>
+
+<!-- WAW -->
+{% for post in site.categories.research  %}
+    {% capture this_game %}{{ post.game }}{% endcapture %}
+
+    {% if forloop.first %}
+        <h2 class="c-research_game" id="waw">World at War</h2>
+        <ul class="c-research_list">
+    {% endif %}
+
+    {% if this_game == 'waw' %}
+        <li class="c-archives__item">
+            <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+             <p>{{ post.date | date: "%b %-d, %Y" }}</p>
+        </li>
+    {% endif %}
+
+    {% if forloop.last %}
+        </ul>
     {% endif %}
 {% endfor %}
