@@ -313,6 +313,10 @@ blockquote {
 	font-family: "Roboto";
 	text-transform: uppercase;
 }
+.footer-copy p b {
+	color: #ce2020;
+	font-size: 14px;
+}
 
 .footer-copy {
 	background-color: #221d39;
@@ -565,5 +569,35 @@ section {
 			}
 		}
 	}
+
+	.footer-left {
+		width: 100%;
+		float: left;
+	}
+
+	.footer-right {
+		width: 100%;
+		float: right;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-top: 1px solid #392f50;
+		padding: 20px 0px 0px 0px;
+		margin-top: 25px;
+	}
+
+	.c-footer__container_links {
+		float: left !important;
+	}
+
+	.footer-copy p {
+		font-size: 10px;
+	}
+	.footer-copy p b {
+		color: #ce2020;
+		font-size: 10px;
+	}
+	
+
 
 }
