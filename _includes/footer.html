@@ -25,9 +25,99 @@
 </div>
 
 <script type="text/javascript">
+
+// ---------------------------------------
+// elements
+var bg = document.getElementById("bg-ground"); 
+var header = document.getElementById("header");
+var title = document.getElementById("page-title");
+var mobile = document.getElementById("mobile-nav");
+var mobileLogo = document.getElementById("mobile-nav-logo");
+var mobileContent = document.getElementById("mobile-nav-content");
+
+
+// ---------------------------------------
+// mobile nav
+
+var mob_menuActive;
+var mob_buttonsActive;
+var mob_lastBgHeight;
+
+function mob_enableButtons() {
+  mob_buttonsActive = true;
+}
+
+function mob_disableButtons() {
+  mob_buttonsActive = false;
+}
+
+function toggleMobileMenu() 
+{
+  // toggle menu
+  mobile.classList.toggle("menu-open");
+  
+  // on-open menu
+  if(mobile.classList.contains("menu-open")) 
+  {
+    // helper bool for dynamic nav
+    mob_menuActive = true;
+    // save the old nav height
+    mob_lastBgHeight = bg.style.height;
+
+    // hacky - move buttons back into bounds
+    mobileContent.style.marginTop = "-81px";
+    title.style.display = "none";
+
+    // change the nav height
+    bg.style.height = "370px";
+    bg.style.transition = "0.4s";
+
+    mobileLogo.style.opacity = "40%";
+    mobileContent.style.opacity = "100%";
+
+    // scroll to top of nav
+    bg.scrollIntoView(true);
+
+    // we need to disable the ability to click buttons on fly-in
+    setTimeout(mob_enableButtons, 400);
+  } 
+
+  // on-close menu
+  else 
+  {
+    // re-enable the scrolling nav
+    mob_menuActive = false;
+    // deactive ability to click buttons
+    mob_buttonsActive = false;
+
+    // hacky - move buttons out of bounds so we cannot click them when the menu is not open
+    mobileContent.style.marginTop = "-151px";
+    title.style.display = "";
+
+    // reset the nav height
+    bg.style.height = mob_lastBgHeight;
+    bg.style.transition = "0.4s";
+
+    // only scroll nav when we had a fixed nav on-open
+    if(mob_lastBgHeight == "160px") {
+      window.scrollBy(0, 8);
+    }
+
+    mobileLogo.style.opacity = "";
+    mobileContent.style.opacity = "0%";
+  }
+}
+
+var pages = new Array('/projects', '/tutorials', '/research', '/about');
+
+function mobileLink(page) {
+  if(mob_buttonsActive) {
+    location.href = pages[page];
+  }
+}
+
 // ---------------------------------------
 // scrolling direction
-
 var prevPageOffs = 0;
 function getScrollDirection(currPageOffs) // -1: scrolling up; 0: not scrolling; 1: scrolling down
 { 
@@ -47,19 +137,38 @@ function getScrollDirection(currPageOffs) // -1: scrolling up; 0: not scrolling;
   return direction;
 }
 
+
 // ---------------------------------------
 // dynamic nav
-
 window.onscroll = function() {
   navScroll()
 };
 
-var bg = document.getElementById("bg-ground"); 
-var header = document.getElementById("header");
 var wasAllowedToScroll = false;
 
 function navScroll() 
 {
+  // disable dynamic nav when we are in mobile-mode
+  /* if(mobile.classList.contains("menu-open")) {
+      return;
+  }  */
+
+  // only exec the mobile nav stuff if its active
+  if(mob_menuActive) 
+  {
+    // close the menu if we scrolled out of it
+    if(window.pageYOffset >= 200) 
+    {
+      // set bg to small nav
+      mob_lastBgHeight = "160px";
+
+      // close the menu
+      toggleMobileMenu();
+    }
+
+    return;
+  }
+
   // get the scroll direction
   var scrollDir = getScrollDirection(window.pageYOffset);
 
@@ -97,6 +206,10 @@ function navScroll()
           window.scrollBy(0, -4);
         }
 
+        else if(scrollDir == -1 && window.pageYOffset < 91) {
+          window.scrollBy(0, -8);
+        }
+
         // do not resize when already using the small nav
         return;
       }
@@ -104,6 +217,7 @@ function navScroll()
         bg.style.height = "160px";
         bg.style.transition = "0.25s";
         header.classList.add("sticky");
+        header.classList.remove("sticky-hidden");
     }
 
     else if (window.pageYOffset == 0)
@@ -123,6 +237,7 @@ function navScroll()
     else if(window.pageYOffset >= 161 && header.classList.contains("sticky")) {
       //console.log('REMOVED STICKY @ ' + window.pageYOffset);
       header.classList.remove("sticky");
+      header.classList.add("sticky-hidden");
     }
   }
 }

@@ -19,6 +19,24 @@
 	max-width: 1280px;
 	padding: 20px 0px !important;
 	transition: 0.2s;
+	opacity: 100%;
+
+	.nav {
+		float: right;
+		transition: 0.2s;
+	}
+}
+
+// move nav downwards when hidden for the showup animation 
+// (keyframe hidden)
+.sticky-hidden {
+	position: fixed;
+	width: 100%;
+	max-width: 1280px;
+	//padding: 20px 0px !important;
+	opacity: 0% !important;
+	padding-top: 4rem !important;
+	transition: 0.0s !important;
 
 	.nav {
 		float: right;
@@ -37,9 +55,15 @@
 
 .header {
 	padding-top: 40px;
+	padding-bottom: 60px;
 	transition: 0.2s;
 	z-index: 99; 
 	min-height: 60px;
+
+	.nav {
+		transition: 0.2s;
+	}
+	
 }
 
 .header .logo {
@@ -49,6 +73,7 @@
 	background-repeat: no-repeat;
 	float: left;
 	margin: 0px 20px;
+	padding-bottom: 3.5rem; // on resizing so that the nav is not to close
 }
 
 .header .logo p {
@@ -71,6 +96,8 @@
 	font-size: 16px;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 300;
+
+	transition: 0.2s;
 }
 
 .header .nav a.nav_item:hover {
@@ -85,7 +112,7 @@
 }
 
 .desc {
-	padding: 90px;
+	padding: 60px;
 	color: #fff;
 	text-align: center;
 
@@ -94,13 +121,15 @@
 }
 
 .desc .title {
-	font-size: 48px;
+	font-size: 48px; // fallback value
+	font-size: calc(2rem + 2vmin); // scale text on scaling the viewport
 	font-family: 'Roboto', sans-serif;
 	font-weight: 300;
 }
 
 .desc .sub-title {
 	font-size: 24px;
+	font-size: calc(0.75rem + 1.8vmin); // scale text on scaling the viewport
 	color: #8b8a92;
 	padding-top: 10px;
 	font-weight: lighter;
@@ -247,17 +276,17 @@ blockquote {
 .footer-left {
 	width: 50%;
 	float: left;
-	margin-top: 50px;
+	margin-top: 35px;
 }
 
 .footer-right {
 	width: 50%;
 	float: right;
-	margin-top: 50px;
+	margin-top: 35px;
 }
 
 .footer-copy-left {
-	width: 33%;
+	width: 45%;
 	float: left;
 	text-align: left;
 }
@@ -269,13 +298,13 @@ blockquote {
 }
 
 .footer-copy-center {
-	width: 33%;
+	width: 10%;
 	float: left;
 	text-align: center;
 }
 
 .footer-copy-right {
-	width: 33%;
+	width: 45%;
 	float: right;
 	text-align: right;
 }
@@ -289,6 +318,8 @@ blockquote {
 	background-color: #221d39;
 	height: 50px;
 	line-height: 50px;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
 }
 .footer-logo {
 	height: 18px;
@@ -338,4 +369,201 @@ blockquote {
 	width: 32px;
 	height: 32px;
 	display: inline-block;
+}
+
+
+
+
+
+/* @media screen and (min-width: 701px) {
+} */
+
+// hidden mobile stuff here
+.mobile-nav {
+	display: none; // disable it when not using mobile view
+	float: right;
+	margin-top: -6px; // center it
+	padding-right: 2rem;
+	cursor: pointer;
+}
+
+.mobile-nav-logo {
+	height: 56px;
+	width: 40px;
+	margin-top: -1.2rem;
+	display: inline-block;
+	transition: 0.2s;
+
+	background: url(https://iamturner.co.uk/codepen/menu-icon.png) no-repeat center;
+	background-size: 54px;
+
+	&:active {
+		opacity: 0.2;
+		transition: 0.0s !important;
+	}
+}
+
+.mobile-nav-content {
+	margin-top: -8rem;
+	opacity: 0%;
+	transition: 0.3s;
+	margin-top: -151px; // move out of bounds .. meme
+	//display: table-column;
+}
+
+$mobile-nav-bg-prim: #534a613d;
+$mobile-nav-bg-sec: #4a41573f;
+
+section {
+	position: absolute;
+	//top: 0;
+	left: 0;
+	width: 100%;
+	//height: 100%;
+	height: 70px;
+	//border-radius: 8px 8px 0 0;
+	-webkit-transition: -webkit-transform 0.3s;
+	
+	&.one {
+	  	background: $mobile-nav-bg-prim;
+	  	-webkit-transition-delay: 0s;
+	}
+	
+	&.two {
+		background: $mobile-nav-bg-sec;
+		-webkit-transition-delay: 0.05s;
+	}
+	
+	&.three {
+		background: $mobile-nav-bg-prim;
+		-webkit-transition-delay: 0.1s;
+	}
+	
+	&.four {
+		background: $mobile-nav-bg-sec;
+		-webkit-transition-delay: 0.15s;
+	}
+	
+	&.after {
+	  	-webkit-transform: translateY(100%);
+	}
+
+	h1 {
+		color: white;
+		font-weight: 500;
+		font-size: 2rem;
+		text-align: center;
+		margin: 0;
+		line-height: 70px;
+		-webkit-user-select: none;
+  	}
+}
+  
+.page-one {
+	section 
+	{
+		&.one { -webkit-transition-delay: 0s; }
+		&.two { -webkit-transition-delay: 0.15s; }
+		&.three { -webkit-transition-delay: 0.1s; }
+		&.four { -webkit-transition-delay: 0.05s; } 
+	} 
+}
+  
+.page-two {
+	section 
+	{
+		&.one { -webkit-transition-delay: 0s; }
+		&.two { -webkit-transition-delay: 0.05s; }
+		&.three { -webkit-transition-delay: 0.1s; }
+		&.four { -webkit-transition-delay: 0.05s; } 
+	} 
+}
+  
+.menu-open {
+	
+	section 
+	{
+		cursor: pointer;
+	  
+		&.one {
+			-webkit-transform: translateY(90px);
+			-webkit-transition-delay: 0.15s;
+			
+			&:active {
+				background: lighten($mobile-nav-bg-prim, 3%);
+			}
+		}
+	  
+		&.two {
+			-webkit-transform: translateY(160px);
+			-webkit-transition-delay: 0.1s;
+			
+			&:active {
+				background: lighten($mobile-nav-bg-sec, 3%);
+			}
+		}
+		
+		&.three {
+			-webkit-transform: translateY(230px);
+			-webkit-transition-delay: 0.05s;
+			
+			&:active {
+				background: lighten($mobile-nav-bg-prim, 3%);
+			}
+		}
+		
+		&.four {
+			-webkit-transform: translateY(300px);
+			-webkit-transition-delay: 0s;
+			
+			&:active {
+				background: lighten($mobile-nav-bg-sec, 3%);
+			}
+		}
+	}
+	
+	&.page-one {
+		section {
+			&.one { -webkit-transition-delay: 0s; }
+			&.two { -webkit-transition-delay: 0.05s; }
+			&.three { -webkit-transition-delay: 0.1s; }
+			&.four { -webkit-transition-delay: 0.15s; }
+		}
+	}
+		
+	&.page-two {
+		section {
+			&.one { -webkit-transition-delay: 0s; }
+			&.two { -webkit-transition-delay: 0.05s; }
+			&.three { -webkit-transition-delay: 0.1s; }
+			&.four { -webkit-transition-delay: 0.15s; } 
+		} 
+	}
+}
+
+// -------------------------------------------------------------------------------------
+// overwrites for mobile when less then 700px in width 
+@media screen and (max-width: 700px) 
+{
+	// fade out the nav
+	.header 
+	{
+		//opacity: 0%;
+
+		// whole nav including the mobile-nav
+		.nav {
+			//display: none;
+			//opacity: 50% !important;
+
+			// desktop nav
+			.nav_item {
+				display: none;
+			}
+
+			.mobile-nav {
+				display: unset; // show
+			}
+		}
+	}
+
 }

@@ -13,12 +13,32 @@
                 <a class="nav_item {% if page.url == '/tutorials/' %}is-active{% endif %}" href="{{ "/tutorials/" | prepend: site.baseurl }}">Tutorials</a>
                 <a class="nav_item {% if page.url == '/research/' %}is-active{% endif %}" href="{{ "/research/" | prepend: site.baseurl }}">Research</a>
                 <a class="nav_item {% if page.url == '/about/' %}is-active{% endif %}" href="{{ "/about/" | prepend: site.baseurl }}">About</a>
+
+                <div class="mobile-nav" id="mobile-nav" onclick="toggleMobileMenu()">
+                    <a class="mobile-nav-logo" id="mobile-nav-logo"></a>
+
+                    <div class="mobile-nav-content" id="mobile-nav-content">
+                        <section class="one" onclick="mobileLink(0)">
+                            <h1>Projects</h1>
+                        </section>
+                        <section class="two" onclick="mobileLink(1)">
+                            <h1>Tutorials</h1>
+                        </section>
+                        <section class="three" onclick="mobileLink(2)">
+                            <h1>Research</h1>
+                        </section>
+                        <section class="four" onclick="mobileLink(3)">
+                            <h1>About</h1>
+                        </section>
+                    </div>
+
+                </div>
             
             </div>
 
         </div>
 
-        <div class="desc">
+        <div class="desc" id="page-title">
 
             <div class="title">{{ page.title }}</div>
 
