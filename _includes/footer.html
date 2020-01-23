@@ -72,7 +72,9 @@ function toggleMobileMenu()
     // mobile menu button
     mobileLogo.style.opacity = "40%";
     mobileContent.style.opacity = "100%";
+
     mobileContentBG.style.opacity = "100%";
+    mobileContentBG.style.height = "270px";
 
     // we need to disable the ability to click buttons on fly-in
     setTimeout(mob_enableButtons(), 400);
@@ -100,6 +102,7 @@ function toggleMobileMenu()
     mobileLogo.style.opacity = "";
     mobileContent.style.opacity = "0%";
     mobileContentBG.style.opacity = "0%";
+    mobileContentBG.style.height = "0px";
   }
 }
 
