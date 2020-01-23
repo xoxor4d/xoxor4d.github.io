@@ -413,11 +413,22 @@ blockquote {
 	opacity: 0%;
 	transition: 0.3s;
 	margin-top: -151px; // move out of bounds .. meme
+	background-color: #1f1b33;
 	//display: table-column;
 }
 
-$mobile-nav-bg-prim: #534a613d;
-$mobile-nav-bg-sec: #4a41573f;
+.mobile-nav-bg {
+	background-color: #1f1b33;
+	height: 271px;
+	position: absolute;
+	margin-top: 89px;
+	border-top: 1px solid #392f50;
+	left: 0;
+	width: 100%;
+}
+
+$mobile-nav-bg-prim: #1f1b33; //534a613d
+$mobile-nav-bg-sec: #1f1b33; //4a41573f
 
 section {
 	position: absolute;
@@ -425,7 +436,9 @@ section {
 	left: 0;
 	width: 100%;
 	//height: 100%;
-	height: 70px;
+	height: 65px;
+	font-weight: 200 !important;
+	font-family: 'Roboto', sans-serif;
 	//border-radius: 8px 8px 0 0;
 	-webkit-transition: -webkit-transform 0.3s;
 	
@@ -459,7 +472,7 @@ section {
 		font-size: 2rem;
 		text-align: center;
 		margin: 0;
-		line-height: 70px;
+		line-height: 65px;
 		-webkit-user-select: none;
   	}
 }
@@ -500,16 +513,19 @@ section {
 		}
 	  
 		&.two {
-			-webkit-transform: translateY(160px);
+			-webkit-transform: translateY(155px);
 			-webkit-transition-delay: 0.1s;
 			
 			&:active {
 				background: lighten($mobile-nav-bg-sec, 3%);
 			}
+			&:hover {
+				background: lighten($mobile-nav-bg-sec, 3%);
+			}
 		}
 		
 		&.three {
-			-webkit-transform: translateY(230px);
+			-webkit-transform: translateY(222px);
 			-webkit-transition-delay: 0.05s;
 			
 			&:active {
@@ -518,7 +534,7 @@ section {
 		}
 		
 		&.four {
-			-webkit-transform: translateY(300px);
+			-webkit-transform: translateY(285px);
 			-webkit-transition-delay: 0s;
 			
 			&:active {
