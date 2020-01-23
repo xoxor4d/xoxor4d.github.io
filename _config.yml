@@ -39,7 +39,7 @@ steamUsername: xoxor4d
 # Build settings
 markdown: kramdown
 
-themeColor: bouncepatch # green, blue, orange, purple, grey
+themeColor: main
 fixedNav: 'true' # true or false
 
 permalink: /:year/:month/:title

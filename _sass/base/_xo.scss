@@ -118,6 +118,7 @@
 
 	transition: opacity 0.2s ease-in;
 	opacity: 80%;
+	pointer-events: none;
 }
 
 .desc .title {

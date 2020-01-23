@@ -39,16 +39,12 @@ var mobileContent = document.getElementById("mobile-nav-content");
 // ---------------------------------------
 // mobile nav
 
+var mob_isMobile = false;
 var mob_menuActive;
 var mob_buttonsActive;
-var mob_lastBgHeight;
 
 function mob_enableButtons() {
   mob_buttonsActive = true;
-}
-
-function mob_disableButtons() {
-  mob_buttonsActive = false;
 }
 
 function toggleMobileMenu() 
@@ -59,60 +55,68 @@ function toggleMobileMenu()
   // on-open menu
   if(mobile.classList.contains("menu-open")) 
   {
-    // helper bool for dynamic nav
+    // enable scroll check for mobile menu
     mob_menuActive = true;
-    // save the old nav height
-    mob_lastBgHeight = bg.style.height;
 
     // hacky - move buttons back into bounds
     mobileContent.style.marginTop = "-81px";
-    title.style.display = "none";
+
+    // fade-out site title
+    title.style.opacity = "0%";
 
     // change the nav height
     bg.style.height = "370px";
     bg.style.transition = "0.4s";
 
+    // mobile menu button
     mobileLogo.style.opacity = "40%";
     mobileContent.style.opacity = "100%";
 
-    // scroll to top of nav
-    bg.scrollIntoView(true);
-
     // we need to disable the ability to click buttons on fly-in
-    setTimeout(mob_enableButtons, 400);
+    setTimeout(mob_enableButtons(), 400);
   } 
 
   // on-close menu
   else 
   {
-    // re-enable the scrolling nav
+    // disable scrolling check for mobile menu
     mob_menuActive = false;
     // deactive ability to click buttons
     mob_buttonsActive = false;
 
     // hacky - move buttons out of bounds so we cannot click them when the menu is not open
     mobileContent.style.marginTop = "-151px";
-    title.style.display = "";
+
+    // fade-in site title
+    title.style.opacity = "80%";
 
     // reset the nav height
-    bg.style.height = mob_lastBgHeight;
+    bg.style.height = "360px";
     bg.style.transition = "0.4s";
 
-    // only scroll nav when we had a fixed nav on-open
-    if(mob_lastBgHeight == "160px") {
-      window.scrollBy(0, 8);
-    }
-
+    // mobile menu button
     mobileLogo.style.opacity = "";
     mobileContent.style.opacity = "0%";
   }
 }
 
+// ---------------------------------------
+// helper function to open links within the mobile menu
 var pages = new Array('/projects', '/tutorials', '/research', '/about');
 
 function mobileLink(page) {
   if(mob_buttonsActive) {
     location.href = pages[page];
+  }
+}
+
+// ---------------------------------------
+// check if any sort of mobile device is used
+function isMobile() {
+  if(!mob_isMobile) {
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+      mob_isMobile = true;
+    }
   }
 }
 
@@ -148,24 +152,23 @@ var wasAllowedToScroll = false;
 
 function navScroll() 
 {
-  // disable dynamic nav when we are in mobile-mode
-  /* if(mobile.classList.contains("menu-open")) {
-      return;
-  }  */
+  // mobile :: set "mob_isMobile" once if on any sort of mobile device is used
+  isMobile();
 
-  // only exec the mobile nav stuff if its active
+  // mobile :: close menu when out of view
   if(mob_menuActive) 
   {
     // close the menu if we scrolled out of it
-    if(window.pageYOffset >= 200) 
-    {
-      // set bg to small nav
-      mob_lastBgHeight = "160px";
-
+    if(window.pageYOffset >= 360) {
       // close the menu
       toggleMobileMenu();
     }
 
+    return;
+  }
+
+  // no dymanic nav on any sort of mobile device
+  if(mob_isMobile) {
     return;
   }
 
@@ -220,7 +223,7 @@ function navScroll()
         header.classList.remove("sticky-hidden");
     }
 
-    else if (window.pageYOffset == 0)
+    else if (window.pageYOffset <= 0)
     {
       if(!header.classList.contains("sticky")) {
         return;

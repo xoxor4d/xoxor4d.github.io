@@ -2,21 +2,23 @@
    Grey Theme
    ========================================================================== */
 
-html{
+html {
     position:relative; 
     min-height: 100%;
     min-width: 50%;
-  }
+}
 
-html,body{
-    margin:0;
-    padding:0;
-  }
+html,body {
+    margin: 0;
+    padding: 0;
+
+    // out of bounds background color for devices using overscroll (eg. ipad)
+    background-color: #221d39; 
+}
 
 .pageContentWrapper {
-  margin-bottom:80px;/* Height of footer*/
-  
-  }
+  margin-bottom: 80px; // Height of footer
+}
 
 .footer {
   position: absolute;
@@ -52,28 +54,9 @@ img[src~="right"] {
   padding: 1rem;
 }
 
-img[src~="yt_center"] {
-  display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  //padding: 1rem;
-  margin-top: 8px;
-  //margin-left: 6%;
-}
-
-
 // add spacing to markdown lists
 li > ul {
   padding-bottom: 0.5em;
-}
-
-
-
-.img-centered
-{
-  margin: 0 auto;
-  display: block;
 }
 
 // -----------------------------------------
@@ -94,38 +77,23 @@ li > ul {
   }
 }
 
-// code highlight box
-// :: {% highlight LANGUAGE %} {% endhighlight %}
-
 .highlight {
   background: $c__bouncepatch_codebox;
-  }
-
+}
 
 // ------------------------------
 // general stuff
-
-.t-bouncepatch 
+.t-main
 {
   // general background
-  background: $c__bouncepatch_lightgrey;
+  //background: $c__bouncepatch_lightgrey;
 
   .c-article,
   .c-article__main {
     background: $c__bouncepatch_lightgrey;
   }
-  
-  .c-footer,
-  .c-navigation,
-  .c-header {
-      background: $c__bouncepatch_darkgrey;
-  }
 
   .c-article__main a:not(.c-btn) {
-    color: $c__bouncepatch;
-  }
-
-  .c-footer a {
     color: $c__bouncepatch;
   }
 }
