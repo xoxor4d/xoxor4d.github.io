@@ -34,6 +34,7 @@ var title = document.getElementById("page-title");
 var mobile = document.getElementById("mobile-nav");
 var mobileLogo = document.getElementById("mobile-nav-logo");
 var mobileContent = document.getElementById("mobile-nav-content");
+var mobileContentBG = document.getElementById("mobile-nav-bg");
 
 
 // ---------------------------------------
@@ -71,6 +72,7 @@ function toggleMobileMenu()
     // mobile menu button
     mobileLogo.style.opacity = "40%";
     mobileContent.style.opacity = "100%";
+    mobileContentBG.style.opacity = "100%";
 
     // we need to disable the ability to click buttons on fly-in
     setTimeout(mob_enableButtons(), 400);
@@ -97,6 +99,7 @@ function toggleMobileMenu()
     // mobile menu button
     mobileLogo.style.opacity = "";
     mobileContent.style.opacity = "0%";
+    mobileContentBG.style.opacity = "0%";
   }
 }
 

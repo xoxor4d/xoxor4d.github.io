@@ -417,16 +417,6 @@ blockquote {
 	//display: table-column;
 }
 
-.mobile-nav-bg {
-	background-color: #1f1b33;
-	height: 271px;
-	position: absolute;
-	margin-top: 89px;
-	border-top: 1px solid #392f50;
-	left: 0;
-	width: 100%;
-}
-
 $mobile-nav-bg-prim: #1f1b33; //534a613d
 $mobile-nav-bg-sec: #1f1b33; //4a41573f
 
@@ -461,6 +451,10 @@ section {
 		background: $mobile-nav-bg-sec;
 		-webkit-transition-delay: 0.15s;
 	}
+
+	&.mobile-nav-bg{
+		-webkit-transition-delay: 0.15s;
+	}
 	
 	&.after {
 	  	-webkit-transform: translateY(100%);
@@ -474,7 +468,15 @@ section {
 		margin: 0;
 		line-height: 65px;
 		-webkit-user-select: none;
-  	}
+	}
+	  
+	&.mobile-nav-bg {
+		background-color: #1f1b33;
+		border-top: 1px solid #392f50;
+		left: 0;
+		width: 100%;
+		height: 270px;
+	}
 }
   
 .page-one {
@@ -540,6 +542,11 @@ section {
 			&:active {
 				background: lighten($mobile-nav-bg-sec, 3%);
 			}
+		}
+		&.mobile-nav-bg{
+
+			-webkit-transform: translateY(89px);
+			-webkit-transition-delay: 0s;
 		}
 	}
 	
