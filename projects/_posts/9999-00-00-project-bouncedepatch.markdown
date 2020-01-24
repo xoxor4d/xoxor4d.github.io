@@ -2,9 +2,11 @@
 layout:     post
 title:      "Multi Call of Duty - Bounce Depatch Tool"
 subtitle:   "Enable Bouncing in multiple Call of Duty Games"
+description: "some description here :)"
 date:       2019-12-01 23:59:00
 permalink:  /projects/bouncepatch/
 image: "/assets/img/bouncepatch_tool.jpg"
+status: "Done"
 ---
 
 <div class="md_flex-container"> 

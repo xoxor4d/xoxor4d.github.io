@@ -7,6 +7,8 @@
         <div class="widget">
 
             <div class="widget-header">
+
+                <div class="text-right text-on-image-status {{ post.status }}">{{ post.status }}</div>
                 
                 {% if post.image == "" %}
                 
@@ -31,7 +33,7 @@
                 <div class="divider"></div>
                 <!--<h3>title</h3>-->
                     
-                <p>{{ post.subtitle }}</p>
+                <p>{{ post.description }}</p>
 
             </div>
 
