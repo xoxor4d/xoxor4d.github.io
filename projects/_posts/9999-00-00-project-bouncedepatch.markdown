@@ -2,11 +2,11 @@
 layout:     post
 title:      "Multi Call of Duty - Bounce Depatch Tool"
 subtitle:   "Enable Bouncing in multiple Call of Duty Games"
-description: "some description here :)"
+description: "A tool to re-enable bouncing in multiple Call of Duty Games. Supported Games: MW2; MW3; MW-R; Advanced Warfare, Ghosts, World At War; World War II; Black Ops 1 & 2"
 date:       2019-12-01 23:59:00
 permalink:  /projects/bouncepatch/
-image: "/assets/img/bouncepatch_tool.jpg"
-status: "Done"
+image:      "/assets/img/bouncepatch_tool.jpg"
+status:     "Done"
 ---
 
 <div class="md_flex-container"> 
