@@ -5,6 +5,16 @@ subtitle: "and projects surrounding the Call of Duty Series"
 ---
 
 <div class="content-title padding-bottom-15">
+	Last 3 Projects
+</div>
+
+{% include news.html  %}
+
+<div class="padding-1l"></div>
+<div align="center"><div class="seperator-100p"></div></div>
+<div class="padding-1l"></div>
+
+<div class="content-title padding-bottom-15">
 	Site Migration - Incomplete
 </div>
 I didn't feel like paying for weebly any longer, so I switched to github-pages as it's more then enough for my use-case.

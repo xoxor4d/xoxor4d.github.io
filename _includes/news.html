@@ -1,0 +1,45 @@
+<div class="row">
+
+{% for post in site.categories.projects limit:3  %}
+
+    <div class="col-sm-4 center">
+
+        <div class="widget">
+
+            <div class="widget-header">
+
+                <div class="post-img" style="max-width: 100%;background-image: url('{{ post.image }}"></div>
+
+                <div class="overlay-try"></div>
+
+                <div class="text-on-image">
+                    <p class="verlauf"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></p>
+                </div>
+            </div>
+
+            <div class="widget-content">
+
+                <p>Date:<span class="float-right">{{ post.date | date: "%b %-d, %Y" }}</span></p>
+                
+                <div class="divider"></div>
+                <!--<h3>title</h3>-->
+                    
+                <p>{{ post.subtitle }}</p>
+
+            </div>
+
+            <div class="widget-footer">
+
+                <a class="widget-button" href="{{ post.url | prepend: site.baseurl }}">Read more.</a>
+
+            </div>
+
+            <div class="clear"></div>
+
+        </div>
+
+    </div>
+
+{% endfor %}
+
+</div>
