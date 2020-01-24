@@ -7,10 +7,17 @@
         <div class="widget">
 
             <div class="widget-header">
+                
+                {% if post.image == "" %}
+                
+                <div class="post-img"></div>
 
-                <div class="post-img" style="max-width: 100%;background-image: url('{{ post.image }}"></div>
+                {% else %}
 
-                <div class="overlay-try"></div>
+                <div class="post-img" style="max-width: 100%;background-image: url('{{ post.image }}')"></div>
+                <div class="overlay-try"></div>                
+
+                {% endif %}
 
                 <div class="text-on-image">
                     <p class="verlauf"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></p>
