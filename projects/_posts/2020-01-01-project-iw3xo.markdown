@@ -8,6 +8,9 @@ permalink:      /projects/iw3xo/
 image:          "/assets/img/iw3xo/thumb.jpg"
 status:         "WIP"
 ---
+<!-- overwrite header bg if defined -->
+<script> var header_bg = "/assets/img/iw3xo/thumb.jpg"; </script>
+
 <!-- tag for quick links so we do not show the nav -->
 <a name="quicklink"></a>
 
@@ -27,3 +30,20 @@ status:         "WIP"
 </div>
 
 <div class="padding-2l"></div>
+
+1. __[[IW3xo]](/projects/iw3xo)__ (eta. 2020) - custom CoD4 client with a multitude of new features including but not limited to: 
+   - __Interface__
+	  + Improved main menu
+	  + Improved in-game console ( eg. drag/resize with the cursor, console output when not using the fullscreen console, ... )
+	  
+   - __Visualization__ 
+      + Draw Brushes with a specific material and/or only specific brushes (eg. draw clip brushes)
+      + Visualize the players origin and/or velocity
+
+   - __Movement__ 
+      + Dvar tweakable movement types like _quake3/cpm_ or _cs:s/surf_
+	  + Dvar tweakable stock movement settings
+
+   - __FileSystem__
+      + Load FastFiles Addons and IWDs on startup
+	  + Live FastFile loading / unloading  

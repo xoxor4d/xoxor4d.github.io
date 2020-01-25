@@ -442,6 +442,7 @@ blockquote {
 		}
 
 		.verlauf {
+			background-clip: text;
 			-webkit-background-clip: text;
 			-webkit-text-fill-color: transparent;
 			background-image: -webkit-linear-gradient(45deg,#71c6f1,#5584ff);
@@ -450,17 +451,20 @@ blockquote {
 
 	.widget-content{
 
-		min-height: 200px;
+		//min-height: 150px !important;
+		height: 150px !important;
+		overflow: hidden;
 
 		h3{
 			padding: 5px 15px;
 		}
 
 		p {
-			padding: 7px 10px;
-			margin-bottom: 0px;
-			font-size: 14px;
+			padding: 3px 10px;
+			margin-bottom: 2px;
+			font-size: 15px; //14px;
 		}
+		
 		.float-right {
 			float: right;
 		}
@@ -478,11 +482,11 @@ blockquote {
 		height: 50px;
 
 		.widget-button {
-			padding: 8px 45px;
+			padding: 9px; // 45px;
 			text-align: center;
 			font-size: 12px;
 			font-weight: normal;
-			background: #5584ff;
+			background: #3561cf; //#5584ff;
 			text-decoration: none;
 			color: #fff !important;
 			margin-top: 6px;
@@ -493,7 +497,7 @@ blockquote {
 		}
 
 		.widget-button:hover{
-			background: #00ff94;
+			background: #5584ff; //#00ff94;
 			transition: linear 0.2s;
 		}
 

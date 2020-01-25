@@ -36,6 +36,18 @@ var mobileLogo = document.getElementById("mobile-nav-logo");
 var mobileContent = document.getElementById("mobile-nav-content");
 var mobileContentBG = document.getElementById("mobile-nav-bg");
 
+// scripts on-load
+window.onload = function() 
+{
+  // if a custom header background is defined within markdown
+  if(header_bg != "") 
+  {
+    bg.style.backgroundPositionY = "center";
+    bg.style.backgroundSize = "cover";
+    bg.style.backgroundBlendMode = "luminosity";
+    bg.style.backgroundImage = "url(" + header_bg + ")";
+  }
+}
 
 // ---------------------------------------
 // mobile nav
@@ -120,7 +132,7 @@ function mobileLink(page) {
 // check if any sort of mobile device is used
 function isMobile() {
   if(!mob_isMobile) {
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+    if (/Android|webOS|iPhone|iPad|iPod|AppleWebKit|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
       mob_isMobile = true;
     }
   }
