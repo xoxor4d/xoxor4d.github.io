@@ -24,6 +24,8 @@ status:     "Done"
 
 <p align="center">A tool to re-enable Bouncing / Rocketjumps / Elevators in multiple Call of Duty´s including:​</p>
 
+>  - Call of Duty - 2
+      + Stock ([Additional Download](#additional))
 >  - Call of Duty - Modern Warfare
       + _1.7 / CoD4x_
 >  - ​​Call of Duty - Modern Warfare 2
@@ -68,6 +70,7 @@ status:     "Done"
 
 {% highlight cpp %}
 #Version 2.3 - 1st December 2019
+  - Added Additional files to support Call of Duty 2
   - Updated MW:R-MP & CJ / CONFIG LOADER
 {% endhighlight %}
 
@@ -155,3 +158,17 @@ status:     "Done"
     - added MW2 ( IW4x "V0.5.4" )
     - added MW2 ( React Legacy R449 )
 {% endhighlight %}
+
+<div class="padding-1l"></div>
+<div align="center"><div class="seperator-75p"></div></div>
+<div class="padding-1l"></div>
+
+<!-- tag for quick links -->
+<a name="additional"></a>
+# Additional Files
+
+<div class="md_flex-container"> 
+      <div class="content-title" style="padding-left: 60px; font-size: 20px"> CoD2 - Bounce Enabler
+            <div class="md_flex-item" style="float: right; padding-right: 60px" markdown="1"> 
+[Download](https://drive.google.com/file/d/1ex7uIi9ma9Dyz6v2lIhMK4dz7eo7Pbin/view){: class= .c-btn .bounce-btn style="margin-top: 8px"} 
+</div></div></div>

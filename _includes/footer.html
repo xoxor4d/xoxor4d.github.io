@@ -35,13 +35,18 @@ var mobile = document.getElementById("mobile-nav");
 var mobileLogo = document.getElementById("mobile-nav-logo");
 var mobileContent = document.getElementById("mobile-nav-content");
 var mobileContentBG = document.getElementById("mobile-nav-bg");
+var header_bg;
 
+function isDefined(x) {
+    return typeof (x) != 'undefined' && x != null;
+}
 // scripts on-load
 window.onload = function() 
 {
   // if a custom header background is defined within markdown
-  if(header_bg != "") 
+  if(isDefined(header_bg))
   {
+    bg.style.backgroundPositionX = "center";
     bg.style.backgroundPositionY = "center";
     bg.style.backgroundSize = "cover";
     bg.style.backgroundBlendMode = "luminosity";
