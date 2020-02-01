@@ -5,7 +5,7 @@ subtitle: "and projects surrounding the Call of Duty Series"
 ---
 
 <div class="content-title padding-bottom-15">
-	Site Migration
+	Site Migration WIP
 </div>
 I didn't feel like paying for weebly any longer, so I switched to github-pages as it's more then enough for my use-case.
 __[Bouncepatch.com](https://bouncepatch.com)__ will redirect any requests to this site for the next year or so. This site will be frequently updated with tools / research / tutorials or whatever else I feel like is worth posting.

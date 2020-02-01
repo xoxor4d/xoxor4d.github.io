@@ -14,6 +14,7 @@ status:     "Done"
             <div class="md_flex-item" style="float: right" markdown="1"> 
 [Changelog](#changelog){: class= .c-btn }
 [Download](https://drive.google.com/open?id=1mAinLnqLoRFnGW8fxFDCSdnrk8mdhBoG){: class= .c-btn .bounce-btn} 
+[Additional Downloads](#additional){: class= .c-btn .bounce-btn} 
 </div></div></div>
 
 <div class="padding-1l" style="margin-top: -2.5rem"></div>
@@ -171,4 +172,19 @@ status:     "Done"
       <div class="content-title" style="padding-left: 60px; font-size: 20px"> CoD2 - Bounce Enabler
             <div class="md_flex-item" style="float: right; padding-right: 60px" markdown="1"> 
 [Download](https://drive.google.com/file/d/1ex7uIi9ma9Dyz6v2lIhMK4dz7eo7Pbin/view){: class= .c-btn .bounce-btn style="margin-top: 8px"} 
+</div></div></div>
+<div class="md_flex-container"> 
+      <div class="content-title" style="padding-left: 60px; font-size: 20px"> BO1 - CoDJumper Mod (Copy the "mp_codjumper" folder into your mods directory)
+            <div class="md_flex-item" style="float: right; padding-right: 60px" markdown="1"> 
+[Download](https://drive.google.com/open?id=1pvyndwAmQ55KqtXWP1CpU5dg9VEbHXvZ){: class= .c-btn .bounce-btn style="margin-top: 8px"} 
+</div></div></div>
+<div class="md_flex-container"> 
+      <div class="content-title" style="padding-left: 60px; font-size: 20px"> BO2 - CoDJumper Mod (GSCStudio by iMCSx.co required)
+            <div class="md_flex-item" style="float: right; padding-right: 60px" markdown="1"> 
+[Download](https://drive.google.com/open?id=18YlR13rCVIQR7yopJbIyWUjn4VOm65bH){: class= .c-btn .bounce-btn style="margin-top: 8px"} 
+</div></div></div>
+<div class="md_flex-container"> 
+      <div class="content-title" style="padding-left: 60px; font-size: 20px"> MW2 - CoDJumper Mod (Copy the"cj" folder into your mods directory - IW4x)
+            <div class="md_flex-item" style="float: right; padding-right: 60px" markdown="1"> 
+[Download](https://drive.google.com/open?id=1G9rWPOOUSD1-7F-NS38CVM1gld27NYly){: class= .c-btn .bounce-btn style="margin-top: 8px"} 
 </div></div></div>
