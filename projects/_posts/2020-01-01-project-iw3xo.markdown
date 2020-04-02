@@ -96,17 +96,6 @@ __Misc__
 # In-Depth Features / Functions / Dvars
 <div class="padding-2l"></div>
 
-
-<div class="highlight-header"><p>General</p></div>
-{% highlight cpp %}
-[Info]
-|->
-
-[Commands]
-|-> help
-{% endhighlight %}
-
-<div class="padding-2l"></div>
 <div class="highlight-header"><p>In-Game Console</p></div>
 {% highlight cpp %}
 [Hotkeys]
