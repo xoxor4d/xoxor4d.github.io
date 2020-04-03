@@ -160,6 +160,7 @@ __Misc__
 |-> r_drawCollision_materialList       :: print a list of all materials with their index
 |-> r_drawCollision_materialInclude    :: preset filters
 
+|-> r_drawCollision_polyLit            :: enable custom-shader usage (unlit fake-lighting)
 |-> r_drawCollision_poly ...           :: polygon options
 |-> r_drawCollision_line ...           :: line options
 {% endhighlight %}
@@ -167,6 +168,9 @@ __Misc__
 <div class="padding-2l"></div>
 <div class="highlight-header"><p>Debug Collision Brushes - Map Exporting</p></div>
 {% highlight cpp %}
+[Commands]
+|-> mapexport :: export the entire map that is currently loaded (using saved export options, see below)
+
 [Dvars]
 |-> r_drawCollision_export                :: export "selected" brushes to a .map file (distance settings and culling ignored)
 |-> r_drawCollision_export_writeTriangles :: export leftover triangles, if enabled
