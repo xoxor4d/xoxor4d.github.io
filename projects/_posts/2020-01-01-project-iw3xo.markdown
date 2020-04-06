@@ -3,10 +3,10 @@ layout:         post
 title:          "Call of Duty 4 :: IW3xo"
 subtitle:       "a custom CoD4 client"
 description:    "A custom Call of Duty 4 client with alot of new and useful features for debugging / mod development / gimmicks / movement-tweaks / improved in-game console ..."
-date:           2020-04-01 00:00:00
+date:           2020-04-05 00:00:00
 permalink:      /projects/iw3xo/
 image:          "/assets/img/iw3xo/thumb.jpg"
-status:         "WIP"
+status:         "WIP - PUBLIC"
 ---
 <!-- overwrite header bg if defined -->
 <script> var header_bg = "/assets/img/iw3xo/header.jpg"; </script>
@@ -202,7 +202,7 @@ __Misc__
 {% highlight cpp %}
 [Commands]
 |-> help                   :: link, opens IW3xo Project page
-|-> iw3xo_radiant          :: link, opens IW3xo Github repo
+|-> iw3xo_github           :: link, opens IW3xo Github repo
 |-> iw3xo_radiant_github   :: link, opens IW3xRadiant Github repo
 |-> patchdvars             :: re-register cg_fovscale and snaps to patch their limits
 

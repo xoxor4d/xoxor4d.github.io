@@ -3,10 +3,10 @@ layout:         post
 title:          "Call of Duty 4 :: IW3xRadiant"
 subtitle:       "A CoD4 Radiant Modification"
 description:    "A CoD4 Radiant Modification built to be used with IW3xo. Live-Link between CoD4 and Radiant. Features brush/camera synchronization, dvar manipulation ..."
-date:           2020-04-02 00:00:00
+date:           2020-04-04 00:00:00
 permalink:      /projects/iw3xo-radiant/
 image:          "/assets/img/vid-live-link.jpg"
-status:         "WIP"
+status:         "WIP - PUBLIC"
 ---
 <!-- overwrite header bg if defined -->
 <script> var header_bg = "/assets/img/iw3xo-radiant/header.jpg"; </script>
@@ -32,13 +32,9 @@ status:         "WIP"
 <div class="padding-1l"></div>
 ![](/assets/img/iw3xo-radiant/link03.jpg) 
 
-<div class="padding-1l"></div>
-[![Play](/assets/img/vid-live-link.jpg# left){: style="width: 50%"}](https://www.youtube.com/watch?v=SBqZLfCaRdw) [![Play](/assets/img/vid-map-export.jpg# right){: style="width: 50%"}](https://www.youtube.com/watch?v=UOjiakKrNdk)
-
 <div class="padding-2l" style="margin-top: -2.5rem"></div>
 <div align="center"><div class="seperator-75p"></div></div>
 <div class="padding-2l" style="margin-bottom: -0.5rem"></div>
-
 
 <div markdown="1" style="padding-left: 2rem">
 # Features
@@ -73,3 +69,9 @@ __Misc__
    + Fixed a few issues with heavy custom-shader usage
    + Fixed "black world" upon selecting a brush with sunlight-preview enabled (only disables sunlight-preview now)
 </div>
+
+<div class="padding-2l" style="margin-top: -2.5rem"></div>
+<div align="center"><div class="seperator-75p"></div></div>
+<div class="padding-2l" style="margin-bottom: -0.5rem"></div>
+
+[![Play](/assets/img/vid-live-link.jpg# left){: style="width: 50%"}](https://www.youtube.com/watch?v=SBqZLfCaRdw) [![Play](/assets/img/vid-map-export.jpg# right){: style="width: 50%"}](https://www.youtube.com/watch?v=UOjiakKrNdk)
