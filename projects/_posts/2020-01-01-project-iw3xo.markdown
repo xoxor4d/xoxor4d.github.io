@@ -1,7 +1,7 @@
 ---
 layout:         post
 title:          "Call of Duty 4 :: IW3xo"
-subtitle:       "a custom CoD4 client"
+subtitle:       "a custom client aimed at developers that includes various modifications/additions"
 description:    "A custom Call of Duty 4 client with alot of new and useful features for debugging / mod development / gimmicks / movement-tweaks / improved in-game console ..."
 date:           2020-04-05 00:00:00
 permalink:      /projects/iw3xo/
@@ -16,7 +16,7 @@ status:         "WIP - PUBLIC"
 
 <div align="center" style="margin-top: -1rem" markdown="1">
 #### Quick Links
-[GitHub Repository](https://github.com/xoxor4d/iw3xo-dev) :: [Latest Release](https://github.com/xoxor4d/iw3xo-dev/releases) :: [IW3xRadiant](/projects/iw3xo-radiant/)
+[GitHub Repository](https://github.com/xoxor4d/iw3xo-dev) :: [Latest Release](https://github.com/xoxor4d/iw3xo-dev/releases) :: [Changelog](https://github.com/xoxor4d/iw3xo-dev/wiki/Changelog) :: [IW3xRadiant](/projects/iw3xo-radiant/)
 <div class="padding-2l"></div></div> 
 
 <div class="padding-2l" style="margin-top: -2.5rem"></div>
@@ -48,10 +48,10 @@ status:         "WIP - PUBLIC"
 <div class="padding-2l"></div>
 __Interface__
    + Completely new main menu
-   + Improved in-game console (eg. drag/resize with the cursor, console output when not using the fullscreen console, ... )
+   + Improved in-game console (eg. drag / resize with the cursor, console output when not using the fullscreen console, ... )
 <div class="padding-2l"></div>
 __Rendering__ 
-   + Draw debug collision brushes (eg. clip, mantle, multiple or all ...)
+   + Draw debug collision brushes (eg. clip, mantle, multiple, all ...)
    + Draw synchronized radiant brushes
    + Trace origin and/or velocity
    + Built in postfx shaders like SSAO, Cellshading, Toon ...
@@ -60,10 +60,18 @@ __Radiant Live-Link (requires [IW3xRadiant](/projects/iw3xo-radiant/))__
    + Synchronize up to 16 selected radiant-brushes 
    + Synchronized brushes are colliding (requires a prefab within the map)
    + Synchronized worldspawn settings (sundirection, suncolor, sunlight)
-   + Synchronize cameras (__radiant \-> server__, __server \-> radiant__ or __both__)
+   + Synchronize cameras (radiant \-> server, server \-> radiant or both)
+<div class="padding-2l"></div>
+__Map Exporting__
+   + Export brushes (includes tool brushes etc ...)
+   + Option to export merged triangles (quads) as patches
+   + Option to export leftover unmerged triangles as patches
+   + Option to export entities / reflection probes
+   + Option to export static models
+   + Option to export only certain parts of a map using a bounding box
 <div class="padding-2l"></div>
 __Movement__ 
-   + Dvar tweakable movement types like __quake3__/__cpm__ or __cs:s__/__surf__
+   + Dvar tweakable movement types like quake3/cpm or css/surf
    + Dvar tweakable stock movement settings
    + Dvar tweakable origin and/or velocity tracing
 <div class="padding-2l"></div>
@@ -76,7 +84,7 @@ __Misc__
    + Removed the need to precache xmodels (more assets will follow)
    + Manipulate entities with console commands (incomplete)
    + Added the most common gsc function additions like setvelocity(), jumpButtonPressed() ...
-   + Fixed mouse lag on newer Windows 10 builds (c) Snake :3
+   + Fixed mouse lag on some Windows 10 builds (c) Snake
 </div>
 
 
@@ -99,8 +107,8 @@ __Misc__
 <div class="highlight-header"><p>In-Game Console</p></div>
 {% highlight cpp %}
 [Hotkeys]
-|-> F1      :: Enable mouse cursor (in-game)
-|-> F2      :: Reset Console
+|-> F1         :: Enable mouse cursor (in-game)
+|-> F2         :: Reset Console
 |-> Mouse 1 :: Press and hold inputbar to move the console. Press and hold the resize-arrow to resize the console (bottom right)
 
 [Dvars]
@@ -146,12 +154,11 @@ __Misc__
 {% highlight cpp %}
 [Dvars]
 |-> r_drawCollision                    :: enables collision drawing (multiple options)
-|-> r_drawCollision_brushBegin         :: clipmap brush-index to start from
 |-> r_drawCollision_brushAmount        :: max amount of brushes to draw (starting at index _brushBegin)
 |-> r_drawCollision_brushDist          :: max drawing distance
-|-> r_drawCollision_brushIndexVisible  :: show clipMap brush indices (used for _brushFilter to only draw specific brushes)
+|-> r_drawCollision_brushIndexVisible  :: show clipMap brush indices for each visible debug brush
 |-> r_drawCollision_brushIndexFilter   :: ^ only draw specific brushes. Format "index index index" (1 2 3 4 20)
-|-> r_drawCollision_brushSorting       :: sort brushes back->front (Z-Fighting; Disabled when using filters) 
+|-> r_drawCollision_brushSorting       :: sort brushes (Z-Fighting; Disabled when using filters) 
 
 |-> r_drawCollision_hud                :: debug hud displaying the current amount of brushes/polygons
 |-> r_drawCollision_hud_ ...    
@@ -169,32 +176,38 @@ __Misc__
 <div class="highlight-header"><p>Debug Collision Brushes - Map Exporting</p></div>
 {% highlight cpp %}
 [Commands]
-|-> mapexport :: export the entire map that is currently loaded (using saved export options, see below)
+|-> mapexport                       :: export highlighted brushes + options or bounding box selection
+|-> mapexport_selectionAdd          :: adds a point to the bounding box (needs mapexport_selectionMode and 2 points in total)
+|-> mapexport_selectionClear        :: reset the bounding box (needs mapexport_selectionMode)
 
 [Dvars]
-|-> r_drawCollision_export                :: export "selected" brushes to a .map file (distance settings and culling ignored)
-|-> r_drawCollision_export_writeTriangles :: export leftover triangles, if enabled
-|-> r_drawCollision_export_writeEntities  :: export map entities, if enabled
-|-> r_drawCollision_export_writeModels    :: export static models, if enabled
+|-> mapexport_selectionMode         :: export only certain parts of a map by using a bounding box (see commands above)
+|-> mapexport_brushEpsilon1         :: brushside generation epsilon 1 (adv. only)
+|-> mapexport_brushEpsilon2         :: brushside generation epsilon 2 (adv. only)
+|-> mapexport_brushMinSize          :: only export brushes (with more then 6 sides) if their diagonal length is greater then this
+|-> mapexport_writeQuads            :: export merged triangles as quads, if enabled
+|-> mapexport_writeTriangles        :: export leftover triangles, if enabled
+|-> mapexport_writeEntities         :: export map entities, if enabled
+|-> mapexport_writeModels           :: export static models, if enabled
 {% endhighlight %}
 
 <div class="padding-2l"></div>
 <div class="highlight-header"><p>Debug Collision Brushes</p></div>
 {% highlight cpp %}
 [Commands]
-|-> radiant_saveSelection  :: save the current brush selection
-|-> radiant_clearSaved     :: clear saved brushes
+|-> radiant_saveSelection        :: save the current brush selection
+|-> radiant_clearSaved           :: clear saved brushes
 
 [Dvars]
-|-> radiant_live                :: enables live-Link
-|-> radiant_liveDebug           :: enables live-Link debug prints
-|-> radiant_livePort            :: port used for live-Link (has to match radiant)
-|-> radiant_syncCamera          :: camera sync modes (radiant->game, game->radiant, both)
-|-> radiant_brushColor          :: color of debug brushes created with radiant
-|-> radiant_brushCollision      :: enable brush collision (map needs to include prefab <dynamic_collision_bmodels.map>)
-|-> radiant_brushLit            :: enable custom-shader usage (unlit fake-lighting)
-|-> radiant_brushWireframe      :: enable additional wireframe
-|-> radiant_brushWireframeColor :: color of wireframe
+|-> radiant_live                 :: enables live-Link
+|-> radiant_liveDebug            :: enables live-Link debug prints
+|-> radiant_livePort             :: port used for live-Link (has to match radiant)
+|-> radiant_syncCamera           :: camera sync modes (radiant->game, game->radiant, both)
+|-> radiant_brushColor           :: color of debug brushes created with radiant
+|-> radiant_brushCollision       :: enable brush collision (map needs to include prefab <dynamic_collision_bmodels.map>)
+|-> radiant_brushLit             :: enable custom-shader usage (unlit fake-lighting)
+|-> radiant_brushWireframe       :: enable additional wireframe
+|-> radiant_brushWireframeColor  :: color of wireframe
 {% endhighlight %}
 
 <div class="padding-2l"></div>
