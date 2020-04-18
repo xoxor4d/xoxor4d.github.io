@@ -74,6 +74,7 @@ __Movement__
    + Dvar tweakable movement types like quake3/cpm or css/surf
    + Dvar tweakable stock movement settings
    + Dvar tweakable origin and/or velocity tracing
+   + Dvar tweakable world axis with fps zones / angles
 <div class="padding-2l"></div>
 __FileSystem__
    + Load FastFiles Addons and IWDs on startup
@@ -140,12 +141,16 @@ __Misc__
 |-> pm_preset_stock
 
 [Dvars]
-|-> pm_debug_traceOrigin    :: trace player origin (multiple options)
-|-> pm_debug_traceVelocity  :: trace player velocity (multiple options)
-|-> pm_hud_enable           :: disable debug hud with speed/movementtype display
-|-> pm_movementType         :: movement TYPES
-|-> pm_cpm_ ....            :: q3 settings
-|-> pm_cs_ ....             :: cs settings
+|-> pm_debug_drawAxis         :: draw axial information (axis/fps Zones)
+|-> pm_debug_drawAxis_radius  :: radius of axis/zones circle
+|-> pm_debug_drawAxis_height  :: height offset (from player origin)
+|-> pm_debug_drawAxis_col ... :: color of zone/s
+|-> pm_debug_traceOrigin      :: trace player origin (multiple options)
+|-> pm_debug_traceVelocity    :: trace player velocity (multiple options)
+|-> pm_hud_enable             :: disable debug hud with speed/movementtype display
+|-> pm_movementType           :: movement TYPES
+|-> pm_cpm_ ....              :: q3 settings
+|-> pm_cs_ ....               :: cs settings
 |-> pm_ ......
 {% endhighlight %}
 
@@ -218,6 +223,7 @@ __Misc__
 |-> iw3xo_github           :: link, opens IW3xo Github repo
 |-> iw3xo_radiant_github   :: link, opens IW3xRadiant Github repo
 |-> patchdvars             :: re-register cg_fovscale and snaps to patch their limits
+|-> r_noborder             :: borderless fullscreen (needs vid_xpos/ypos 0)
 
 |-> loadzone <zoneName>                   :: load/reload zones (fastfiles)
 |-> ent_rotateTo <entityID> <angles vec3> :: rotate any entity 
