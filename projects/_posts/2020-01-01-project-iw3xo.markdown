@@ -55,6 +55,7 @@ __Rendering__
    + Draw synchronized radiant brushes
    + Trace origin and/or velocity
    + Built in postfx shaders like SSAO, Cellshading, Toon ...
+   + Direct3D9Ex
 <div class="padding-2l"></div>
 __Radiant Live-Link (requires [IW3xRadiant](/projects/iw3xo-radiant/))__ 
    + Synchronize up to 16 selected radiant-brushes 
@@ -79,6 +80,7 @@ __Movement__
 __FileSystem__
    + Load FastFiles Addons and IWDs on startup
    + Live FastFile loading/reloading
+   + Increased AssetPools
 <div class="padding-2l"></div>
 __Misc__
    + Dvar cheat/write protection removed
@@ -197,7 +199,7 @@ __Misc__
 {% endhighlight %}
 
 <div class="padding-2l"></div>
-<div class="highlight-header"><p>Debug Collision Brushes</p></div>
+<div class="highlight-header"><p>Radiant Live-Link</p></div>
 {% highlight cpp %}
 [Commands]
 |-> radiant_saveSelection        :: save the current brush selection
@@ -224,6 +226,7 @@ __Misc__
 |-> iw3xo_radiant_github   :: link, opens IW3xRadiant Github repo
 |-> patchdvars             :: re-register cg_fovscale and snaps to patch their limits
 |-> r_noborder             :: borderless fullscreen (needs vid_xpos/ypos 0)
+|-> r_d3d9ex               :: enables extended dx9 interface (on by default)
 
 |-> loadzone <zoneName>                   :: load/reload zones (fastfiles)
 |-> ent_rotateTo <entityID> <angles vec3> :: rotate any entity 
