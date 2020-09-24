@@ -49,6 +49,7 @@ status:         "WIP - PUBLIC"
 __Interface__
    + Completely new main menu
    + Improved in-game console (eg. drag / resize with the cursor, console output when not using the fullscreen console, ... )
+   + ImGUI (Devgui) to access almost all additional dvars eg. map-exporting, movement tweaks / debugging etc ...
 <div class="padding-2l"></div>
 __Rendering__ 
    + Draw debug collision brushes (eg. clip, mantle, multiple, all ...)
@@ -56,6 +57,8 @@ __Rendering__
    + Trace origin and/or velocity
    + Built in postfx shaders like SSAO, Cellshading, Toon ...
    + Direct3D9Ex
+   + Borderless fullscreen
+   + Custom aspect ratios
 <div class="padding-2l"></div>
 __Radiant Live-Link (requires [IW3xRadiant](/projects/iw3xo-radiant/))__ 
    + Synchronize up to 16 selected radiant-brushes 
@@ -64,12 +67,12 @@ __Radiant Live-Link (requires [IW3xRadiant](/projects/iw3xo-radiant/))__
    + Synchronize cameras (radiant \-> server, server \-> radiant or both)
 <div class="padding-2l"></div>
 __Map Exporting__
-   + Export brushes (includes tool brushes etc ...)
+   + Export brushes, brushmodels, triggers (mapEnts)
    + Option to export merged triangles (quads) as patches
    + Option to export leftover unmerged triangles as patches
    + Option to export entities / reflection probes
    + Option to export static models
-   + Option to export only certain parts of a map using a bounding box
+   + Option to export only certain selection of a map using a bounding box
 <div class="padding-2l"></div>
 __Movement__ 
    + Dvar tweakable movement types like quake3/cpm or css/surf
@@ -78,9 +81,10 @@ __Movement__
    + Dvar tweakable world axis with fps zones / angles
 <div class="padding-2l"></div>
 __FileSystem__
-   + Load FastFiles Addons and IWDs on startup
+   + Load FastFile addons and IWDs on startup
    + Live FastFile loading/reloading
    + Increased AssetPools
+   + Rawfile menu loading / hot-reloading
 <div class="padding-2l"></div>
 __Misc__
    + Dvar cheat/write protection removed
@@ -88,6 +92,9 @@ __Misc__
    + Manipulate entities with console commands (incomplete)
    + Added the most common gsc function additions like setvelocity(), jumpButtonPressed() ...
    + Fixed mouse lag on some Windows 10 builds (c) Snake
+   + Menu Exporter (c) SheepWizard 
+   + Live editing of [ocean shader](/projects/cod4-ocean/) parameters via the DevGui
+   + CubeMapShot fixes
 </div>
 
 
@@ -107,32 +114,53 @@ __Misc__
 # In-Depth Features / Functions / Dvars
 <div class="padding-2l"></div>
 
+<div class="highlight-header"><p>DevGui</p></div>
+{% highlight cpp %}
+[Hotkeys]
+|-> Home       :: Opens ImGui Demo menu (DEBUG Build only)
+|-> End        :: Opens DevGui (DEBUG Build only)
+
+[Commands]
+|-> devgui        :: opens the devgui
+|-> devgui_demo   :: opens the ImGui demo menu
+{% endhighlight %}
+
+
+<div class="padding-2l"></div>
 <div class="highlight-header"><p>In-Game Console</p></div>
 {% highlight cpp %}
 [Hotkeys]
 |-> F1         :: Enable mouse cursor (in-game)
 |-> F2         :: Reset Console
-|-> Mouse 1 :: Press and hold inputbar to move the console. Press and hold the resize-arrow to resize the console (bottom right)
+|-> Mouse 1    :: Press and hold inputbar to move the console. Press and hold the resize-arrow to resize the console (bottom right)
 
 [Dvars]
-|-> xo_con_outputHeight  :: line amount for mini-con output window
-|-> xo_con_maxMatches    :: maximum amount of matches to draw
-|-> xo_con_padding       :: padding from window borders (default console state (F2))
-|-> xo_con_useDepth      :: use depth-preview shader as background for output window
-|-> xo_con .....
-|-> con_minicon_position :: change position of the minicon
-|-> con_minicon .....
+|-> xo_con_outputHeight          :: line amount for mini-con output window
+|-> xo_con_maxMatches            :: maximum amount of matches to draw
+|-> xo_con_padding               :: padding from window borders (default console state (F2))
+|-> xo_con_useDepth              :: use depth-preview shader as background for output window
+|-> xo_con_hintBoxTxtColor ...   :: change console text colors
+|-> xo_con ...
+|-> con_minicon_position         :: change position of the minicon
+|-> con_minicon ...
 {% endhighlight %}
 
+
 <div class="padding-2l"></div>
-<div class="highlight-header"><p>Postfx Shaders</p></div>
+<div class="highlight-header"><p>Custom Shaders</p></div>
 {% highlight cpp %}
 [Types]
 |-> XO_SHADEROVERLAY 1 :: SSAO (dvars : xo_ssao_)
 |-> XO_SHADEROVERLAY 2 :: CELLSHADING
 |-> XO_SHADEROVERLAY 3 :: OUTLINER (dvars : xo_outliner_)
 |-> XO_SHADEROVERLAY 4 :: FULLSCREEN-DEPTH
+|-> XO_SHADEROVERLAY 5 :: CUSTOM (dvar : xo_shaderoverlay_custom)
+
+[Dvars]
+|-> xo_shaderoverlay_custom   :: material to be used as a full screen overlay shader
+|-> xo_shaderdbg_matrix       :: debug transformation matrices
 {% endhighlight %}
+
 
 <div class="padding-2l"></div>
 <div class="highlight-header"><p>Movement</p></div>
@@ -155,6 +183,7 @@ __Misc__
 |-> pm_cs_ ....               :: cs settings
 |-> pm_ ......
 {% endhighlight %}
+
 
 <div class="padding-2l"></div>
 <div class="highlight-header"><p>Debug Collision Brushes</p></div>
@@ -179,6 +208,7 @@ __Misc__
 |-> r_drawCollision_line ...           :: line options
 {% endhighlight %}
 
+
 <div class="padding-2l"></div>
 <div class="highlight-header"><p>Debug Collision Brushes - Map Exporting</p></div>
 {% highlight cpp %}
@@ -189,6 +219,7 @@ __Misc__
 
 [Dvars]
 |-> mapexport_selectionMode         :: export only certain parts of a map by using a bounding box (see commands above)
+|-> mapexport_brush5Sides           :: export brushes that only consist of 5 sides
 |-> mapexport_brushEpsilon1         :: brushside generation epsilon 1 (adv. only)
 |-> mapexport_brushEpsilon2         :: brushside generation epsilon 2 (adv. only)
 |-> mapexport_brushMinSize          :: only export brushes (with more then 6 sides) if their diagonal length is greater then this
@@ -197,6 +228,7 @@ __Misc__
 |-> mapexport_writeEntities         :: export map entities, if enabled
 |-> mapexport_writeModels           :: export static models, if enabled
 {% endhighlight %}
+
 
 <div class="padding-2l"></div>
 <div class="highlight-header"><p>Radiant Live-Link</p></div>
@@ -217,6 +249,22 @@ __Misc__
 |-> radiant_brushWireframeColor  :: color of wireframe
 {% endhighlight %}
 
+
+<div class="padding-2l"></div>
+<div class="highlight-header"><p>Menus</p></div>
+{% highlight cpp %}
+[Commands]
+|-> menu_loadlist_raw <menulist_name.txt>                :: rawfile load/reload menus defined in a menulist. 
+                                                            files need to be in devraw directories (needs fs_usedevdir)   
+|-> menu_list                                            :: prints a list of all loaded menus to the console
+|-> menu_open <menu_name>                                :: opens a loaded menu by name
+|-> menu_open_ingame <menu_name>                         :: opens a loaded menu by name (ingame)
+|-> menu_closebyname <menu_name>                         :: close a loaded and visible menu by name
+|-> menu_export <menu_name> <[optional] subdir>          :: exports the specified menu
+|-> menu_export_itemdefs <menu_name> <[optional] subdir> :: exports all itemdefs of the specified menu
+{% endhighlight %}
+
+
 <div class="padding-2l"></div>
 <div class="highlight-header"><p>Misc</p></div>
 {% highlight cpp %}
@@ -227,6 +275,9 @@ __Misc__
 |-> patchdvars             :: re-register cg_fovscale and snaps to patch their limits
 |-> r_noborder             :: borderless fullscreen (needs vid_xpos/ypos 0)
 |-> r_d3d9ex               :: enables extended dx9 interface (on by default)
+|-> r_aspectRatio          :: use 4 / custom to enable custom aspect ratios (r_aspectRatio_custom)
+|-> r_aspectRatio_custom   :: 21:9 = 2.333 / 32:9 = 3.5555
+|-> cubeMapShot            :: fully works now -> disable r_smp_backend when using it
 
 |-> loadzone <zoneName>                   :: load/reload zones (fastfiles)
 |-> ent_rotateTo <entityID> <angles vec3> :: rotate any entity 
