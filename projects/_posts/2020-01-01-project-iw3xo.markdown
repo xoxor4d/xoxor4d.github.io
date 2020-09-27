@@ -79,6 +79,8 @@ __Movement__
    + Dvar tweakable stock movement settings
    + Dvar tweakable origin and/or velocity tracing
    + Dvar tweakable world axis with fps zones / angles
+   + [MDD World Compass](https://github.com/Jelvan1/cgame_proxymod/blob/master/src/compass.c) - Ported by: [n1kjs](https://github.com/Shkerzy)
+   + [MDD CampingGaz (cgaz)](https://github.com/Jelvan1/cgame_proxymod/blob/master/src/cg_cgaz.c) - Ported by: [n1kjs](https://github.com/Shkerzy)
 <div class="padding-2l"></div>
 __FileSystem__
    + Load FastFile addons and IWDs on startup
@@ -91,8 +93,8 @@ __Misc__
    + Removed the need to precache xmodels (more assets will follow)
    + Manipulate entities with console commands (incomplete)
    + Added the most common gsc function additions like setvelocity(), jumpButtonPressed() ...
-   + Fixed mouse lag on some Windows 10 builds (c) Snake
-   + Menu Exporter (c) SheepWizard 
+   + Fixed mouse lag on some Windows 10 builds (c) [Snake](https://github.com/momo5502)
+   + Menu Exporter by [SheepWizard](https://github.com/SheepWizard)
    + Live editing of [ocean shader](/projects/cod4-ocean/) parameters via the DevGui
    + CubeMapShot fixes
 </div>
@@ -171,16 +173,34 @@ __Misc__
 |-> pm_preset_stock
 
 [Dvars]
-|-> pm_debug_drawAxis         :: draw axial information (axis/fps Zones)
-|-> pm_debug_drawAxis_radius  :: radius of axis/zones circle
-|-> pm_debug_drawAxis_height  :: height offset (from player origin)
-|-> pm_debug_drawAxis_col ... :: color of zone/s
-|-> pm_debug_traceOrigin      :: trace player origin (multiple options)
-|-> pm_debug_traceVelocity    :: trace player velocity (multiple options)
-|-> pm_hud_enable             :: disable debug hud with speed/movementtype display
-|-> pm_movementType           :: movement TYPES
-|-> pm_cpm_ ....              :: q3 settings
-|-> pm_cs_ ....               :: cs settings
+|-> mdd_cgaz                     :: display mDd CampingGaz HUD
+|-> mdd_cgaz_ground              :: show true ground zones
+|-> mdd_cgaz_speed               :: speed at which to draw cgaz
+|-> mdd_cgaz_yh                  :: cgaz y position and thickness
+|-> mdd_cgaz_rgbaNoAccel         :: color of no accel zones
+|-> mdd_cgaz_rgbaPartialAccel    :: color of partial accel zones
+|-> mdd_cgaz_rgbaFullAccel       :: color of full accel zones
+|-> mdd_cgaz_rgbaTurnZone        :: color of turn zones
+
+|-> mdd_compass                  :: display mDd world compass
+|-> mdd_compass_yh               :: compass y position and thickness
+|-> mdd_compass_quadrant_rgbas0  :: color 0 to 90 quadrant
+|-> mdd_compass_quadrant_rgbas1  :: color 90 to 180 quadrant
+|-> mdd_compass_quadrant_rgbas2  :: color 180 to 270 quadrant
+|-> mdd_compass_quadrant_rgbas3  :: color 270 to 360 quadrant
+|-> mdd_compass_ticks_rgba       :: color of ticks
+
+|-> pm_debug_drawAxis            :: draw axial information (axis/fps Zones)
+|-> pm_debug_drawAxis_radius     :: radius of axis/zones circle
+|-> pm_debug_drawAxis_height     :: height offset (from player origin)
+|-> pm_debug_drawAxis_col ...    :: color of zone/s
+|-> pm_debug_traceOrigin         :: trace player origin (multiple options)
+|-> pm_debug_traceVelocity       :: trace player velocity (multiple options)
+
+|-> pm_hud_enable                :: disable debug hud with speed/movementtype display
+|-> pm_movementType              :: movement TYPES
+|-> pm_cpm_ ....                 :: q3 settings
+|-> pm_cs_ ....                  :: cs settings
 |-> pm_ ......
 {% endhighlight %}
 
@@ -283,3 +303,11 @@ __Misc__
 |-> ent_rotateTo <entityID> <angles vec3> :: rotate any entity 
 |-> more entity commands to follow ....
 {% endhighlight %}
+
+<div class="padding-2l"></div>
+[![Play](/assets/img/shader-ocean/vid01.jpg# center){: style="width: 100%"}](https://www.youtube.com/watch?v=0lDc3uzDOD4)
+
+<div align="center" style="margin-top: 6rem; margin-bottom: -2rem" markdown="1">
+None of this would be possible without the friends over at [IW4x](https://github.com/IW4x/) and [Plutonium](https://plutonium.pw/)  
+Much love ❤ 
+</div> 
