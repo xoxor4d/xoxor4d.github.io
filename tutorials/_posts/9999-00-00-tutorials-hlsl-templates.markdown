@@ -6,6 +6,9 @@ date:       2020-01-01 23:58:00
 categorie:  Call of Duty 4 - HLSL
 permalink: /tutorials/hlsl-templates/
 ---
+
+<!-- overwrite header bg if defined -->
+<script> var header_bg = "/assets/img/compileTools/header.jpg"; </script>
 <!-- tag for quick links so we do not show the nav -->
 <a name="quicklink"></a>
 

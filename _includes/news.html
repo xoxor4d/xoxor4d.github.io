@@ -1,13 +1,13 @@
 <div class="row">
 
-{% for post in site.categories.projects limit:3  %}
+{% for post in site.categories.projects limit:9  %}
 
     <div class="col-sm-4 center">
 
         <div class="widget">
 
             <div class="widget-header">
-
+                <a href="{{ post.url | prepend: site.baseurl }}">
                 <div class="text-right text-on-image-status {{ post.status }}">{{ post.status }}</div>
                 
                 {% if post.image == "" %}
@@ -22,8 +22,9 @@
                 {% endif %}
 
                 <div class="text-on-image">
-                    <p class="verlauf"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></p>
+                    <p class="verlauf">{{ post.title }}</p>
                 </div>
+                </a>
             </div>
 
             <div class="widget-content">
@@ -37,11 +38,11 @@
 
             </div>
 
-            <div class="widget-footer">
+            <!-- <div class="widget-footer">
 
                 <a class="widget-button" href="{{ post.url | prepend: site.baseurl }}">Read more.</a>
 
-            </div>
+            </div> -->
 
             <div class="clear"></div>
 

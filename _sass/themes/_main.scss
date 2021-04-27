@@ -58,6 +58,14 @@ img[src~="right"] {
   padding: 1rem;
 }
 
+img[src~="fit"] {
+    width: 100vw;
+    height: auto;
+    max-width: none;
+    max-height: 100vh;
+    object-fit: contain;
+}
+
 // add spacing to markdown lists
 li > ul {
   padding-bottom: 0.5em;

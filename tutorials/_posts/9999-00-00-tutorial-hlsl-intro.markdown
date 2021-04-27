@@ -5,10 +5,14 @@ date:       2020-01-01 23:59:00
 categorie:  Call of Duty 4 - HLSL
 permalink: /tutorials/hlsl-intro/
 ---
+
+<!-- overwrite header bg if defined -->
+<script> var header_bg = "/assets/img/compileTools/header.jpg"; </script>
+
 <div align="center" style="margin-top: -1rem" markdown="1">
 #### Table of Contents
 [Introduction](#intro) :: [Overview](#creatematerials) :: [Material Templates](#templates) :: [Asset Manager](#assman)   
-[Techset](#techset) :: [Technique](#technique) :: [Vertex Shader](#vertex) :: [Pixel Shader](#pixel) :: [Compiling Shaders](#compiling) :: [Linking Shaders](#usingshader)
+[Techset](#techset) :: [Technique](#technique) :: [Vertex Shader](#vertex) :: [Pixel Shader](#pixel) :: [Compiling Shaders / Download](#compiling) :: [Linking Shaders](#usingshader)
 <div class="padding-2l"></div></div> 
 
 <div align="center" markdown="1">

@@ -27,6 +27,109 @@
 	}
 }
 
+.vertical-line-centered {
+    border-left: 1px solid #5f656d; /* Border on the left */
+    width: 1px; /* Width instead of height */
+    height: 100%;
+  }
+
+.image-hover-highlight {
+
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+
+    -webkit-transition: all 0.50s;
+    transition: all 0.50s;
+
+    /* filter: blur(5px); */
+    /* -webkit-filter: blur(5px); */
+    /* -moz-filter: blur(5px); */
+    /* -o-filter: blur(5px); */
+    /* -ms-filter: blur(5px); */
+
+    filter: grayscale(1);
+    -webkit-filter: grayscale(1); 
+    -moz-filter: grayscale(1);
+    -o-filter: grayscale(1);
+    -ms-filter: grayscale(1);
+    
+    &:hover {
+        //border: 1px solid gray;
+        /* filter: brightness(140%);
+        -webkit-filter: brightness(140%);
+        -moz-filter: brightness(140%);
+        -o-filter: brightness(140%);
+        -ms-filter: brightness(140%); */
+
+        /* filter: blur(0px); */
+        /* -webkit-filter: blur(0px); */
+        /* -moz-filter: blur(0px); */
+        /* -o-filter: blur(0px); */
+        /* -ms-filter: blur(0px); */
+
+        filter: grayscale(0);
+        -webkit-filter: grayscale(0); 
+        -moz-filter: grayscale(0);
+        -o-filter: grayscale(0);
+        -ms-filter: grayscale(0);
+
+        -webkit-transition: all 0.50s;
+        transition: all 0.50s;
+    }
+}
+
+.full-width-element-container-centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    user-select: none;
+    pointer-events: none;
+    font-size: xx-large;
+  }
+
+.full-width-element-text-centered {
+    position: relative;
+   /*  top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    margin-bottom: -1rem;
+    user-select: none;
+    pointer-events: none;
+    font-size: xx-large;
+    text-shadow: 0px 0px 15px black;
+    filter: drop-shadow(0px 4px 5px black);
+  }
+
+  .full-width-element-text-centered-sub {
+    position: relative;
+    /* top: 60%;
+    left: 50%;
+    transform: translate(-50%, -40%); */
+    user-select: none;
+    pointer-events: none;
+    font-size: medium;
+    text-shadow: 0px 0px 15px black;
+    filter: drop-shadow(0px 4px 5px black);
+  }
+
+.full-width-element {
+    /* margin-left: calc(-100vw / 2 + 1300px / 2); 
+    margin-right: calc(-100vw / 2 + 1300px / 2); */
+    text-align: center;
+    position: relative;
+}
+
+.full-width-element-container {
+    /* margin-left: calc(-100vw / 2 + 1600px / 2); 
+    margin-right: calc(-100vw / 2 + 1600px / 2); */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    //border-bottom: inset;
+}
+
 // move nav downwards when hidden for the showup animation 
 // (keyframe hidden)
 .sticky-hidden {
@@ -92,6 +195,8 @@
 	font-size: 16px;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 300;
+    //text-shadow: 0px 0px 10px black;
+    filter:drop-shadow(0px 0px 5px black);
 
 	transition: 0.2s;
 }
@@ -377,7 +482,7 @@ blockquote {
 	border: 1px solid #e8e8f1;
 	background: #FFF;
 	box-shadow: 2px 2px 4px #00000008;
-	margin-top: 35px;
+	margin-top: 25px;
 
 	.widget-header {
 		position: relative;
@@ -396,15 +501,23 @@ blockquote {
 			//background-color:#1f1b34;
 			background-image: url('/assets/img/no-image-found.png');
 		}
-
 		.overlay-try {
-			//background-image: -webkit-linear-gradient(45deg, #71c6f1, #5584ff);
-			width: 100%;
+            -webkit-transition: all 0.50s;
+            transition: all 0.50s;
+
+            width: 100%;
 			height: 220px;
 			position: absolute;
 			top: 0;
 			opacity: 0.5;
 			background-color:#1f1b34;
+
+            &:hover {
+                opacity: 0.0;
+
+                -webkit-transition: all 0.50s;
+                transition: all 0.50s;
+            }
 		}
 
 		.text-on-image-status {
@@ -416,7 +529,9 @@ blockquote {
 			border-radius: 0 0 0 4px;
 			z-index: 5;
 			color: #FFF;
-			background-color: rgba(0,0,0,0.3);
+			background-color: rgba(0,0,0,0.4);
+            user-select: none;
+            pointer-events: none;
 			
 			&.Done {
 				color: #00ff94;
@@ -439,6 +554,8 @@ blockquote {
 			transition: all .1s linear 0s;
 			z-index: 5;
 			background-color: rgba(0,0,0,.6);
+            user-select: none;
+            pointer-events: none;
 		}
 
 		.verlauf {

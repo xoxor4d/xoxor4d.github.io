@@ -6,6 +6,9 @@ date:       2020-01-01 23:58:00
 categorie:  Call of Duty 4 - HLSL
 permalink: /tutorials/hlsl-techsets/
 ---
+
+<!-- overwrite header bg if defined -->
+<script> var header_bg = "/assets/img/compileTools/header.jpg"; </script>
 <!-- tag for quick links so we do not show the nav -->
 <a name="quicklink"></a>
 
@@ -75,15 +78,15 @@ Not defining a state used by the game results in .. ? (unsure)
 {% endhighlight %}
 
 <div class="padding-1l" style="margin-bottom: 0.5rem"></div>
-<div class="highlight-header"><p>"Model techsets with suffix "mc_"</p></div>
+<div class="highlight-header"><p>"Model techsets with prefix "mc_"</p></div>
 {% highlight cpp %}
 /* eg. viewmodels */
-/* most techniques used for models have a _dtex prefix*/
+/* most techniques used for models have a _dtex suffix*/
 
-"fakelight normal":             // radiant fake-lighting
+"fakelight normal":
     fakelight_normal_dtex;
 
-"fakelight view":               // radiant fake-lighting
+"fakelight view":
     fakelight_view_dtex;
 
 "case texture":
@@ -209,11 +212,72 @@ Not defining a state used by the game results in .. ? (unsure)
 <div align="center"><div class="seperator-75p"></div></div>
 <div class="padding-1l"></div>
 
-# 4. Additional Information
+# 4. Additional Information / Engine Background (SM / HSM)
 
-1. Creating "lit" world-materials is hard and I wasn't able to get them to work. It seems like the game is prepending __"l_hsm_"__ to techset names even tho they are not referenced by anything within my material chain. I guess thats something done by the engine at runtime and these are probably used for instanced lighting / baked lighting. I'm not really sure.
-2. Creating "lit" model-materials is easier, but still requires multiple shaders to fully support each and every lighting state. Tbh. I'm fine with doing it like in the example I posted above.
-3. Looking at stock techsets and techniques can help you quite alot :)
+<div class="highlight-header"><p>Techset abbreviations</p></div>
+{% highlight cpp %}
+w       // world
+wc      // world color
+m       // model
+mc      // model color
+l       // light
+sm      // shadow
+hsm     // hardware shadow
+scroll  // scrolling texcoords
+r0      // reflection sample
+c0      // colormap
+d0      // detailmap
+n0      // normalmap
+s0      // specularmap
+{% endhighlight %}
+
+Using the __l_sm__ prefix for techsets allows the engine to remap it to a __l_hsm__ (hardware shadowmapping) techset if cod4 detects that your GPU supports HSM. 
+This means that you need to have the same techset name but prefixed with __l_hsm__. Linker will throw an error if you don't.
+
+Example: most, if not all cod4 weapons use the __l_sm_r0c0s0__ techset. If your GPU supports HSM, the engine will now look for the __l_hsm__ prefixed techset. Since this example is about models, the engine will look for the __mc__ prefix. That means that the actual techset being used is __mc_l_hsm_r0c0s0__.  
+
+<div align="center" markdown="1">
+Confused? This might clear things up for you: [cod4-shader-reversed-weapon](https://github.com/xoxor4d/cod4-shader-reversed-weapon)
+</div>
+
+
+
+<div class="highlight-header"><p>Techset Lighting States Explained</p></div>
+{% highlight cpp %}
+"fakelight normal"              // radiant fakelight
+"fakelight view":               // radiant fakelight
+"case texture":                 // radiant only  
+"shaded wireframe":             // radiant only  
+"solid wireframe":              // radiant only  
+"debug bumpmap":                // r_debugShader 1-4  
+"debug bumpmap instanced":      // ^ grouped objects like grass
+"depth prepass":                
+"build shadowmap depth":  
+"build shadowmap color":  
+"build floatz":  
+"unlit":                        // fullbright  
+"lit":                          // sm_enable 0 + not in sun || sm_enable 1 + not in sun  
+"lit sun":                      // sm_enable 0 + in sun  
+"lit sun shadow":               // sm_enable 1 + in sun  
+"lit spot":                     // sm_enable 0 :: spotlight / dlight  
+"lit spot shadow":              // sm_enable 1 :: spotlight / dlight  
+"lit omni":                     // no clue  
+"lit omni shadow":              // no clue  
+"lit instanced":                // prob. grouped objects like grass / trees
+"lit instanced sun":            // ^
+"lit instanced sun shadow":     // ^
+"lit instanced spot":           // ^
+"lit instanced spot shadow":    // ^
+"lit instanced omni":           // ^
+"lit instanced omni shadow":    // ^
+"light omni":                   // fx omni lights  
+"light spot":                   // fx spot lights  
+"light spot shadow":            // fx shadow-casting spot lights  
+"sunlight preview":             // radiant only?  
+"shadowcookie caster":          // shadow caster
+"shadowcookie receiver":        // shadow receiver
+{% endhighlight %}
+
 
 <div class="padding-1l"></div>
 <div align="center"><div class="seperator-75p"></div></div>
