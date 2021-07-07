@@ -3,7 +3,7 @@ layout:     post
 title:      "In-depth :: Techsets"
 subtitle:   ">> root\\raw\\techsets"
 date:       2020-01-01 23:58:00
-categorie:  Call of Duty 4 - HLSL
+categorie:  hlsl
 permalink: /tutorials/hlsl-techsets/
 ---
 

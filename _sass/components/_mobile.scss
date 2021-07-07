@@ -14,7 +14,7 @@
 	display: inline-block;
 	transition: 0.2s;
 
-	background: url(https://iamturner.co.uk/codepen/menu-icon.png) no-repeat center;
+	background: url(/assets/img/mobile_menu.png) no-repeat center;
 	background-size: 54px;
 
 	&:active {
@@ -32,8 +32,8 @@
 	//display: table-column;
 }
 
-$mobile-nav-bg-prim: #1f1b33; //534a613d
-$mobile-nav-bg-sec: #1f1b33; //4a41573f
+$mobile-nav-bg-prim: #1f1b333a; //534a613d
+$mobile-nav-bg-sec: #1f1b333a; //4a41573f
 
 section {
 	position: absolute;
@@ -48,22 +48,22 @@ section {
 	-webkit-transition: -webkit-transform 0.3s;
 	
 	&.one {
-	  	background: $mobile-nav-bg-prim;
+	  	//background: $mobile-nav-bg-prim;
 	  	-webkit-transition-delay: 0s;
 	}
 	
 	&.two {
-		background: $mobile-nav-bg-sec;
+		//background: $mobile-nav-bg-sec;
 		-webkit-transition-delay: 0.05s;
 	}
 	
 	&.three {
-		background: $mobile-nav-bg-prim;
+		//background: $mobile-nav-bg-prim;
 		-webkit-transition-delay: 0.1s;
 	}
 	
 	&.four {
-		background: $mobile-nav-bg-sec;
+		//background: $mobile-nav-bg-sec;
 		-webkit-transition-delay: 0.15s;
 	}
 
@@ -86,7 +86,7 @@ section {
 	}
 	  
 	&.mobile-nav-bg {
-		background-color: #1f1b33;
+		background-color: #1f1b337c;
 		border-top: 1px solid #392f50;
 		left: 0;
 		width: 100%;

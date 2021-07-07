@@ -4,28 +4,46 @@ title: Tutorials
 permalink: /tutorials/
 ---
 
+<!-- hlsl -->
 {% for post in site.categories.tutorials  %}
-    {% capture this_categorie %}{{ post.categorie | categorie: "%Y" }}{% endcapture %}
-    {% capture next_categorie %}{{ post.previous.categorie | categorie: "%Y" }}{% endcapture %}
+    {% capture this_categorie %}{{ post.categorie }}{% endcapture %}
 
     {% if forloop.first %}
-        <h2 class="c-tutorials_categorie" id="{{ this_categorie }}-ref">{{this_categorie}}</h2>
+        <h2 class="c-tutorials_categorie" id="hlsl">Call of Duty 4 - HLSL</h2>
         <ul class="c-tutorials_list">
     {% endif %}
 
-    <li class="c-archives__item">
-        <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
-        <p>{{ post.date | date: "%b %-d, %Y" }}</p>
-    </li>
+    {% if this_categorie == 'hlsl' %}
+        <li class="c-archives__item">
+            <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+             <p>{{ post.date | date: "%b %-d, %Y" }}</p>
+        </li>
+    {% endif %}
 
     {% if forloop.last %}
         </ul>
+    {% endif %}
+{% endfor %}
 
-    {% else %}
-        {% if this_categorie != next_categorie and next_categorie != "" %}
-            </ul>
-            <h2 class="c-tutorials_categorie" id="{{ next_categorie }}-ref">{{next_categorie}}</h2>
-            <ul class="c-tutorials_list">
-        {% endif %}
+<div class="padding-1l"></div>
+
+<!-- iw3xo -->
+{% for post in site.categories.tutorials  %}
+    {% capture this_categorie %}{{ post.categorie }}{% endcapture %}
+
+    {% if forloop.first %}
+        <h2 class="c-tutorials_categorie" id="iw3xo">IW3xo</h2>
+        <ul class="c-tutorials_list">
+    {% endif %}
+
+    {% if this_categorie == 'iw3xo' %}
+        <li class="c-archives__item">
+            <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+             <p>{{ post.date | date: "%b %-d, %Y" }}</p>
+        </li>
+    {% endif %}
+
+    {% if forloop.last %}
+        </ul>
     {% endif %}
 {% endfor %}

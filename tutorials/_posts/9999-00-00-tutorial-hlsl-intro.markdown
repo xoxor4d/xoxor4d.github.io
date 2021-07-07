@@ -1,8 +1,9 @@
 ---
 layout:     post
 title:      "Introduction to custom CoD4-shaders"
+subtitle:   "using a simple 2D shader as an example"
 date:       2020-01-01 23:59:00
-categorie:  Call of Duty 4 - HLSL
+categorie:  hlsl
 permalink: /tutorials/hlsl-intro/
 ---
 

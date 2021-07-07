@@ -35,6 +35,8 @@ var mobile = document.getElementById("mobile-nav");
 var mobileLogo = document.getElementById("mobile-nav-logo");
 var mobileContent = document.getElementById("mobile-nav-content");
 var mobileContentBG = document.getElementById("mobile-nav-bg");
+//var sticky_bg = document.getElementById("header sticky"); 
+
 var header_bg;
 
 function isDefined(x) {
@@ -173,98 +175,62 @@ window.onscroll = function() {
 
 var wasAllowedToScroll = false;
 
+function to_range(o_start, o_end, n_start, n_end, value)
+{
+    var o_diff = o_end - o_start;
+    var n_diff = n_end - n_start;
+    var ratio = n_diff / o_diff;
+    
+    return value * ratio + n_start;
+}
+
 function navScroll() 
 {
-  // mobile :: set "mob_isMobile" once if on any sort of mobile device is used
-  isMobile();
+    // mobile :: set "mob_isMobile" once if on any sort of mobile device is used
+    isMobile();
 
-  // mobile :: close menu when out of view
-  if(mob_menuActive) 
-  {
-    // close the menu if we scrolled out of it
-    if(window.pageYOffset >= 360) {
-      // close the menu
-      toggleMobileMenu();
-    }
-
-    return;
-  }
-
-  // no dymanic nav on any sort of mobile device
-  if(mob_isMobile) {
-    return;
-  }
-
-  // get the scroll direction
-  var scrollDir = getScrollDirection(window.pageYOffset);
-
-  // only modify the header when there is/was enough content to scroll
-  if(document.body.scrollHeight >= 1300 || wasAllowedToScroll) 
-  {
-    // debug
-    //console.log('currScroll @ ' + window.pageYOffset);
-    //console.log('scrollDir @ ' + scrollDir);
-
-    // one time on page load to set nav height. only usefull when jumped to tags within the page instead of landing at the top
-    // using wasAllowedToScroll as a one shot bool
-    if(!wasAllowedToScroll) 
+    // mobile :: close menu when out of view
+    if(mob_menuActive) 
     {
-        if(window.pageYOffset < 40) {
-          //console.log('initial height: 360 @ scroll: ' + window.pageYOffset);
-          bg.style.height = "360px";
-        } else {
-          //console.log('initial height: 160 @ scroll: ' + window.pageYOffset);
-          bg.style.height = "160px";
-        }
-    }
-    
-    // we loose scrollHeight on resizing the bg and may fall under the min-threshold to scroll
-    // ^ allow further scrolling
-    wasAllowedToScroll = true;
-    
-    // small nav between 1 - 161
-    if (window.pageYOffset > 0 && window.pageYOffset < 161) 
-    {
-      if(header.classList.contains("sticky")) 
-      {
-        // snap to small nav when scrolling up
-        if(scrollDir == -1 && window.pageYOffset > 100) {
-          window.scrollBy(0, -4);
+        // close the menu if we scrolled out of it
+        if(window.pageYOffset >= 360) 
+        {
+            // close the menu
+            toggleMobileMenu();
         }
 
-        else if(scrollDir == -1 && window.pageYOffset < 91) {
-          window.scrollBy(0, -8);
-        }
-
-        // do not resize when already using the small nav
         return;
-      }
-        //console.log('STICKY @ ' + window.pageYOffset);
-        bg.style.height = "160px";
-        bg.style.transition = "0.25s";
-        header.classList.add("sticky");
-        header.classList.remove("sticky-hidden");
     }
 
-    else if (window.pageYOffset <= 0)
-    {
-      if(!header.classList.contains("sticky")) {
+    // no dymanic nav on any sort of mobile device
+    if(mob_isMobile) {
         return;
-      }
-
-      //console.log('BIG @ ' + window.pageYOffset);
-      bg.style.height = "360px";
-      bg.style.transition = "0.4s";
-
-      bg.scrollIntoView(true);
-      header.classList.remove("sticky");
     }
 
-    else if(window.pageYOffset >= 161 && header.classList.contains("sticky")) {
-      //console.log('REMOVED STICKY @ ' + window.pageYOffset);
-      header.classList.remove("sticky");
-      header.classList.add("sticky-hidden");
+    var page_y_height = window.pageYOffset;
+    if (page_y_height > 280) {
+        page_y_height = 280;
     }
-  }
+
+    var height = 360 - (page_y_height * 0.25);
+    bg.style.height = height + "px";
+
+    //
+
+    var alpha = to_range(0, 200, 1, 0, window.pageYOffset);
+    if (alpha < 0.0) {
+        alpha = 0.0;
+    }
+
+    title.style.opacity = alpha;
+
+    //
+
+    var page_y_padding = window.pageYOffset;
+    if (page_y_padding > 220)
+    {
+          page_y_padding = 220;
+    }
+    bg.style.paddingTop = (page_y_padding * 0.12) + "px";
 }
 </script>

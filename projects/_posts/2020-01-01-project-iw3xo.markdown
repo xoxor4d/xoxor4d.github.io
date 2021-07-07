@@ -24,41 +24,48 @@ status:         "WIP - PUBLIC"
 <div class="padding-1l" style="margin-bottom: -0.5rem"></div>
 
 <div class="padding-1l"></div>
-![](/assets/img/iw3xo/collisionDrawType.jpg) 
-
-<div class="padding-1l"></div>
 ![](/assets/img/iw3xo/originVelocity.jpg) 
 
-<div class="padding-1l"></div>
-![](/assets/img/iw3xo/collisionClip.jpg) 
+![](/assets/img/iw3xo/collisionDrawType.jpg# halfsize left) ![](/assets/img/iw3xo/collisionClip.jpg# halfsize right) 
 
-<div class="padding-1l"></div>
-![](/assets/img/iw3xo/collisionClipIndex.jpg) 
-
-<div class="padding-1l"></div>
 [![Play](/assets/img/vid-live-link.jpg# left){: style="width: 50%"}](https://www.youtube.com/watch?v=SBqZLfCaRdw) [![Play](/assets/img/vid-map-export.jpg# right){: style="width: 50%"}](https://www.youtube.com/watch?v=UOjiakKrNdk)
 
-<div class="padding-2l" style="margin-top: -2.5rem"></div>
 <div align="center"><div class="seperator-75p"></div></div>
 <div class="padding-2l" style="margin-bottom: -0.5rem"></div>
 
+<div align="center" markdown="1">
+### IW3xo is a project aimed at developers that includes various modifications and additions.
+### You can grab the latest release [here](https://github.com/xoxor4d/iw3xo-dev/releases). The latest changelog can be found [here](https://github.com/xoxor4d/iw3xo-dev/wiki/Changelog).
+### Please note that IW3xo is not compatible with CoD4x nor the Steam version of the game.  
+<br>
+### A quick feature overview can be found below. Go to [In-Depth](#in-depth) for a complete Dvar List and Guids helping you to get where you want.
+</div>
 
-<div markdown="1" style="padding-left: 2rem">
+<div class="padding-1l" style="margin-bottom: -0.5rem"></div>
+<div align="center"><div class="seperator-75p"></div></div>
+<div class="padding-2l" style="margin-bottom: -0.5rem"></div>
+
+<div markdown="1" style="padding-left: -2rem">
 # Features ([In-Depth](#in-depth))
 <div class="padding-2l"></div>
-__Interface__
-   + Completely new main menu
+__Memory__
+   + Increased Hunk
+   + Increased Gmem
+   + 3.5GB patch applied to included IW3xo.exe
+<div class="padding-2l"></div>
+__UI / Gui__
+   + Completely new main menu with latest changelog pulled from <https://github.com/xoxor4d/iw3xo-dev/wiki/Changelog>
    + Improved in-game console (eg. drag / resize with the cursor, console output when not using the fullscreen console, ... )
    + ImGUI (Devgui) to access almost all additional dvars eg. map-exporting, movement tweaks / debugging etc ...
 <div class="padding-2l"></div>
-__Rendering__ 
-   + Draw debug collision brushes (eg. clip, mantle, multiple, all ...)
-   + Draw synchronized radiant brushes
-   + Trace origin and/or velocity
-   + Built in postfx shaders like SSAO, Cellshading, Toon ...
-   + Direct3D9Ex
-   + Borderless fullscreen
-   + Custom aspect ratios
+![](/assets/img/iw3xo/devgui_movement.jpg# right){: style="width: 42%; margin-top: 3rem; margin-right: 4rem"}
+__Map Exporting ([Dvars](#dvars-collision) | [Tutorial](/tutorials/iw3xo-mapexport))__
+   + Export brushes, brushmodels, triggers (mapEnts)
+   + Option to export merged triangles (quads) as patches
+   + Option to export leftover unmerged triangles as patches
+   + Option to export entities / reflection probes
+   + Option to export static models
+   + Option to export a certain section of a map by using a bounding box
 <div class="padding-2l"></div>
 __Radiant Live-Link (requires [IW3xRadiant](/projects/iw3xo-radiant/))__ 
    + Synchronize up to 16 selected radiant-brushes 
@@ -66,13 +73,21 @@ __Radiant Live-Link (requires [IW3xRadiant](/projects/iw3xo-radiant/))__
    + Synchronized worldspawn settings (sundirection, suncolor, sunlight)
    + Synchronize cameras (radiant \-> server, server \-> radiant or both)
 <div class="padding-2l"></div>
-__Map Exporting__
-   + Export brushes, brushmodels, triggers (mapEnts)
-   + Option to export merged triangles (quads) as patches
-   + Option to export leftover unmerged triangles as patches
-   + Option to export entities / reflection probes
-   + Option to export static models
-   + Option to export only certain selection of a map using a bounding box
+__Rendering__ 
+   + Draw debug collision brushes (eg. clip, mantle, multiple, all ...)
+   + Draw synchronized radiant brushes
+   + Trace origin and/or velocity
+   + Built-in PostFx shaders like SSAO, Cellshading, Toon ...
+   + Direct3D9Ex
+   + Borderless fullscreen
+   + Custom aspect ratio's
+   + Show world and model uv's / texcoords
+   + Dump shader binaries at runtime (to iw3xo\shader_dump)
+   + Draw xmodel / world surfaces using their wireframe technique
+   + Live editing of [Ocean-Shader](/projects/cod4-ocean/) parameters via the DevGui
+   + Live editing of [DayAndNight-Cycle](/projects/cod4-daynight/) parameters via the DevGui
+   + Increase rendering buffers such as skinnedCache, smodelCache and various others
+   + R_MAX_SKINNED_CACHE_VERTICES and TEMP_SKIN_BUF_SIZE warnings are now dynamic and adjust to their respective buffer sizes
 <div class="padding-2l"></div>
 __Movement__ 
    + Dvar tweakable movement types like quake3/cpm or css/surf
@@ -82,23 +97,25 @@ __Movement__
    + [MDD World Compass](https://github.com/Jelvan1/cgame_proxymod/blob/master/src/compass.c) - Ported by: [n1kjs](https://github.com/Shkerzy)
    + [MDD CampingGaz (cgaz)](https://github.com/Jelvan1/cgame_proxymod/blob/master/src/cg_cgaz.c) - Ported by: [n1kjs](https://github.com/Shkerzy)
 <div class="padding-2l"></div>
-__FileSystem__
+__File System__
    + Load FastFile addons and IWDs on startup
    + Live FastFile loading/reloading
    + Increased AssetPools
    + Rawfile menu loading / hot-reloading
+   + Menu Exporter by [SheepWizard](https://github.com/SheepWizard)
+   + Automatically load "reshade.dll" if placed in "iw3xo\bin" 
+   + Automatically load "iw3mvm.dll" if placed in "iw3xo\bin" and dvar "load_iw3mvm" is enabled
+<div class="padding-2l"></div>
+__Moviemaking__
+   + Fixed an out of memory error when trying to take screenshots with R_TakeScreenshot when using heavy mods
+   + Fixed cl_avidemo screenshots being black (iw3mvm support)
+   + cl_avidemo_streams :: same as iw3mvm mvm_streams but with customization options
+   + CubeMapShot fixed
 <div class="padding-2l"></div>
 __Misc__
    + Dvar cheat/write protection removed
-   + Removed the need to precache xmodels (more assets will follow)
-   + Manipulate entities with console commands (incomplete)
-   + Added the most common gsc function additions like setvelocity(), jumpButtonPressed() ...
+   + Added common gsc function like setvelocity(), jumpButtonPressed() ...
    + Fixed mouse lag on some Windows 10 builds (c) [Snake](https://github.com/momo5502)
-   + Menu Exporter by [SheepWizard](https://github.com/SheepWizard)
-   + Live editing of [ocean shader](/projects/cod4-ocean/) parameters via the DevGui
-   + CubeMapShot fixes
-</div>
-
 
 <div class="padding-1l" style="margin-top: -1.5rem"></div>
 <div align="center"><div class="seperator-75p"></div></div>
@@ -111,11 +128,12 @@ __Misc__
 <div class="padding-1l"></div>
 
 <a name="in-depth"></a>
-
+<div class="padding-2l"></div>
 <div markdown="1" style="padding-left: 2rem">
 # In-Depth Features / Functions / Dvars
-<div class="padding-2l"></div>
 
+<div class="padding-2l"></div>
+<a name="dvars-devgui"></a>
 <div class="highlight-header"><p>DevGui</p></div>
 {% highlight cpp %}
 [Hotkeys]
@@ -152,15 +170,15 @@ __Misc__
 <div class="highlight-header"><p>Custom Shaders</p></div>
 {% highlight cpp %}
 [Types]
-|-> XO_SHADEROVERLAY 1 :: SSAO (dvars : xo_ssao_)
-|-> XO_SHADEROVERLAY 2 :: CELLSHADING
-|-> XO_SHADEROVERLAY 3 :: OUTLINER (dvars : xo_outliner_)
-|-> XO_SHADEROVERLAY 4 :: FULLSCREEN-DEPTH
-|-> XO_SHADEROVERLAY 5 :: CUSTOM (dvar : xo_shaderoverlay_custom)
+|-> XO_SHADEROVERLAY 1      :: SSAO (dvars : xo_ssao_)
+|-> XO_SHADEROVERLAY 2      :: CELLSHADING
+|-> XO_SHADEROVERLAY 3      :: OUTLINER (dvars : xo_outliner_)
+|-> XO_SHADEROVERLAY 4      :: FULLSCREEN-DEPTH
+|-> XO_SHADEROVERLAY 5      :: CUSTOM (dvar : xo_shaderoverlay_custom)
 
 [Dvars]
-|-> xo_shaderoverlay_custom   :: material to be used as a full screen overlay shader
-|-> xo_shaderdbg_matrix       :: debug transformation matrices
+|-> xo_shaderoverlay_custom :: material to be used as a full screen overlay shader
+|-> xo_shaderdbg_matrix     :: debug transformation matrices
 {% endhighlight %}
 
 
@@ -175,7 +193,7 @@ __Misc__
 [Dvars]
 |-> mdd_cgaz                     :: display mDd CampingGaz HUD
 |-> mdd_cgaz_ground              :: show true ground zones
-|-> mdd_cgaz_speed               :: speed at which to draw cgaz
+|-> mdd_cgaz_min_speed           :: speed at which to draw cgaz
 |-> mdd_cgaz_yh                  :: cgaz y position and thickness
 |-> mdd_cgaz_rgbaNoAccel         :: color of no accel zones
 |-> mdd_cgaz_rgbaPartialAccel    :: color of partial accel zones
@@ -206,6 +224,7 @@ __Misc__
 
 
 <div class="padding-2l"></div>
+<a name="dvars-collision"></a>
 <div class="highlight-header"><p>Debug Collision Brushes</p></div>
 {% highlight cpp %}
 [Dvars]
@@ -230,23 +249,24 @@ __Misc__
 
 
 <div class="padding-2l"></div>
-<div class="highlight-header"><p>Debug Collision Brushes - Map Exporting</p></div>
+<a name="dvars-mapexport"></a>
+<div class="highlight-header"><p markdown="1">Debug Collision Brushes - Map Exporting :: [[Tutorial]](/tutorials/iw3xo-mapexport)</p></div>
 {% highlight cpp %}
 [Commands]
-|-> mapexport                       :: export highlighted brushes + options or bounding box selection
-|-> mapexport_selectionAdd          :: adds a point to the bounding box (needs mapexport_selectionMode and 2 points in total)
-|-> mapexport_selectionClear        :: reset the bounding box (needs mapexport_selectionMode)
+|-> mapexport                   :: export highlighted brushes + options or bounding box selection
+|-> mapexport_selectionAdd      :: adds a point to the bounding box (needs mapexport_selectionMode and 2 points in total)
+|-> mapexport_selectionClear    :: reset the bounding box (needs mapexport_selectionMode)
 
 [Dvars]
-|-> mapexport_selectionMode         :: export only certain parts of a map by using a bounding box (see commands above)
-|-> mapexport_brush5Sides           :: export brushes that only consist of 5 sides
-|-> mapexport_brushEpsilon1         :: brushside generation epsilon 1 (adv. only)
-|-> mapexport_brushEpsilon2         :: brushside generation epsilon 2 (adv. only)
-|-> mapexport_brushMinSize          :: only export brushes (with more then 6 sides) if their diagonal length is greater then this
-|-> mapexport_writeQuads            :: export merged triangles as quads, if enabled
-|-> mapexport_writeTriangles        :: export leftover triangles, if enabled
-|-> mapexport_writeEntities         :: export map entities, if enabled
-|-> mapexport_writeModels           :: export static models, if enabled
+|-> mapexport_selectionMode     :: export only certain parts of a map by using a bounding box (see commands above)
+|-> mapexport_brush5Sides       :: export brushes that only consist of 5 sides
+|-> mapexport_brushEpsilon1     :: brushside generation epsilon 1 (adv. only)
+|-> mapexport_brushEpsilon2     :: brushside generation epsilon 2 (adv. only)
+|-> mapexport_brushMinSize      :: only export brushes (with more then 6 sides) if their diagonal length is greater then this
+|-> mapexport_writeQuads        :: export merged triangles as quads, if enabled
+|-> mapexport_writeTriangles    :: export leftover triangles, if enabled
+|-> mapexport_writeEntities     :: export map entities, if enabled
+|-> mapexport_writeModels       :: export static models, if enabled
 {% endhighlight %}
 
 
@@ -254,19 +274,19 @@ __Misc__
 <div class="highlight-header"><p>Radiant Live-Link</p></div>
 {% highlight cpp %}
 [Commands]
-|-> radiant_saveSelection        :: save the current brush selection
-|-> radiant_clearSaved           :: clear saved brushes
+|-> radiant_saveSelection       :: save the current brush selection
+|-> radiant_clearSaved          :: clear saved brushes
 
 [Dvars]
-|-> radiant_live                 :: enables live-Link
-|-> radiant_liveDebug            :: enables live-Link debug prints
-|-> radiant_livePort             :: port used for live-Link (has to match radiant)
-|-> radiant_syncCamera           :: camera sync modes (radiant->game, game->radiant, both)
-|-> radiant_brushColor           :: color of debug brushes created with radiant
-|-> radiant_brushCollision       :: enable brush collision (map needs to include prefab <dynamic_collision_bmodels.map>)
-|-> radiant_brushLit             :: enable custom-shader usage (unlit fake-lighting)
-|-> radiant_brushWireframe       :: enable additional wireframe
-|-> radiant_brushWireframeColor  :: color of wireframe
+|-> radiant_live                :: enables live-Link
+|-> radiant_liveDebug           :: enables live-Link debug prints
+|-> radiant_livePort            :: port used for live-Link (has to match radiant)
+|-> radiant_syncCamera          :: camera sync modes (radiant->game, game->radiant, both)
+|-> radiant_brushColor          :: color of debug brushes created with radiant
+|-> radiant_brushCollision      :: enable brush collision (map needs to include prefab <dynamic_collision_bmodels.map>)
+|-> radiant_brushLit            :: enable custom-shader usage (unlit fake-lighting)
+|-> radiant_brushWireframe      :: enable additional wireframe
+|-> radiant_brushWireframeColor :: color of wireframe
 {% endhighlight %}
 
 
@@ -286,22 +306,53 @@ __Misc__
 
 
 <div class="padding-2l"></div>
+<div class="highlight-header"><p>Renderer</p></div>
+{% highlight cpp %}
+[Dvars]
+|-> r_noborder                  :: borderless fullscreen (needs vid_xpos/ypos 0)
+|-> r_d3d9ex                    :: enables extended dx9 interface (on by default)
+|-> r_aspectRatio               :: use 4 / custom to enable custom aspect ratios (r_aspectRatio_custom)
+|-> r_aspectRatio_custom        :: 21:9 = 2.333 / 32:9 = 3.5555
+|-> r_dumpShaders               :: Dump visible shaders at runtime (iw3xo/shader_dump)
+|-> r_wireframe_world           :: Draw world objects using their wireframe technique
+|-> r_wireframe_xmodels         :: Draw xmodels using their wireframe technique
+|-> r_debugShaderTexcoord       :: Show surface UVs / Texcoords
+|-> r_dayAndNight               :: Enable day and night cycle
+|-> r_fogTweaks                 :: Enable framefog tweaks
+|-> r_fogTweaksColor            :: Framefog color
+|-> r_fogTweaksStart            :: Framefog start
+|-> r_fogTweaksDensity          :: Framefog density
+
+// DISABLE r_fastSkin if you are changing these dvars or the client will crash when hitting the old limit
+|-> r_buf_skinnedCacheVb        :: Size of skinnedCache Vertexbuffer (Size * 2 will be allocated) in Megabytes
+|-> r_buf_smodelCacheVb         :: Size of smodelCache Vertexbuffer in Megabytes
+|-> r_buf_smodelCacheIb         :: Size of smodelCache Indexbuffer in Megabytes
+|-> r_buf_tempSkin              :: Size of tempSkin buffer in Megabytes
+|-> r_buf_dynamicVertexBuffer   :: Size of dynamic Vertexbuffer in Megabytes
+|-> r_buf_dynamicIndexBuffer    :: Size of dynamic Indexbuffer in Megabytes
+|-> r_buf_preTessIndexBuffer    :: Size of preTess Indexbuffer (Size * 2 will be allocated) in Megabytes
+
+[Commands]
+|-> cubeMapShot                 :: fully works now -> disable r_smp_backend when using it
+{% endhighlight %}
+
+<div class="padding-2l"></div>
+<div class="highlight-header"><p>Moviemaking</p></div>
+{% highlight cpp %}
+[Dvars]
+|-> cl_avidemo_streams          :: aka. iw3mvm mvm_streams but with customization options ~ "cl_avidemo_streams_"
+|-> cl_pause_demo               :: pause demos
+{% endhighlight %}
+
+
+<div class="padding-2l"></div>
 <div class="highlight-header"><p>Misc</p></div>
 {% highlight cpp %}
 [Commands]
 |-> help                   :: link, opens IW3xo Project page
 |-> iw3xo_github           :: link, opens IW3xo Github repo
 |-> iw3xo_radiant_github   :: link, opens IW3xRadiant Github repo
-|-> patchdvars             :: re-register cg_fovscale and snaps to patch their limits
-|-> r_noborder             :: borderless fullscreen (needs vid_xpos/ypos 0)
-|-> r_d3d9ex               :: enables extended dx9 interface (on by default)
-|-> r_aspectRatio          :: use 4 / custom to enable custom aspect ratios (r_aspectRatio_custom)
-|-> r_aspectRatio_custom   :: 21:9 = 2.333 / 32:9 = 3.5555
-|-> cubeMapShot            :: fully works now -> disable r_smp_backend when using it
-
-|-> loadzone <zoneName>                   :: load/reload zones (fastfiles)
-|-> ent_rotateTo <entityID> <angles vec3> :: rotate any entity 
-|-> more entity commands to follow ....
+|-> loadzone <zoneName>    :: load/reload zones (fastfiles)
 {% endhighlight %}
 
 <div class="padding-2l"></div>

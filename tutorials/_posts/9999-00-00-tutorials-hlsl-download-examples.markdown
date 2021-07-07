@@ -3,7 +3,7 @@ layout:     post
 title:      "Additional Files :: Tools / Shader Examples"
 subtitle:   "General tools needed / shader examples for different use-cases"
 date:       2020-01-01 23:53:00
-categorie:  Call of Duty 4 - HLSL
+categorie:  hlsl
 permalink: /tutorials/hlsl-downloads/
 ---
 

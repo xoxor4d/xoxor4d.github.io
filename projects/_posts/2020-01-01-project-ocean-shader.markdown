@@ -50,7 +50,12 @@ status:         "Done"
 <div align="center"><div class="seperator-75p"></div></div>
 <div class="padding-2l"></div>
 
-[![Play](/assets/img/shader-ocean/vid01.jpg# center){: style="width: 100%"}](https://www.youtube.com/watch?v=0lDc3uzDOD4)
+<div class="yt-container">
+    <a href="https://www.youtube.com/watch?v=0lDc3uzDOD4">
+        <img src="/assets/img/shader-ocean/vid01.jpg" class="yt-image">
+        <img src="/assets/img/play_btn.png" class="yt-overlay">
+    </a>
+</div>
 
 <div class="padding-1l"></div>
 <div align="center"><div class="seperator-75p"></div></div>

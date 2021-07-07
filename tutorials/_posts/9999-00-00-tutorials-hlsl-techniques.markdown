@@ -3,7 +3,7 @@ layout:     post
 title:      "In-depth :: Techniques"
 subtitle:   ">> root\\raw\\techniques"
 date:       2020-01-01 23:57:00
-categorie:  Call of Duty 4 - HLSL
+categorie:  hlsl
 permalink: /tutorials/hlsl-techniques/
 ---
 

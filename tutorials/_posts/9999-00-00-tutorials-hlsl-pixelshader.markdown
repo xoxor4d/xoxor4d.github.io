@@ -3,7 +3,7 @@ layout:     post
 title:      "In-depth :: PixelShaders"
 subtitle:   ">> root\\raw\\shader_bin\\shader_src"
 date:       2020-01-01 23:54:00
-categorie:  Call of Duty 4 - HLSL
+categorie:  hlsl
 permalink: /tutorials/hlsl-pixelshader/
 ---
 

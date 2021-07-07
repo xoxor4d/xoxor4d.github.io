@@ -10,9 +10,9 @@ status:     "Done"
 ---
 
 <div class="md_flex-container"> 
-      <div class="content-title"> Version 3.0 - December 2019
+      <div class="content-title"> Version 3.1 - June 2021
             <div class="md_flex-item" style="float: right" markdown="1"> 
-[Download](https://mega.nz/#!34RGRSzB!LvClsteVwW_684TylaEBFhbJusiPG4fxjFZV5fhW7OM){: class= .c-btn .bounce-btn} 
+[Download](https://drive.google.com/file/d/1L6M8NF3GU9xVWsP-Svncl651F34C1BtE/view?usp=sharing){: class= .c-btn .bounce-btn} 
 </div></div></div>
 
 <div class="padding-1l" style="margin-top: -2.5rem"></div>
@@ -27,7 +27,7 @@ status:     "Done"
 {% highlight cpp %}
       - Start MWR, setup a private match with a password (make sure no one connects to minimize chances of getting VACd)
       - In-Game -> Open "MWR Console.exe"
-      - Use Extreme Injector to inject the dll into "h1_mp64_ship.exe"
+      - Inject "MWR_CJ_Internal.dll" into "h1_mp64_ship.exe" (Injector not included)
       - The external console should say "connected to MWR"
       - You are now able to use the console and the internal CJ-Mod
 {% endhighlight %}
