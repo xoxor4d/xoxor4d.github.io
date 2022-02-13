@@ -2,7 +2,7 @@
 layout:         post
 title:          "Call of Duty 4 :: Day and Night Cycle"
 subtitle:       "with Film, Sun and Fog lerping ++ Volumetric Clouds"
-description:    "Realtime / dynamic ocean shader, fully customizable in-game via the use of the IW3xo client"
+description:    "Day and Night Cycle with Filmtweak, Lighttweak and Fog lerping ++ Volumetric Clouds, fully customizable in-game via the use of the IW3xo client"
 date:           2021-07-03 00:00:00
 permalink:      /projects/cod4-daynight/
 image:          "/assets/img/daynight/thumb.jpg"
