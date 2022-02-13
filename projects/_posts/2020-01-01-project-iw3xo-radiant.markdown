@@ -17,7 +17,7 @@ status:         "WIP - PUBLIC"
 <div align="center" style="margin-top: -4rem" markdown="1">
 #### Quick Links
 [[GitHub Repository]](https://github.com/xoxor4d/iw3xo-radiant) :: [[Latest Release]](https://github.com/xoxor4d/iw3xo-radiant/releases) :: [[IW3xo]](/projects/iw3xo/)  
-[[Installation]](#install) :: [[Using Live Link]](#tut-livelink) :: [[Features / Buttons]](#tut-general)
+[[Installation]](#install) :: [[Using Live Link]](#tut-livelink) :: [[Features / Buttons]](#tut-general) :: [[Noticeable Changes]](#tut-general)
 </div>
 
 <div class="padding-1l"></div>
@@ -113,8 +113,6 @@ Custom lighting shader with normal-mapping, specular highlights, reflections and
 <div class="padding-1l"></div>
 ![](/assets/img/iw3xo-radiant/gif/feat_fakesun_settings_man.gif) 
 
-![](/assets/img/iw3xo-radiant/collisionDrawType.jpg# left) ![](/assets/img/iw3xo-radiant/collisionClip.jpg# right) 
-
 <br>
 <br>
 __Live-Link__
@@ -187,3 +185,12 @@ Make sure that the following dvars are enabled and are matching radiant's:
 ![](/assets/img/iw3xo-radiant/ico_cubic_clip.png){: style="width: 4%; margin-top: 1rem; margin-bottom: 1rem; margin-right: 1rem"} __`Cubic Clipping`__ - reduce drawing distance. Distance can be adjusted under __`Menubar > Renderer > Cubic Scale`__  
 
 ![](/assets/img/iw3xo-radiant/ico_undock.png){: style="width: 4%; margin-top: 1rem; margin-bottom: 1rem; margin-right: 1rem"} __`Undock Window`__ - triangle that appears on the upper-left corner of a fully docked window. Single click shows tab bar. Click-drag to undock the window.
+
+<div class="padding-1l"></div>
+<div align="center" style="margin-top: 2.5rem; margin-bottom: 2.5rem"><div class="seperator-100p"></div></div>
+
+<a name="tut-noticeable-changes"></a>
+## Most noticeable changes / differences compared to stock radiant
+
+- The hotkey for increase / decrease grid (curve patch subdivision) was changed and is now __`SHIFT+9/0`__ by default.  
+Function can also be found under __`Menubar > Patch > Inc/Dec Subdevision`__  

@@ -14,24 +14,15 @@ status:         "WIP - PUBLIC"
 <!-- tag for quick links so we do not show the nav -->
 <a name="quicklink"></a>
 
-<div align="center" style="margin-top: -1rem" markdown="1">
+<div align="center" style="margin-top: -4rem" markdown="1">
 #### Quick Links
 [GitHub Repository](https://github.com/xoxor4d/iw3xo-dev) :: [Latest Release](https://github.com/xoxor4d/iw3xo-dev/releases) :: [Changelog](https://github.com/xoxor4d/iw3xo-dev/wiki/Changelog) :: [IW3xRadiant](/projects/iw3xo-radiant/)
-<div class="padding-2l"></div></div> 
-
-<div class="padding-2l" style="margin-top: -2.5rem"></div>
-<div align="center"><div class="seperator-75p"></div></div>
-<div class="padding-1l" style="margin-bottom: -0.5rem"></div>
+</div>
 
 <div class="padding-1l"></div>
-![](/assets/img/iw3xo/originVelocity.jpg) 
-
-![](/assets/img/iw3xo/collisionDrawType.jpg# halfsize left) ![](/assets/img/iw3xo/collisionClip.jpg# halfsize right) 
-
-[![Play](/assets/img/vid-live-link.jpg# left){: style="width: 50%"}](https://www.youtube.com/watch?v=SBqZLfCaRdw) [![Play](/assets/img/vid-map-export.jpg# right){: style="width: 50%"}](https://www.youtube.com/watch?v=UOjiakKrNdk)
-
-<div align="center"><div class="seperator-75p"></div></div>
-<div class="padding-2l" style="margin-bottom: -0.5rem"></div>
+<h1 align="center">IW3xo - A Call of Duty 4 Client Modification</h1>
+<div align="center" style="margin-top: -1.5rem"><div class="seperator-100p"></div></div>
+<div class="padding-1l" style="margin-bottom: 0.0rem"></div>
 
 <div align="center" markdown="1">
 ### IW3xo is a project aimed at developers that includes various modifications and additions.
@@ -41,9 +32,43 @@ status:         "WIP - PUBLIC"
 ### A quick feature overview can be found below. Go to [In-Depth](#in-depth) for a complete Dvar List and Guids helping you to get where you want.
 </div>
 
-<div class="padding-1l" style="margin-bottom: -0.5rem"></div>
+<div class="padding-1l"></div>
+### [Day-Night cycle](/projects/cod4-daynight/) tweakable via the DevGui
+![](/assets/img/iw3xo/gif/feat_daynight.gif)  
+
+<div class="padding-2l"></div>
+### [Map exporting](/tutorials/iw3xo-mapexport/) supporting brushes, entities, static models and more
+<div class="yt-container">
+    <a href="https://www.youtube.com/watch?v=UOjiakKrNdk">
+        <img src="/assets/img/iw3xo/feat_mapexport.jpg" class="yt-image">
+        <img src="/assets/img/play_btn.png" class="yt-overlay">
+    </a>
+</div>
+
+
+<div class="padding-2l"></div>
+### Live-link to synchronize selected brushes (with collision), cameras and worldspawn settings between IW3xo and [IW3xRadiant](/projects/iw3xo-radiant/)
+<div class="yt-container">
+    <a href="https://www.youtube.com/watch?v=SBqZLfCaRdw">
+        <img src="/assets/img/iw3xo/gif/feat_livelink.gif" class="yt-image">
+        <img src="/assets/img/play_btn.png" class="yt-overlay">
+    </a>
+</div>
+
+<div class="padding-1l"></div>
+### Load SP maps in MP
+![](/assets/img/iw3xo/feat_spmap.jpg)  
+
+
+<div class="padding-1l"></div>
+### Debug collision drawing with filtering options
+![](/assets/img/iw3xo/collisionDrawType.jpg# left){: style="width: 50%; margin-top: -1rem; margin-left: -1rem; margin-right: -1rem"}
+![](/assets/img/iw3xo/collisionClip.jpg# right){: style="width: 50%; margin-top: -1rem; margin-left: -1rem; margin-right: -1rem"}
+
+
 <div align="center"><div class="seperator-75p"></div></div>
 <div class="padding-2l" style="margin-bottom: -0.5rem"></div>
+
 
 <div markdown="1" style="padding-left: -2rem">
 # Features ([In-Depth](#in-depth))
@@ -52,13 +77,28 @@ __Memory__
    + Increased Hunk
    + Increased Gmem
    + 3.5GB patch applied to included IW3xo.exe
-<div class="padding-2l"></div>
+
+<br>
+<br>
 __UI / Gui__
    + Completely new main menu with latest changelog pulled from <https://github.com/xoxor4d/iw3xo-dev/wiki/Changelog>
    + Improved in-game console (eg. drag / resize with the cursor, console output when not using the fullscreen console, ... )
-   + ImGUI (Devgui) to access almost all additional dvars eg. map-exporting, movement tweaks / debugging etc ...
-<div class="padding-2l"></div>
-![](/assets/img/iw3xo/devgui_movement.jpg# right){: style="width: 42%; margin-top: 3rem; margin-right: 4rem"}
+   + Devgui (using ImGui) to access almost all additional dvars eg. map-exporting, movement tweaks / debugging etc ...
+   ![](/assets/img/iw3xo/devgui_movement.jpg# right){: style="width: 42%; margin-top: 10rem; margin-right: -1rem"}
+
+<br>
+<br>
+__File System__
+   + Load FastFile addons and IWDs on startup
+   + Live FastFile loading/reloading
+   + Increased AssetPools
+   + Rawfile menu loading / hot-reloading
+   + Menu Exporter by [SheepWizard](https://github.com/SheepWizard)
+   + Automatically load "reshade.dll" if placed in "iw3xo\bin" 
+   + Automatically load "iw3mvm.dll" if placed in "iw3xo\bin" and dvar "load_iw3mvm" is enabled
+
+<br>
+<br>
 __Map Exporting ([Dvars](#dvars-collision) | [Tutorial](/tutorials/iw3xo-mapexport))__
    + Export brushes, brushmodels, triggers (mapEnts)
    + Option to export merged triangles (quads) as patches
@@ -66,15 +106,25 @@ __Map Exporting ([Dvars](#dvars-collision) | [Tutorial](/tutorials/iw3xo-mapexpo
    + Option to export entities / reflection probes
    + Option to export static models
    + Option to export a certain section of a map by using a bounding box
-<div class="padding-2l"></div>
+
+<br>
+<br>
 __Radiant Live-Link (requires [IW3xRadiant](/projects/iw3xo-radiant/))__ 
    + Synchronize up to 16 selected radiant-brushes 
    + Synchronized brushes are colliding (requires a prefab within the map)
    + Synchronized worldspawn settings (sundirection, suncolor, sunlight)
    + Synchronize cameras (radiant \-> server, server \-> radiant or both)
+
 <div class="padding-2l"></div>
+Save currently selected brushes using the devgui or console commands
+![](/assets/img/iw3xo/gif/feat_livelink_save_selection.gif) 
+
+<br>
+<br>
 __Rendering__ 
    + Draw debug collision brushes (eg. clip, mantle, multiple, all ...)
+   + Filter debug collision by brush indicies, allowing you to display only the collisions you are interested in 
+   + Filter debug collisions by distance and material
    + Draw synchronized radiant brushes
    + Trace origin and/or velocity
    + Built-in PostFx shaders like SSAO, Cellshading, Toon ...
@@ -84,11 +134,31 @@ __Rendering__
    + Show world and model uv's / texcoords
    + Dump shader binaries at runtime (to iw3xo\shader_dump)
    + Draw xmodel / world surfaces using their wireframe technique
-   + Live editing of [Ocean-Shader](/projects/cod4-ocean/) parameters via the DevGui
-   + Live editing of [DayAndNight-Cycle](/projects/cod4-daynight/) parameters via the DevGui
    + Increase rendering buffers such as skinnedCache, smodelCache and various others
    + R_MAX_SKINNED_CACHE_VERTICES and TEMP_SKIN_BUF_SIZE warnings are now dynamic and adjust to their respective buffer sizes
+   + Fixed an out of memory error when trying to take screenshots with R_TakeScreenshot when using heavy mods
+   + CubeMapShot fixed
+
 <div class="padding-2l"></div>
+[Day-Night cycle](/projects/cod4-daynight/) with volumetric clouds tweakable via the DevGui
+<div class="yt-container">
+    <a href="https://www.youtube.com/watch?v=PlCpgC3jPcM">
+        <img src="/assets/img/iw3xo/gif/feat_daynight_clouds.gif" class="yt-image">
+        <img src="/assets/img/play_btn.png" class="yt-overlay">
+    </a>
+</div>
+
+<div class="padding-2l"></div>
+Live editing of [Ocean-Shader](/projects/cod4-ocean/) parameters via the DevGui
+<div class="yt-container">
+    <a href="https://www.youtube.com/watch?v=0lDc3uzDOD4">
+        <img src="/assets/img/iw3xo/gif/feat_ocean.gif" class="yt-image">
+        <img src="/assets/img/play_btn.png" class="yt-overlay">
+    </a>
+</div>
+
+<br>
+<br>
 __Movement__ 
    + Dvar tweakable movement types like quake3/cpm or css/surf
    + Dvar tweakable stock movement settings
@@ -96,36 +166,20 @@ __Movement__
    + Dvar tweakable world axis with fps zones / angles
    + [MDD World Compass](https://github.com/Jelvan1/cgame_proxymod/blob/master/src/compass.c) - Ported by: [n1kjs](https://github.com/Shkerzy)
    + [MDD CampingGaz (cgaz)](https://github.com/Jelvan1/cgame_proxymod/blob/master/src/cg_cgaz.c) - Ported by: [n1kjs](https://github.com/Shkerzy)
-<div class="padding-2l"></div>
-__File System__
-   + Load FastFile addons and IWDs on startup
-   + Live FastFile loading/reloading
-   + Increased AssetPools
-   + Rawfile menu loading / hot-reloading
-   + Menu Exporter by [SheepWizard](https://github.com/SheepWizard)
-   + Automatically load "reshade.dll" if placed in "iw3xo\bin" 
-   + Automatically load "iw3mvm.dll" if placed in "iw3xo\bin" and dvar "load_iw3mvm" is enabled
-<div class="padding-2l"></div>
-__Moviemaking__
-   + Fixed an out of memory error when trying to take screenshots with R_TakeScreenshot when using heavy mods
-   + Fixed cl_avidemo screenshots being black (iw3mvm support)
-   + cl_avidemo_streams :: same as iw3mvm mvm_streams but with customization options
-   + CubeMapShot fixed
-<div class="padding-2l"></div>
+
+<br>
+<br>
 __Misc__
    + Dvar cheat/write protection removed
    + Added common gsc function like setvelocity(), jumpButtonPressed() ...
    + Fixed mouse lag on some Windows 10 builds (c) [Snake](https://github.com/momo5502)
+   + Fixed 500FPS lock on some Windows 10/11 builds
 
-<div class="padding-1l" style="margin-top: -1.5rem"></div>
-<div align="center"><div class="seperator-75p"></div></div>
-<div class="padding-1l"></div>
-
+<br>
+<br>
 ![](/assets/img/iw3xo/console01.jpg) 
-
-<div class="padding-1l" style="margin-top: -1.5rem"></div>
-<div align="center"><div class="seperator-75p"></div></div>
-<div class="padding-1l"></div>
+<br>
+<br>
 
 <a name="in-depth"></a>
 <div class="padding-2l"></div>
@@ -337,15 +391,6 @@ __Misc__
 {% endhighlight %}
 
 <div class="padding-2l"></div>
-<div class="highlight-header"><p>Moviemaking</p></div>
-{% highlight cpp %}
-[Dvars]
-|-> cl_avidemo_streams          :: aka. iw3mvm mvm_streams but with customization options ~ "cl_avidemo_streams_"
-|-> cl_pause_demo               :: pause demos
-{% endhighlight %}
-
-
-<div class="padding-2l"></div>
 <div class="highlight-header"><p>Misc</p></div>
 {% highlight cpp %}
 [Commands]
@@ -355,10 +400,16 @@ __Misc__
 |-> loadzone <zoneName>    :: load/reload zones (fastfiles)
 {% endhighlight %}
 
+
 <div class="padding-2l"></div>
-[![Play](/assets/img/shader-ocean/vid01.jpg# center){: style="width: 100%"}](https://www.youtube.com/watch?v=0lDc3uzDOD4)
+<div class="highlight-header"><p>SP map loading</p></div>
+{% highlight cpp %}
+- load spmod
+- change gametype to "dm"
+- "devmap coup" (or any other sp map)
+{% endhighlight %}
 
 <div align="center" style="margin-top: 6rem; margin-bottom: -2rem" markdown="1">
-None of this would be possible without the friends over at [IW4x](https://github.com/IW4x/) and [Plutonium](https://plutonium.pw/)  
+None of this would be possible without the friends over at [XLabs](https://github.com/XLabsProject) and [Plutonium](https://plutonium.pw/)  
 Much love ❤ 
 </div> 
