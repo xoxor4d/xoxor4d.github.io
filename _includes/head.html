@@ -4,8 +4,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:image" content="https://xoxor4d.github.io/assets/img/logo-xoxo.png">
+ 
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-
   <meta name="author" content="{{ site.author.name }}">
     {% if page.keywords %}<meta name="keywords" content="{{ page.keywords }}">{% endif %}
 
