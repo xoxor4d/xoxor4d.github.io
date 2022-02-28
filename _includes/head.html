@@ -10,13 +10,13 @@
   <meta property="og:image" content="https://xoxor4d.github.io/assets/img/logo-xoxo.png">
   <meta name="og:site_name" content="xoxor4d.github.io"/>
   <meta name="theme-color" content="#7289DA">
-  
+
   <meta name="description" content="
   	{% if page.description %}
 	  {{ page.description }}
-	{% elseif site.description %}
+	{% elsif site.description %}
 		{{ site.description }}
-	{% elseif page.excerpt %}
+	{% elsif page.excerpt %}
 		{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}
 	{% endif %}">
 
