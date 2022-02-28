@@ -8,10 +8,23 @@
   <meta property="og:type" content="website">
   <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
   <meta property="og:image" content="https://xoxor4d.github.io/assets/img/logo-xoxo.png">
- 
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="og:site_name" content="xoxor4d.github.io"/>
+  <meta name="theme-color" content="#7289DA">
+  
+  <meta name="description" content="
+  	{% if page.description %}
+	  {{ page.description }}
+	{% elseif site.description %}
+		{{ site.description }}
+	{% elseif page.excerpt %}
+		{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}
+	{% endif %}">
+
   <meta name="author" content="{{ site.author.name }}">
-    {% if page.keywords %}<meta name="keywords" content="{{ page.keywords }}">{% endif %}
+
+	{% if page.keywords %}
+		<meta name="keywords" content="{{ page.keywords }}">
+	{% endif %}
 
   <link href="https://fonts.googleapis.com/css?family=Lato|Roboto:300,400&display=swap" rel="stylesheet"> 
   <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
