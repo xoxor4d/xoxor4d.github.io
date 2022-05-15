@@ -62,20 +62,32 @@ Running IW3xRadiant and IW3xo enables a live-link between CoD4 and Radiant. You 
 __Interface / General__
    + Completely revamped user interface with docking, tabs, saved layouts and more (Dear ImGui)
    + 3D guizmo to preciously manipulate entities and brushes from the camera window (ImGuizmo)
+   + play, edit and export effects as createFx files right from within radiant (makes effectsEd almost obsolete)
+   + switch / scale / place the individual windows however you want
+   + preview xmodels and drag them directly into the scene using the model previewer
+   + live link (sync. brushes (with collision), camera and worldspawn settings between cod4 and radiant)
+   + custom lighting shader with normal-mapping, specular highlights, reflections and fog
+   + ability to limit shadow drawing distance when using stock sunpreview (++FPS)
+   + filmtweak support
+   + render actual water instead of case-textures
    ![](/assets/img/iw3xo-radiant/feat_guizmo.jpg# right){: style="width: 42%; margin-top: 1rem; margin-right: -1rem"}
-   + Preview xmodels and drag them directly into the scene using the model previewer
-   + Realtime viewports (adjust FPS per Viewport)
-   + Save and load dvars to/from config
-   + Hotkey editor
-   + Color editor 
-   + Toolbar editor
-   + Better surface / entity property editor
-   + New preferences menu with categories
-   + Grid Window: Zoom to cursor
-   + Increased undo limit (512)
-   + Texture window toolbar with quick filtering
-   + Console with dvar support (including dvar suggestions and autocomplete)
-   + External console that runs on startup showing the initialization process
+   + guizmo to manipulate entities and brushes from within the camera window
+   + high poly xmodel's no longer crash radiant
+   + realtime viewports
+   + better surface / property editor
+   + context aware grid and camera context menus with QoL features
+   + better vertex edit dialog
+   + zoom to cursor
+   + editable toolbars, hotkeys, colors (all saved)
+   + new file dialogs with working default paths
+   + texture window toolbar for quick filtering
+   + rope/wire generator
+   + sun direction visualizer
+   + a proper console with dvar support (incl. dvar suggestions and autocomplete)
+   + increased undo limit
+   + print parsed entity and brush num on map load making it easier to find issues in map files (off by default)
+   + alot of QOL features
+
    
 <div class="padding-2l"></div>
 Gameview - hide all tool entities and textures with a single click
@@ -91,12 +103,22 @@ __Effects__
    + Play, play-repeat, pause and stop effects from the camera toolbar
    + Adjust global effect timescale and enable debugging options using the effects settings menu
    + Generate createfx / loadfx files for all fx_origin entities on the currently loaded map
-   + Future Goal - edit effects right within radiant
+   + Edit effects right within radiant (EffectsEd)
    + Future Goal - play effects of multiple __`fx_origin`__ entites at once
    + Future Goal - physics
 
+<br>
+
+<p float="left">
+  <img src="/assets/img/iw3xo-radiant/fxedit_01.jpg" width="40%" />
+  <img src="/assets/img/iw3xo-radiant/fxedit_03.jpg" width="40%" align="right" /> 
+</p>
+
+<br>
+
+![](/assets/img/iw3xo-radiant/fxedit_02.jpg) 
+
 <div class="padding-2l"></div>
-![](/assets/img/iw3xo-radiant/gif/feat_effects_spawn.gif) 
 
 <br>
 <br>
@@ -132,11 +154,20 @@ __Live-Link__
 <a name="install"></a>
 ## Installation
 
+<div align="center" markdown="1">
+[![build-develop](https://img.shields.io/github/workflow/status/xoxor4d/iw3xo-radiant/Build/develop?logo=github&label=nightly-develop)](https://nightly.link/xoxor4d/iw3xo-radiant/workflows/build/develop/Debug%20binaries.zip)&ensp;
+[![build-release](https://img.shields.io/github/workflow/status/xoxor4d/iw3xo-radiant/Build/develop?logo=github&label=nightly-release)](https://nightly.link/xoxor4d/iw3xo-radiant/workflows/build/develop/Release%20binaries.zip)&ensp;
+nightly builds - develop branch ( download and install the [latest release](https://github.com/xoxor4d/iw3xo-radiant/releases) before using nightly's )
+</div>
+
+<br>
+
 Download the [Latest Release](https://github.com/xoxor4d/iw3xo-radiant/releases) and unzip the contents into your CoD4 root directory.  
 Go into the bin folder and open __`IW3xRadiant.exe`__. You'll be asked to open a project file. Go ahead and select __`iw3xradiant.prj`__ found in _root/bin_.  
 <p align="right">
 	(IW3xRadiant requires the CoD4 Modtools, obviously)<br>
 </p>
+
 
 
 <div class="padding-1l"></div>
