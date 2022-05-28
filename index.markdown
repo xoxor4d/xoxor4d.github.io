@@ -35,9 +35,19 @@ subtitle: "and projects surrounding the Call of Duty Series"
 <div class="padding-2l" align="center"> <div class="seperator-100p"></div></div><div class="padding-1l"></div>
 
 <div align="center" markdown="1">
-Oh, hey there! You might ask yourself what this site is about and what kind of content you can expect to find here.   
-This is something like a blog / wiki, featuring research, tools and projects surrounding the Call of Duty Games.  
-Most of you might know me as the creator of the "__Bounce-Depatcher__" or "__Custom-HLSL-Shaders__" for CoD4.   
+Oh, hey, glad you're here. Wondering what this site is about?   
+This is something like a blog / wiki with research, tools and projects surrounding the Call of Duty Games.  
+Most probably know me as the creator of the "__Bounce-Depatcher__" or "__Custom-HLSL-Shaders__".  
+My most-recent focus lies on the creation and enhancement of cod4 modding tools like [[IW3xRadiant]](https://github.com/xoxor4d/iw3xo-radiant) and [[IW3xo]](https://github.com/xoxor4d/iw3xo-dev)
+
+<div class="padding-2l"></div>
+
+<div class="image-hover-highlight"> 
+If you like what you see and want to support me and what I do, buy me a coffee 
+    <a href="https://ko-fi.com/xoxor4d">
+        <img width="40px" src="https://uploads-ssl.webflow.com/5c14e387dab576fe667689cf/61e1116779fc0a9bd5bdbcc7_Frame%206.png">
+    </a>
+</div>
 
 <div class="padding-2l"></div>
 

@@ -20,20 +20,21 @@
 title: "#xoxor4d's - Bug Research / ex. Bouncepatch.com / Tutorials and Tools"
 email: 
 description: >- # this means to ignore newlines until "baseurl:"
-  Call of Duty - Bug Research / ex. Bouncepatch.com / Tutorials and Tools.
+  Call of Duty - IW3xRadiant - IW3xo - Bug Research / ex. Bouncepatch.com / Tutorials and Tools.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://xoxor4d.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 favicon: favico.png
 author.name: xoxor4d
-keywords: call of duty, cod, bug research, bouncepatch, bounce depatch, cod4 hlsl, custom hlsl shaders, iw3xo, visible clip
+keywords: call of duty, cod, iw3xo, iw3xradiant, cod4 radiant, bug research, bouncepatch, bounce depatch, cod4 hlsl, custom hlsl shaders, iw3xo, visible clip, mapping, tutorials
 
 # Footer -------------------
 footer-content: Content on this site has been created purely for the purposes of academic research. Project maintainers are not responsible or liable for misuse of any content provided.
 # Social
 githubUsername: xoxor4d
 twitterUsername: xoxor4d
-youtubeUsername: UC7DiUO6bzZGii0EUx1Vg4mw
+youtubeUsername: xoxor4d
 steamUsername: xoxor4d
+kofiUsername: xoxor4d
 
 
 # Build settings

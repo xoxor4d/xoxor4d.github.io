@@ -3,7 +3,7 @@ layout:         post
 title:          "Call of Duty 4 :: IW3xRadiant"
 subtitle:       "A Call of Duty 4 Radiant Modification using ImGui"
 description:    "A CoD4 Radiant Modification built to be used with IW3xo. Live-Link between CoD4 and Radiant. ImGui UI, Brush/Camera synchronization, Effects, Filmtweaks, Fog, Reflections ..."
-date:           2022-02-01 00:00:00
+date:           2022-05-28 00:00:00
 permalink:      /projects/iw3xo-radiant/
 image:          "/assets/img/iw3xo-radiant/thumb.jpg"
 status:         "WIP - PUBLIC"
@@ -16,8 +16,7 @@ status:         "WIP - PUBLIC"
 
 <div align="center" style="margin-top: -4rem" markdown="1">
 #### Quick Links
-[[GitHub Repository]](https://github.com/xoxor4d/iw3xo-radiant) :: [[Latest Release]](https://github.com/xoxor4d/iw3xo-radiant/releases) :: [[IW3xo]](/projects/iw3xo/)  
-[[Installation]](#install) :: [[Using Live Link]](#tut-livelink) :: [[Features / Buttons]](#tut-general) :: [[Noticeable Changes]](#tut-general)
+[[GitHub Repository]](https://github.com/xoxor4d/iw3xo-radiant) :: [[Latest Release]](https://github.com/xoxor4d/iw3xo-radiant/releases) :: [[IW3xo]](/projects/iw3xo/)  :: [[Installation]](#install) :: [[Usage Tutorials]](/tutorials#iw3xradiant)
 </div>
 
 <div class="padding-1l"></div>
@@ -36,11 +35,16 @@ Running IW3xRadiant and IW3xo enables a live-link between CoD4 and Radiant. You 
 ![](/assets/img/iw3xo-radiant/gif/feat_ui.gif) 
 
 <div class="padding-1l"></div>
-### Play and export createFX files right from within radiant
-![](/assets/img/iw3xo-radiant/gif/radiant_effect_leaves.gif) 
+### Play, create, edit and export createFX files right from within radiant
+![](/assets/img/iw3xo-radiant/gif/feat_efx_editor.gif) 
+
+<a name="d3dbsp-prev"></a>
+<div class="padding-1l"></div>
+### D3DBSP loading and compilation - quickly toggle between the actual in-game view and radiants _world_
+![](/assets/img/iw3xo-radiant/gif/feat_bsp_compiling.gif) 
 
 <div class="padding-1l"></div>
-### Custom sun shaders with support for normalmapping, specular highlights, reflections and fog
+### Custom sun shaders with support for normalmapping, specular highlights, reflections and fog (radiant _world_)
 ![](/assets/img/iw3xo-radiant/gif/feat_fakesun_settings.gif) 
 
 <div class="padding-1l"></div>
@@ -59,26 +63,25 @@ Running IW3xRadiant and IW3xo enables a live-link between CoD4 and Radiant. You 
 <div align="center" style="margin-top: 2.5rem"><div class="seperator-100p"></div></div>
 
 <div markdown="1" style="padding-left: 2rem">
-__Interface / General__
-   + Completely revamped user interface with docking, tabs, saved layouts and more (Dear ImGui)
-   + 3D guizmo to preciously manipulate entities and brushes from the camera window (ImGuizmo)
-   + play, edit and export effects as createFx files right from within radiant (makes effectsEd almost obsolete)
-   + switch / scale / place the individual windows however you want
+__Feature List__
+   + completely revamped user interface with docking, tabs, saved layouts and more (Dear ImGui)
+   + [play](/tutorials/iw3xradiant-using-effects) && [edit / create](/tutorials/iw3xradiant-effects-editor) && [export effects as CreateFX](/tutorials/iw3xradiant-createfx) files right from within radiant (__makes effectsEd completely obsolete__)
+   + [d3dbsp loading](/tutorials/iw3xradiant-d3dbsp) and bsp/light compilation from within radiant
+   + [live link](/tutorials/iw3xradiant-livelink) (sync. brushes (with collision), camera and worldspawn settings between cod4 and radiant)   
+   + 3D guizmo to precisely manipulate entities and brushes from the camera window (ImGuizmo)
    + preview xmodels and drag them directly into the scene using the model previewer
-   + live link (sync. brushes (with collision), camera and worldspawn settings between cod4 and radiant)
    + custom lighting shader with normal-mapping, specular highlights, reflections and fog
    + ability to limit shadow drawing distance when using stock sunpreview (++FPS)
    + filmtweak support
    + render actual water instead of case-textures
    ![](/assets/img/iw3xo-radiant/feat_guizmo.jpg# right){: style="width: 42%; margin-top: 1rem; margin-right: -1rem"}
-   + guizmo to manipulate entities and brushes from within the camera window
-   + high poly xmodel's no longer crash radiant
+   + increased asset limits to allow high poly models
    + realtime viewports
-   + better surface / property editor
    + context aware grid and camera context menus with QoL features
+   + better surface / property editor
    + better vertex edit dialog
    + zoom to cursor
-   + editable toolbars, hotkeys, colors (all saved)
+   + editable toolbars, hotkeys, colors
    + new file dialogs with working default paths
    + texture window toolbar for quick filtering
    + rope/wire generator
@@ -86,8 +89,12 @@ __Interface / General__
    + a proper console with dvar support (incl. dvar suggestions and autocomplete)
    + increased undo limit
    + print parsed entity and brush num on map load making it easier to find issues in map files (off by default)
-   + alot of QOL features
-
+   + bo3 tool textures (optional)
+   + [stamp prefabs](/tutorials/iw3xradiant-prefab) 
+   + [create prefab from selection](/tutorials/iw3xradiant-prefab) 
+   + terrain patch thickening
+   + [extrude selected brush to other brush faces](/tutorials/iw3xradiant-brush-face-extending) 
+   + .... + alot more QOL features
    
 <div class="padding-2l"></div>
 Gameview - hide all tool entities and textures with a single click
@@ -98,36 +105,45 @@ Gameview - hide all tool entities and textures with a single click
 __Effects__
 	![](/assets/img/iw3xo-radiant/gif/radiant_effect_fire.gif# right){: style="width: 32%; margin-top: 3rem; margin-right: -1rem"}
    + New entity: __`fx_origin`__
-   + Play individual effects assigned to __`fx_origin`__ entites right within the editor
+   + [Play](/tutorials/iw3xradiant-using-effects) individual effects assigned to __`fx_origin`__ entites right within the editor
    + Effects directly react to translations and rotations of their __`fx_origin`__ entity
    + Play, play-repeat, pause and stop effects from the camera toolbar
+   + [Edit and create](/tutorials/iw3xradiant-effects-editor) effects right within radiant (EffectsEd)
+   + Ability to step through the effect frame by frame
    + Adjust global effect timescale and enable debugging options using the effects settings menu
    + Generate createfx / loadfx files for all fx_origin entities on the currently loaded map
-   + Edit effects right within radiant (EffectsEd)
    + Future Goal - play effects of multiple __`fx_origin`__ entites at once
    + Future Goal - physics
 
 <br>
 
-<p float="left">
-  <img src="/assets/img/iw3xo-radiant/fxedit_01.jpg" width="40%" />
-  <img src="/assets/img/iw3xo-radiant/fxedit_03.jpg" width="40%" align="right" /> 
-</p>
-
-<br>
-
-![](/assets/img/iw3xo-radiant/fxedit_02.jpg) 
+![](/assets/img/iw3xo-radiant/fxedit_02.jpg# left){: style="width: 75%; margin-top: -1rem; margin-left: -1rem; margin-right: -1rem"}
+![](/assets/img/iw3xo-radiant/fxedit_03.jpg# right){: style="height: 800px; margin-top: -1rem; margin-left: -1rem; margin-right: -1rem"}
 
 <div class="padding-2l"></div>
 
 <br>
 <br>
 __Rendering__
+   + [[d3dbsp preview]](#d3dbsp-prev) with almost all rendering features found in cod4 
+     + logic to quickly toggle between radiant/bsp 'worlds'
+	 + bsp and light compiling options
+	 + automatically reload bsp after compilation
+	 + effect lights/spotlights visible with loaded bsp
+	 + alot of stock iw3-engine debug dvars that are stripped from cod4 but available in radiant
+
+   + Filmtweaks
+   + Fog
+   + Specular and normalmapping
    + Option to disable patch backface wireframe
    + Option to disable entity origin boxes
    + Active light preview no longer darkens the rest of the map
    + Selecting a brush with sunlight-preview enabled no longer darkens the rest of the map
-   + Disabled sunlight-preview shadows (++FPS)
+   + Sunlight-preview shadows can be disabled or clipped by distance (++FPS)
+   + Sundirection debug visualizer
+
+<br>
+<br>
 
 <div class="padding-2l"></div>
 Custom lighting shader with normal-mapping, specular highlights, reflections and fog
@@ -138,7 +154,7 @@ Custom lighting shader with normal-mapping, specular highlights, reflections and
 <br>
 <br>
 __Live-Link__
-   + Synchronize selected brushes (with collision) 
+   + [Synchronize selected brushes](/tutorials/iw3xradiant-livelink) (with collision) 
    + Synchronize radiant and game camera
    + Synchronize worldspawn settings
 
@@ -155,73 +171,24 @@ __Live-Link__
 ## Installation
 
 <div align="center" markdown="1">
-[![build-develop](https://img.shields.io/github/workflow/status/xoxor4d/iw3xo-radiant/Build/develop?logo=github&label=nightly-develop)](https://nightly.link/xoxor4d/iw3xo-radiant/workflows/build/develop/Debug%20binaries.zip)&ensp;
-[![build-release](https://img.shields.io/github/workflow/status/xoxor4d/iw3xo-radiant/Build/develop?logo=github&label=nightly-release)](https://nightly.link/xoxor4d/iw3xo-radiant/workflows/build/develop/Release%20binaries.zip)&ensp;
-nightly builds - develop branch ( download and install the [latest release](https://github.com/xoxor4d/iw3xo-radiant/releases) before using nightly's )
-</div>
+
+If you want the newest and latest but potentially unstable build, get a nightly. Follow the second paragraph and get an actual release otherwise.
 
 <br>
 
-Download the [Latest Release](https://github.com/xoxor4d/iw3xo-radiant/releases) and unzip the contents into your CoD4 root directory.  
-Go into the bin folder and open __`IW3xRadiant.exe`__. You'll be asked to open a project file. Go ahead and select __`iw3xradiant.prj`__ found in _root/bin_.  
+[![build-develop](https://img.shields.io/github/workflow/status/xoxor4d/iw3xo-radiant/Build-Debug/develop?logo=github&label=nightly-develop)](https://nightly.link/xoxor4d/iw3xo-radiant/workflows/build-debug/develop/Debug%20binaries.zip)&ensp;
+[![build-release](https://img.shields.io/github/workflow/status/xoxor4d/iw3xo-radiant/Build-Release/develop?logo=github&label=nightly-release)](https://nightly.link/xoxor4d/iw3xo-radiant/workflows/build-release/develop/Release%20binaries.zip)&ensp;
+__<- download__ :: nightly builds - develop branch ( download and install the [latest release](https://github.com/xoxor4d/iw3xo-radiant/releases) before using nightly's )  
+<div class="padding-1l"></div>
+(_make sure to use the release build and only switch to the debug build if you encounter a crash that you want to report_)
+</div>
+
+<br>
+&ensp;&ensp; Download the [Latest Release](https://github.com/xoxor4d/iw3xo-radiant/releases) and unzip the contents into your CoD4 root directory.  
+&ensp;&ensp; Go into the bin folder and open __`IW3xRadiant.exe`__. 
 <p align="right">
 	(IW3xRadiant requires the CoD4 Modtools, obviously)<br>
 </p>
 
-
-
 <div class="padding-1l"></div>
 <div align="center" style="margin-top: 2.5rem; margin-bottom: 2.5rem"><div class="seperator-100p"></div></div>
-
-<a name="tut-livelink"></a>
-## Using Live-Link
-
-* Place the __`dynamic_collision_bmodels.map`__ prefab found in __`map_source\prefabs\_iw3xo`__ into your map. (Preferably into the sky)
-![](/assets/img/iw3xo-radiant/tut_livelink_prefab.jpg# right){: style="width: 42%; margin-top: 3rem; margin-right: -1rem"}
-* Compile your maps bsp and fastfiles
-* Keep radiant open and launch IW3xo.   
-Make sure that the following dvars are enabled and are matching radiant's:
-
-{% highlight cpp %}
-|-> radiant_live        :: enables live-Link
-|-> radiant_livePort    :: port used for live-Link (has to match radiant)
-{% endhighlight %}
-
-* Load up your map. You should now see such a print in radiant's console: 
-![](/assets/img/iw3xo-radiant/tut_livelink_radiant_console.jpg){: style="margin-top: 2rem; margin-bottom: 2rem"}
-
-* IW3xo should report the same, followed by some initialization prints where it searches for the __`dynamic_collision_bmodels.map`__ prefab. (Used for collisions)
-
-![](/assets/img/iw3xo-radiant/tut_livelink_camera_sync.jpg){: style="width: 42%; margin-top: 0rem; margin-left: 4rem"} 
-<p align="right">
-	^ Use IW3xo's devgui or the __`radiant_syncCamera`__ dvar to change the way camera synchronization is handled.<br>
-</p>
-
-<div class="padding-1l"></div>
-<div align="center" style="margin-top: 2.5rem; margin-bottom: 2.5rem"><div class="seperator-100p"></div></div>
-
-<a name="tut-general"></a>
-## Features / Buttons explained
-
-![](/assets/img/iw3xo-radiant/ico_gameview.png){: style="width: 4%; margin-top: 1rem; margin-bottom: 1rem; margin-right: 1rem"} __`Gameview`__ - hide all tool entities and textures with a single click (__`Menubar > View > Toggle > Game View`__)  
-
-![](/assets/img/iw3xo-radiant/ico_fakesun.png){: style="width: 4%; margin-top: 1rem; margin-bottom: 1rem; margin-right: 1rem"} __`Fake Sun Preview`__ - toggle custom sunlight shader (__`Menubar > Renderer > Render Method > Fake Sun Preview`__)  
-
-![](/assets/img/iw3xo-radiant/ico_fog.png){: style="width: 4%; margin-top: 1rem; margin-bottom: 1rem; margin-right: 1rem"} __`Fog`__ - toggle fog (requires custom sunlight shader to be active)  
-
-![](/assets/img/iw3xo-radiant/ico_filmtweaks.png){: style="width: 4%; margin-top: 1rem; margin-bottom: 1rem; margin-right: 1rem"} __`Filmtweaks`__ - toggle filmtweaks  
-
-![](/assets/img/iw3xo-radiant/ico_settings.png){: style="width: 4%; margin-top: 1rem; margin-bottom: 1rem; margin-right: 1rem"} __`Settings`__ - opens advanced sunlight, filmtweaks and effects settings  
-
-![](/assets/img/iw3xo-radiant/ico_cubic_clip.png){: style="width: 4%; margin-top: 1rem; margin-bottom: 1rem; margin-right: 1rem"} __`Cubic Clipping`__ - reduce drawing distance. Distance can be adjusted under __`Menubar > Renderer > Cubic Scale`__  
-
-![](/assets/img/iw3xo-radiant/ico_undock.png){: style="width: 4%; margin-top: 1rem; margin-bottom: 1rem; margin-right: 1rem"} __`Undock Window`__ - triangle that appears on the upper-left corner of a fully docked window. Single click shows tab bar. Click-drag to undock the window.
-
-<div class="padding-1l"></div>
-<div align="center" style="margin-top: 2.5rem; margin-bottom: 2.5rem"><div class="seperator-100p"></div></div>
-
-<a name="tut-noticeable-changes"></a>
-## Most noticeable changes / differences compared to stock radiant
-
-- The hotkey for increase / decrease grid (curve patch subdivision) was changed and is now __`SHIFT+9/0`__ by default.  
-Function can also be found under __`Menubar > Patch > Inc/Dec Subdevision`__  

@@ -368,6 +368,25 @@ p,li,ul {
 
 // --------------------------------------------
 
+.vlinebox {
+	margin: 0 auto;
+	width: auto;
+	margin-left: 2%;
+	/* background-color:red; */
+}
+
+.vline-title {
+	width: auto;
+	margin-left: 0%;
+	margin-bottom: 12px;
+	/* background-color:red; */
+}
+
+.vline {
+	border-left: 2px solid #5f656d;
+	padding-left: 0.5%;
+}
+
 .content-title {
 	font-size: 28px;
 	font-weight: 300;
@@ -490,6 +509,14 @@ blockquote {
 
 .steam {
 	background-image: url("/assets/img/social/steam.png");
+	background-repeat: no-repeat;
+	width: 32px;
+	height: 32px;
+	display: inline-block;
+}
+
+.kofi {
+	background-image: url("/assets/img/social/kofi.png");
 	background-repeat: no-repeat;
 	width: 32px;
 	height: 32px;
