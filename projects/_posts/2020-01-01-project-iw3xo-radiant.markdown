@@ -43,6 +43,11 @@ Running IW3xRadiant and IW3xo enables a live-link between CoD4 and Radiant. You 
 ### D3DBSP loading and compilation - quickly toggle between the actual in-game view and radiants _world_
 ![](/assets/img/iw3xo-radiant/gif/feat_bsp_compiling.gif) 
 
+<a name="d3dbsp-reflections"></a>
+<div class="padding-1l"></div>
+### Generate Reflections - automatically generate reflections (inside radiant) when compiling your map
+![](/assets/img/iw3xo-radiant/gif/tut/bsp_reflections.gif) 
+
 <div class="padding-1l"></div>
 ### Custom sun shaders with support for normalmapping, specular highlights, reflections and fog (radiant _world_)
 ![](/assets/img/iw3xo-radiant/gif/feat_fakesun_settings.gif) 
@@ -67,6 +72,7 @@ __Feature List__
    + completely revamped user interface with docking, tabs, saved layouts and more (Dear ImGui)
    + [play](/tutorials/iw3xradiant-using-effects) && [edit / create](/tutorials/iw3xradiant-effects-editor) && [export effects as CreateFX](/tutorials/iw3xradiant-createfx) files right from within radiant (__makes effectsEd completely obsolete__)
    + [d3dbsp loading](/tutorials/iw3xradiant-d3dbsp) and bsp/light compilation from within radiant
+   + [automatically generate reflections](/tutorials/iw3xradiant-d3dbsp-reflections) within radiant when compiling the maps bsp
    + [live link](/tutorials/iw3xradiant-livelink) (sync. brushes (with collision), camera and worldspawn settings between cod4 and radiant)   
    + 3D guizmo to precisely manipulate entities and brushes from the camera window (ImGuizmo)
    + preview xmodels and drag them directly into the scene using the model previewer
