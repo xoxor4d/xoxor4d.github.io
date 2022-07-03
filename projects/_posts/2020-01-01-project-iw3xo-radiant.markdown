@@ -75,7 +75,8 @@ __Feature List__
    + [automatically generate reflections](/tutorials/iw3xradiant-d3dbsp-reflections) within radiant when compiling the maps bsp
    + [live link](/tutorials/iw3xradiant-livelink) (sync. brushes (with collision), camera and worldspawn settings between cod4 and radiant)   
    + 3D guizmo to precisely manipulate entities and brushes from the camera window (ImGuizmo)
-   + preview xmodels and drag them directly into the scene using the model previewer
+   + preview xmodels and drag them directly into the scene using the model browser
+   + a prefab browser with the ability to generate thumbnails (no more guess work + prefabs can be dragged into the scene)
    + custom lighting shader with normal-mapping, specular highlights, reflections and fog
    + ability to limit shadow drawing distance when using stock sunpreview (++FPS)
    + filmtweak support
@@ -86,7 +87,10 @@ __Feature List__
    + context aware grid and camera context menus with QoL features
    + better surface / property editor
    + better vertex edit dialog
+   + better layer dialog
+   + display missing materials using a proper invalid_texture material
    + zoom to cursor
+   + toast notifications
    + editable toolbars, hotkeys, colors
    + new file dialogs with working default paths
    + texture window toolbar for quick filtering
@@ -157,6 +161,25 @@ Custom lighting shader with normal-mapping, specular highlights, reflections and
 <div class="padding-1l"></div>
 ![](/assets/img/iw3xo-radiant/gif/feat_fakesun_settings_man.gif) 
 
+<br>
+<br>
+
+![](/assets/img/iw3xo-radiant/feat_toolbox.jpg# right){: style="height: 800px; margin-top: -1rem; margin-left: -1rem; margin-right: -1rem"}
+<div class="padding-2l"></div>
+
+<p align="right" markdown="1">
+__Toolbox featuring all brush/patch related functions and integrated surface inspector + entity properties >>__ &ensp; &ensp;
+</p>
+
+<br>
+<br>
+<br>
+
+![](/assets/img/iw3xo-radiant/feat_prefab_browser.jpg# left){: style="width: 65%; margin-top: -1rem; margin-left: 5rem; margin-right: -1rem"}
+
+&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; __^ Prefab Browser with the ability to generate preview images__
+
+<br>
 <br>
 <br>
 __Live-Link__
