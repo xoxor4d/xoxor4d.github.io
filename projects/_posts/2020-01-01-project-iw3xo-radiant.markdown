@@ -49,12 +49,22 @@ Running IW3xRadiant and IW3xo enables a live-link between CoD4 and Radiant. You 
 ![](/assets/img/iw3xo-radiant/gif/tut/bsp_reflections.gif) 
 
 <div class="padding-1l"></div>
-### Custom sun shaders with support for normalmapping, specular highlights, reflections and fog (radiant _world_)
-![](/assets/img/iw3xo-radiant/gif/feat_fakesun_settings.gif) 
+### Nvidia PhysX - dynamic prefabs and physics-enabled effects
+![](/assets/img/iw3xo-radiant/physx/prefab_physics_preview.gif) 
+<div class="padding-1l"></div>
+![](/assets/img/iw3xo-radiant/physx/fx_physics_preview.gif) 
+
+<div class="padding-1l"></div>
+### Prefab previewer - create thumbnails & drag and drop prefabs directly into the scene
+![](/assets/img/iw3xo-radiant/gif/prefab_browser.gif) 
 
 <div class="padding-1l"></div>
 ### Model previewer - drag and drop models directly into the scene
 ![](/assets/img/iw3xo-radiant/gif/feat_modelpreview.gif) 
+
+<div class="padding-1l"></div>
+### Custom sun shaders with support for normalmapping, specular highlights, reflections and fog (radiant _world_)
+![](/assets/img/iw3xo-radiant/gif/feat_fakesun_settings.gif) 
 
 <div class="padding-1l"></div>
 ### Live-link to synchronize selected brushes (with collision) and worldspawn settings between CoD4 and Radiant 
@@ -70,13 +80,14 @@ Running IW3xRadiant and IW3xo enables a live-link between CoD4 and Radiant. You 
 <div markdown="1" style="padding-left: 2rem">
 __Feature List__
    + completely revamped user interface with docking, tabs, saved layouts and more (Dear ImGui)
-   + [play](/tutorials/iw3xradiant-using-effects) && [edit / create](/tutorials/iw3xradiant-effects-editor) && [export effects as CreateFX](/tutorials/iw3xradiant-createfx) files right from within radiant (__makes effectsEd completely obsolete__)
+   + [play](/tutorials/iw3xradiant-using-effects) / [edit / create](/tutorials/iw3xradiant-effects-editor) / [export effects as CreateFX](/tutorials/iw3xradiant-createfx) files right from within radiant (__makes effectsEd completely obsolete__)
+   + Nvidia PhysX integration for [dynamic placement of prefabs](/tutorials/iw3xradiant-physx-prefabs) or [physics-enabled effects](/tutorials/iw3xradiant-physx-effects) (can be turned into misc_models)
    + [d3dbsp loading](/tutorials/iw3xradiant-d3dbsp) and bsp/light compilation from within radiant
    + [automatically generate reflections](/tutorials/iw3xradiant-d3dbsp-reflections) within radiant when compiling the maps bsp
    + [live link](/tutorials/iw3xradiant-livelink) (sync. brushes (with collision), camera and worldspawn settings between cod4 and radiant)   
    + 3D guizmo to precisely manipulate entities and brushes from the camera window (ImGuizmo)
-   + preview xmodels and drag them directly into the scene using the model browser
-   + a prefab browser with the ability to generate thumbnails (no more guess work + prefabs can be dragged into the scene)
+   + a prefab browser with the ability to generate thumbnails (no more guesswork + prefabs can be dragged into the scene)
+   + a model browser to preview xmodels + models can be dragged directly into the scene
    + custom lighting shader with normal-mapping, specular highlights, reflections and fog
    + ability to limit shadow drawing distance when using stock sunpreview (++FPS)
    + filmtweak support
@@ -98,6 +109,7 @@ __Feature List__
    + sun direction visualizer
    + a proper console with dvar support (incl. dvar suggestions and autocomplete)
    + increased undo limit
+   + custom texture favourite lists (like customizable texture filters)
    + print parsed entity and brush num on map load making it easier to find issues in map files (off by default)
    + bo3 tool textures (optional)
    + [stamp prefabs](/tutorials/iw3xradiant-prefab) 
@@ -112,6 +124,8 @@ Gameview - hide all tool entities and textures with a single click
 
 <br>
 <br>
+
+
 __Effects__
 	![](/assets/img/iw3xo-radiant/gif/radiant_effect_fire.gif# right){: style="width: 32%; margin-top: 3rem; margin-right: -1rem"}
    + New entity: __`fx_origin`__
@@ -122,8 +136,12 @@ __Effects__
    + Ability to step through the effect frame by frame
    + Adjust global effect timescale and enable debugging options using the effects settings menu
    + Generate createfx / loadfx files for all fx_origin entities on the currently loaded map
+   + Nvidia PhysX to handle collisions with the ability to turn spawned physics-objects into misc_models
    + Future Goal - play effects of multiple __`fx_origin`__ entites at once
-   + Future Goal - physics
+
+<br>
+
+![](/assets/img/iw3xo-radiant/physx/fx_convert_to_misc_models.gif# left){: style="width: 100%; margin-top: -1rem"}
 
 <br>
 
