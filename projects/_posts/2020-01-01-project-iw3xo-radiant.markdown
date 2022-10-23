@@ -45,22 +45,31 @@ Running IW3xRadiant and IW3xo enables a live-link between CoD4 and Radiant. You 
 
 <a name="d3dbsp-reflections"></a>
 <div class="padding-1l"></div>
-### Generate Reflections - automatically generate reflections (inside radiant) when compiling your map
-![](/assets/img/iw3xo-radiant/gif/tut/bsp_reflections.gif) 
+### Mesh Painter - Paint models and prefabs with adjustable weights, random rotation and size
+![](/assets/img/iw3xo-radiant/gif/feat_mesh_painter.gif) 
 
 <div class="padding-1l"></div>
 ### Nvidia PhysX - dynamic prefabs and physics-enabled effects
 ![](/assets/img/iw3xo-radiant/physx/prefab_physics_preview.gif) 
+
 <div class="padding-1l"></div>
 ![](/assets/img/iw3xo-radiant/physx/fx_physics_preview.gif) 
 
 <div class="padding-1l"></div>
-### Prefab previewer - create thumbnails & drag and drop prefabs directly into the scene
+### Nvidia PhysX - character movement with cod4 movement mechanics (bouncing)
+![](/assets/img/iw3xo-radiant/gif/feat_movement.gif) 
+
+<div class="padding-1l"></div>
+### Prefab Browser - create thumbnails & drag and drop prefabs directly into the scene
 ![](/assets/img/iw3xo-radiant/gif/prefab_browser.gif) 
 
 <div class="padding-1l"></div>
-### Model previewer - drag and drop models directly into the scene
+### Model Browser - drag and drop models directly into the scene
 ![](/assets/img/iw3xo-radiant/gif/feat_modelpreview.gif) 
+
+<div class="padding-1l"></div>
+### Effect Browser - Preview effects & drag and drop them directly into the scene
+![](/assets/img/iw3xo-radiant/gif/feat_effect_browser.gif) 
 
 <div class="padding-1l"></div>
 ### Custom sun shaders with support for normalmapping, specular highlights, reflections and fog (radiant _world_)
@@ -82,12 +91,15 @@ __Feature List__
    + completely revamped user interface with docking, tabs, saved layouts and more (Dear ImGui)
    + [play](/tutorials/iw3xradiant-using-effects) / [edit / create](/tutorials/iw3xradiant-effects-editor) / [export effects as CreateFX](/tutorials/iw3xradiant-createfx) files right from within radiant (__makes effectsEd completely obsolete__)
    + Nvidia PhysX integration for [dynamic placement of prefabs](/tutorials/iw3xradiant-physx-prefabs) or [physics-enabled effects](/tutorials/iw3xradiant-physx-effects) (can be turned into misc_models)
+   + Nvidia PhysX enabled character movement with cod4 movement mechanics (bouncing) [character movement](/tutorials/iw3xradiant-physx-movement)
    + [d3dbsp loading](/tutorials/iw3xradiant-d3dbsp) and bsp/light compilation from within radiant
    + [automatically generate reflections](/tutorials/iw3xradiant-d3dbsp-reflections) within radiant when compiling the maps bsp
-   + [live link](/tutorials/iw3xradiant-livelink) (sync. brushes (with collision), camera and worldspawn settings between cod4 and radiant)   
+   + [live link](/tutorials/iw3xradiant-livelink) (sync. brushes (with collision), camera and worldspawn settings between cod4 and radiant)
+   + [mesh painting](/tutorials/iw3xradiant-mesh-painting) (xmodels/prefabs) with per object settings, random size, angles, weight etc.
    + 3D guizmo to precisely manipulate entities and brushes from the camera window (ImGuizmo)
-   + a prefab browser with the ability to generate thumbnails (no more guesswork + prefabs can be dragged into the scene)
-   + a model browser to preview xmodels + models can be dragged directly into the scene
+   + a prefab browser with the ability to generate thumbnails + drag and drop prefabs into the scene
+   + a model browser to preview xmodels + drag and drop models into the scene
+   + an effect browser to preview effects + drag and drop effects into the scene
    + custom lighting shader with normal-mapping, specular highlights, reflections and fog
    + ability to limit shadow drawing distance when using stock sunpreview (++FPS)
    + filmtweak support
@@ -105,18 +117,18 @@ __Feature List__
    + editable toolbars, hotkeys, colors
    + new file dialogs with working default paths
    + texture window toolbar for quick filtering
+   + custom texture favourite lists (like customizable texture filters)
    + rope/wire generator
    + sun direction visualizer
    + a proper console with dvar support (incl. dvar suggestions and autocomplete)
    + increased undo limit
-   + custom texture favourite lists (like customizable texture filters)
    + print parsed entity and brush num on map load making it easier to find issues in map files (off by default)
    + bo3 tool textures (optional)
+   + terrain patch thickening
    + [stamp prefabs](/tutorials/iw3xradiant-prefab) 
    + [create prefab from selection](/tutorials/iw3xradiant-prefab) 
-   + terrain patch thickening
    + [extrude selected brush to other brush faces](/tutorials/iw3xradiant-brush-face-extending) 
-   + .... + alot more QOL features
+   + + alot more QoL features
    
 <div class="padding-2l"></div>
 Gameview - hide all tool entities and textures with a single click
