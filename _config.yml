@@ -17,15 +17,15 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: "#xoxor4d's - Bug Research / ex. Bouncepatch.com / Tutorials and Tools"
+title: "#xoxor4d's - Game Research / Remix Compatibility Mods / Tutorials and Tools"
 email: 
 description: >- # this means to ignore newlines until "baseurl:"
-  Call of Duty - IW3xRadiant - IW3xo - Bug Research / ex. Bouncepatch.com / Tutorials and Tools.
+  RTX-Remix Compatibility Mods - Call of Duty - iw3xo-radiant - iw3xo - Bug Research / ex. Bouncepatch.com / Tutorials and Tools.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://xoxor4d.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 favicon: favico.png
 author.name: xoxor4d
-keywords: call of duty, cod, iw3xo, iw3xradiant, cod4 radiant, bug research, bouncepatch, bounce depatch, cod4 hlsl, custom hlsl shaders, iw3xo, visible clip, mapping, tutorials
+keywords: rtx, rtx remix, compatibility mods, gta4, gta iv, call of duty, cod, iw3xo, iw3xradiant, cod4 radiant, bug research, bouncepatch, bounce depatch, cod4 hlsl, custom hlsl shaders, iw3xo, visible clip, mapping, tutorials
 
 # Footer -------------------
 footer-content: Content on this site has been created purely for the purposes of academic research. Project maintainers are not responsible or liable for misuse of any content provided.
@@ -35,7 +35,7 @@ twitterUsername: xoxor4d
 youtubeUsername: xoxor4d
 steamUsername: xoxor4d
 kofiUsername: xoxor4d
-
+patreonUsername: xoxor4d
 
 # Build settings
 markdown: kramdown

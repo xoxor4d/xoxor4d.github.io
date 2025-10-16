@@ -459,6 +459,15 @@ blockquote {
 	text-transform: uppercase;
 }
 
+.footer-copy-left p b {
+  font-size: 13px;
+  font-family: "Roboto";
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  color: #3585cf
+}
+
 .footer-copy-center {
 	width: 10%;
 	float: left;
@@ -475,10 +484,11 @@ blockquote {
 	font-family: "Roboto";
 	text-transform: uppercase;
 }
-.footer-copy p b {
+
+/* .footer-copy p b {
 	color: #ce2020;
 	font-size: 14px;
-}
+} */
 
 .footer-copy {
 	background-color: #221d39;
@@ -516,9 +526,17 @@ blockquote {
 }
 
 .kofi {
-	background-image: url("/assets/img/social/kofi.png");
-	background-repeat: no-repeat;
-	width: 32px;
+	background-image: url("/assets/img/social/kofi2.png");
+	background-repeat: round;
+	width: 96px;
+	height: 32px;
+	display: inline-block;
+}
+
+.patreon {
+	background-image: url("/assets/img/social/patreon.png");
+	background-repeat: round;
+	width: 128px;
 	height: 32px;
 	display: inline-block;
 }

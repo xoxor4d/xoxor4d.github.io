@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Research - Tools - Tutorials"
-subtitle: "and projects surrounding the Call of Duty Series"
+subtitle: "and projects surrounding various games and programs"
 ---
 
 <div class="content-title padding-bottom-15">
@@ -15,7 +15,7 @@ subtitle: "and projects surrounding the Call of Duty Series"
         </a>
     </div>
     <div class="full-width-element-container-centered">
-        <div class="full-width-element-text-centered" style="color: #d4d4d4;">IW3xo</div>
+        <div class="full-width-element-text-centered" style="color: #d4d4d4;">iw3xo</div>
         <div class="full-width-element-text-centered-sub" style="color: #d4d4d4;">a custom client aimed at developers that includes various modifications/additions</div>
     </div>
 </div>
@@ -27,7 +27,7 @@ subtitle: "and projects surrounding the Call of Duty Series"
         </a>
     </div>
     <div class="full-width-element-container-centered">
-        <div class="full-width-element-text-centered" style="color: #d4d4d4;">IW3xRadiant</div>
+        <div class="full-width-element-text-centered" style="color: #d4d4d4;">iw3xo-radiant</div>
         <div class="full-width-element-text-centered-sub" style="color: #d4d4d4;">live-link between Radiant and IW3xo and various other modifications</div>
     </div>
 </div>
@@ -35,19 +35,33 @@ subtitle: "and projects surrounding the Call of Duty Series"
 <div class="padding-2l" align="center"> <div class="seperator-100p"></div></div><div class="padding-1l"></div>
 
 <div align="center" markdown="1">
-Oh, hey, glad you're here. Wondering what this site is about?   
-This is something like a blog / wiki with research, tools and projects surrounding the Call of Duty Games.  
-Most probably know me as the creator of the "__Bounce-Depatcher__" or "__Custom-HLSL-Shaders__".  
-My most-recent focus lies on the creation and enhancement of cod4 modding tools like [[IW3xRadiant]](https://github.com/xoxor4d/iw3xo-radiant) and [[IW3xo]](https://github.com/xoxor4d/iw3xo-dev)
+Oh, hey, glad you're here. Wondering what this site is about?  
+This is something like a blog/wiki with research, tools, and projects surrounding various games and programs.  
+
+<br>
+I was initially very active in the Call of Duty scene, where most folks know me as the creator of the [Bounce-Depatcher](https://xoxor4d.github.io/projects/bouncepatch/)  
+and a heavily modify version of CoD4 [iw3xo](https://github.com/xoxor4d/iw3xo-dev) together with its map editor [iw3xo-radiant](https://github.com/xoxor4d/iw3xo-radiant).
+
+<br>
+Nowadays, I'm mainly working on so called __Compatibility Mods__ for __[NVIDIA's RTX-Remix](https://github.com/NVIDIAGameWorks/rtx-remix)__.  
+A few of my most noteworthy compatiblity mods would be [Portal 2](https://github.com/xoxor4d/p2-rtx), [Left 4 Dead 2](https://github.com/xoxor4d/l4d2-rtx), [Black Mesa](https://github.com/xoxor4d/remix-comp-projects?tab=readme-ov-file#black-mesa)  
+but also [Grand Theft Auto IV](https://github.com/xoxor4d/gta4-rtx) and Call of Duty Titles like [CoD4](https://github.com/xoxor4d/iw3xo-dev), [CoD5](https://github.com/xoxor4d/t4-rtx), [Black Ops 1](https://github.com/xoxor4d/t5-rtx)
 
 <div class="padding-2l"></div>
 
+
+If you like what you see and want to support my work:
+
+<br>
+
 <div class="image-hover-highlight"> 
-If you like what you see and want to support me and what I do, buy me a coffee 
-    <a href="https://ko-fi.com/xoxor4d">
-        <img width="40px" src="https://uploads-ssl.webflow.com/5c14e387dab576fe667689cf/61e1116779fc0a9bd5bdbcc7_Frame%206.png">
-    </a>
+<a href="https://patreon.com/xoxor4d"><img src="/assets/img/social/patreon_dark.png" width="12%"></a>  
 </div>
+
+<div class="image-hover-highlight"> 
+<a href="https://ko-fi.com/xoxor4d"><img src="/assets/img/social/kofi2.png" width="10%"></a>
+</div>
+
 
 <div class="padding-2l"></div>
 
